@@ -60,7 +60,7 @@ $(function()
                     $("<td>").text(obj.id).append($("<input>").attr("type","hidden").attr("value",obj.id).attr("name","product_id[]")),
                     $("<td>").text(obj.name),
                     $("<td>").text(obj.category.name),
-                    $("<td>").text(obj.price),
+                    $("<td>").text(numeral(obj.price).format('0,0.00')),
                     $("<td>").text(obj.stock),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id).attr("type", 'number').attr("min", 1).attr("value", 1)),
                     $("<td>").append($("<a>").append($("<i>").attr("class"," icon-remove")))
@@ -124,7 +124,9 @@ $(function()
 
 
 });
-
+/**
+ * Display Total
+ * */
 function getTotal()
 {
     total = 0;
@@ -135,10 +137,12 @@ function getTotal()
         total  += obj.price*qty;
     });
     getTotalWTaxes();
-    $("#cashier").val("RD$ "+parseFloat(total));
-
+    var string = numeral(total).format('0,0.00');
+    $("#cashier").val("RD$ "+(string));
 }
-
+/**
+ * Display Tota w/ Taxes
+ * */
 function getTotalWTaxes()
 {
     total_itbis = 0;
@@ -152,7 +156,7 @@ function getTotalWTaxes()
     {
         total_itbis = total_itbis+total_itbis*itbis;
     }
-
-    $("#subtotal").val("RD$ "+parseFloat(total_itbis));
+    var string = numeral(total_itbis).format('0,0.00');
+    $("#subtotal").val("RD$ "+(string));
 
 }

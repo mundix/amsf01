@@ -1,11 +1,5 @@
 @extends('themes.melon.tpls.page')
 
-@section('scripts')
-
-    {{ HTML::script('https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js') }}
-    {{ HTML::script('js/app.js') }}
-@endsection
-
 @section('content')
     <div class="widget box" ng-app="AmSisFactura">
         <div class="widget-header">
@@ -52,7 +46,7 @@
         <div class="col-md-6">
             <div class="widget box">
                 <div class="widget-header">
-                    <h4><i class="icon-reorder"></i> Simple Table</h4>
+                    <h4><i class="icon-reorder"></i> Resumen de Productos</h4>
                     <div class="toolbar no-padding">
                         <div class="btn-group">
                             <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
@@ -110,11 +104,11 @@
                                     No aplica
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="discount" id="discount_percent" value="1">
+                                    <input type="radio" name="discount" role="percent" id="discount_percent" value="1">
                                     Porciento %
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="discount" id="discount_amount" value="2" >
+                                    <input type="radio" name="discount" role="money" id="discount_amount" value="2" >
                                     Monto RD$
                                 </label>
                             </div>
@@ -134,7 +128,7 @@
                         <div class="form-group">
                             {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">
-                                <input type="text"  name="sub_total" class="form-control" disabled id="subtotal"  placeholder="S/. 0.00">
+                                <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
                             </div>
                         </div>
                     </form>

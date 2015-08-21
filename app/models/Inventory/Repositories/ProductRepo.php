@@ -42,8 +42,17 @@ class ProductRepo extends BaseRepo
     public function search($input = null)
     {
 //        $products = Product::where('name','like','%'.$input.'%')->take(20)->get();
-        $products  = Product::with('category')->where('name','like','%'.$input.'%')->take(20)->get();
-        return Response::json($products);
+        if(!is_null($input))
+        {
+            $products  = Product::with('category')->where('name','like','%'.$input.'%')
+                ->orWhere('id','like',$input)
+                ->orWhere('description','like','%'.$input.'%')
+                ->orWhere('sku','like','%'.$input.'%')
+                ->take(20)
+                ->get();
+            return Response::json($products);
+        }
+        return FALSE;
     }
 
 }

@@ -35,11 +35,11 @@ abstract class BaseManager
 
     public function save()
     {
-        echo "<pre>";
+//        echo "<pre>";
         $this->isValid();
         $this->entity->fill($this->prepareData($this->data));//Asigna todos los datos, function fill de eloquent y que salve
-        dd($this->entity);
-//        $this->entity->save();
+//        dd($this->entity);
+        $this->entity->save();
         return TRUE;
     }
 

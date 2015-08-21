@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration {
 			$table->string("sku");
 			$table->integer("stock");
 			$table->integer("min_stock");
-			$table->float("price",2);
+			$table->float("price",15,2);
 			$table->double("min_price",15,2);
 			$table->double("discount",15,2);
 			$table->boolean("discount_apply");

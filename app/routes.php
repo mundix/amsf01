@@ -4,8 +4,8 @@
  * Vista del login, como el root del site, ojo esto deberia tener una condicion
  * si estas logueado, deberia estar dentro.
 */
-//Route::get('/',['as' => 'login','uses' => 'HomeController@index']);
-Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
+Route::get('/',['as' => 'login','uses' => 'HomeController@index']);
+//Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
 
 /**

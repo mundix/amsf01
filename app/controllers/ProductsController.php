@@ -58,6 +58,8 @@ class ProductsController extends AssetsController
 	public function search()
 	{
 		$input = Input::get('search');
-		return  $this->productRepo->search($input);
+		if($result = $this->productRepo->search($input))
+			return  $result;
+		return FALSE;
 	}
 }
