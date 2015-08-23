@@ -1,6 +1,6 @@
 <?php
 
-namespace Billing\Entitis;
+namespace Billing\Entities;
 
 class OrderStatus extends \Eloquent {
 	protected $fillable = [];

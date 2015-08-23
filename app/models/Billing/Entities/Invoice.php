@@ -1,6 +1,5 @@
 <?php
-
-namespace Billing\Entitis;
+namespace Billing\Entities;
 
 class Invoice extends \Eloquent {
 	protected $fillable = [];

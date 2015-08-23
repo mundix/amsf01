@@ -1,5 +1,5 @@
 <?php
-namespace Billing\Entitis;
+namespace Billing\Entities;
 
 class Itbis extends \Eloquent {
 	protected $fillable = [];
