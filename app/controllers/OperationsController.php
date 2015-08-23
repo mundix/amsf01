@@ -20,6 +20,7 @@ class OperationsController extends AssetsController
 		$products 		= $this->productRepo->all('id','DESC');
 		$javascripts 	= $this->getJsDataTables();
 		array_push($javascripts,
+			'melon/plugins/bootbox/bootbox.min.js',
 			'js/jquery/plugin/numeral.min.js',
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
 			'js/cashier.js'

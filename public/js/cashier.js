@@ -24,15 +24,10 @@ AmSisFactura.controller('SearchCtrl',function($scope,$http)
         })
     };
 });
-var discount = 0;
-var total = 0;
-//var itbis = 18/100;
-var total_itbis = 0;
-var sub_total = 0;
-var value = 0;
 
 $(function()
 {
+    //bootbox.alert("Hello world!");
     $("#cashier").val("RD$ 0.00");
     $("#subtotal").val("RD$ 0.00");
     /**
@@ -40,7 +35,7 @@ $(function()
      * */
     $(document).on("click","#resultlist a",function(e)
     {
-        total = 0;
+        total_neto = 0;
         e.preventDefault();
         $('#search-table').hide();
         var id          = $(this).attr("data-product-id");
@@ -66,31 +61,70 @@ $(function()
                     $("<td>").text(obj.name),
                     $("<td>").text(obj.category.name),
                     $("<td>").text(numeral(obj.price).format('0,0.00')),
-                    $("<td>").text(function(){
+                    $("<td>").text(function()
+                    {
                         return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                     }),
+                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
-                    $("<td>").append($("<input>").attr('id', "qty-" + obj.id).attr("type", 'number').attr("min", 1).attr("value", 1).attr("class","form-control")),
+                    $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
+                        .attr("type", 'number').attr("min", 1).attr("value", 1)
+                        .attr("class","form-control is_qty")
+                        .attr("data-original-title","")
+                        .attr("data-content","")
+                        .attr("data-trigger","hover")),
                     $("<td>").append($("<a>").append($("<i>").attr("class"," icon-remove")))
-                )
-            );
+                ));
         }else{
                 var qty = ($("#qty-"+id).val());
                 qty ++;
                 $("#obj-"+id).find("input").val(qty);
         }
+
         /**
          * Display total on the black input
          * */
         getTotal();
+        $("#search_input").val("");
     });
-
+    $(document).on("load","input.is_qty",function()
+    {
+        console.log("dispara");
+        //$('.bs-popover').popover();
+    });
     /**
      * If input qty changes, recalculate the total
      * */
-    $(document).on("change","input[type=number]",function(e)
+    $(document).on("change","input[type=number]",function()
     {
+        //console.log("Estamos en algo");
+
         getTotal();
+    });
+
+    /**
+     * Check if the qty is less has on the inventory
+     * */
+    $(document).on("change",".is_qty",function()
+    {
+        var obj = JSON.parse($(this).parent().parent().attr("data-product"));
+        var stock = obj.stock;
+        if($(this).val() > stock)
+        {
+            $(this).addClass("bs-popover");
+            $(this).attr("data-original-title","Error");
+            $(this).attr("data-content","La cantidad elegida, es mayor a la existente.");
+            $('.bs-popover').popover();
+            $(this).parent().parent().attr("style","background:#f2dede");
+            //bootbox.alert("La cantidad elegida, es mayor a la existente.");
+        }else{
+            $(this).removeClass("bs-popover");
+            $(this).removeAttr("data-original-title");
+            $(this).removeAttr("data-content");
+        }
+
+        //console.log("Estamos en algo");
+        //getTotal();
     });
 
     /**
@@ -108,14 +142,7 @@ $(function()
      * */
     $("#apply_itbis").click(function()
     {
-        if($(this).is(":checked"))
-        {
-            console.log("aplicaste itbis");
-        }else{
-            console.log("No aplica itbis");
-        }
         getTotal();
-
     });
 
     /**
@@ -125,13 +152,17 @@ $(function()
     {
        if($(this).attr("id") == "discount_na")
        {
-        //$("#discount_amount").attr("disabled","disabled");
            $("#discount_div label").html("Valor");
            $("#discount_total").prop("disabled", true);
+           $(".is_percent").val(0);
+           $(".is_percent").prop("disabled", false);
            $("#discount_div").hide();
+           getTotal();
+
        }else
        {
-            //console.log($(this).attr("id"));
+            $(".is_percent").val(0);
+            $(".is_percent").prop("disabled", true);
             $("#discount_div").show();
             var label = $("#discount_div label").html();
             if($(this).attr("id") == "discount_percent")
@@ -148,7 +179,6 @@ $(function()
        }
     });
 
-
     /**
      * Hide the Search Table
      * */
@@ -157,33 +187,29 @@ $(function()
 });
 
 /**
+ * ***********************
+ * My Vars
+ * ***********************
+ * */
+var discount = 0;
+var total_neto = 0;
+var total_itbis = 0;
+var total_discount = 0;
+var discount = 0;
+var value = 0;
+var individual_discount = false;
+
+/**
  * Display Total
+ * Black Display
  * */
 function getTotal()
 {
-    total = 0;
-    $("#products-list tbody tr").each(function( key, value )
-    {
-        var obj = JSON.parse($(value).attr("data-product"));
-        var qty = parseInt($("#qty-"+obj.id).val());
-        total  += obj.price*qty;
-    });
-
-    getTotalWTaxes();
-    var string = numeral(total).format('0,0.00');
-    $("#cashier").val("RD$ "+(string));
-
-    if(total > 0)
-        $("input[type=submit]").prop("disabled", false);
-    else
-        $("input[type=submit]").prop("disabled", true);
-}
-/**
- * Display Tota w/ Taxes
- * */
-function getTotalWTaxes()
-{
+    total_neto  = 0;
     total_itbis = 0;
+    total_discount = 0;
+    individual_discount = false;
+
     $("#products-list tbody tr").each(function( key, value )
     {
         var obj = JSON.parse($(value).attr("data-product"));
@@ -191,19 +217,100 @@ function getTotalWTaxes()
         var price = parseFloat(obj.price);
         var itbis = parseFloat(obj.itbis.value);
 
-        if($("#apply_itbis").is(":checked"))
-        {
-            total_itbis += (price + price*itbis/100) * qty;
-            console.log("Price: ",price,"Itbis:",itbis,"Qty:",qty,"Total:",total_itbis);
+        var discount = parseFloat(obj.discount);
+        var discount_apply = obj.discount_apply;
+        total_neto  += qty * price;
 
-            //total_itbis += (obj.price + obj.itbis.value) * qty;
-            //console.log("pride:",obj.price,"itbis:",obj.itbis.value,"Qty:",qty);
-        }else{
-            total_itbis += (price) * qty;
+        /**
+         * DB Discount Table Offerts
+         * */
+        if(parseInt(discount_apply) == 1)
+        {
+            price = price - price*(discount/100);
         }
+        /**
+         * If dicount came from input id =
+         * */
+        var discount = parseFloat($("#discount-"+obj.id).val());
+        if(discount>0)
+        {
+            price = price - price*(discount/100);
+            individual_discount = true;
+        }
+
+        /**
+         * Main Global Discount % or Amount Field
+         * */
+        if($("input.radio_discount:checked").val() == 1)
+        {
+            //console.log("Estamos haciendo el calclulo");
+            discount = getDiscountValue(1);
+            price = price - price * discount;
+        }
+        total_discount  += qty*price;
+        total_itbis += qty*price*itbis/100;
+
     });
 
-    var string = numeral(total_itbis).format('0,0.00');
-    $("#subtotal").val("RD$ "+(string));
 
+
+    getTotalWTaxes();
+    var string = numeral(total_neto).format('0,0.00');
+    $("#cashier").val("RD$ "+(string));
+
+    if(total_neto > 0)
+        $("input[type=submit]").prop("disabled", false);
+    else
+        $("input[type=submit]").prop("disabled", true);
+}
+/**
+ * Display Tota w/ Taxes
+ * Yellow Display
+ * */
+function getTotalWTaxes()
+{
+    var total = 0;
+    if($("#apply_itbis").is(":checked"))
+    {
+        //console.log("total_discount:",total_discount);
+        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || individual_discount)
+        {
+            total = total_discount  + total_itbis ;
+        }else
+            total = total_neto + total_itbis;
+    }else{
+        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || individual_discount)
+        {
+            total = total_discount ;
+        }else
+            total = total_neto ;
+    }
+
+    var string = numeral(total).format('0,0.00');
+    $("#subtotal").val("RD$ "+(string));
+}
+
+/**
+ * Returns the Value to discount
+ *
+ * @param type = 1 Percentual
+ * @param type = 2 Direct Amount
+ *
+ * */
+function getDiscountValue(type)
+{
+    /**
+     * 1 - Percent
+     * 2 - Amount
+     * */
+    var value = parseFloat($("#discount_total").val());
+    var discount = 0;
+    if( type == 1 )
+    {
+        discount = value /100;
+    }else
+    {
+        discount = value;
+    }
+    return discount;
 }

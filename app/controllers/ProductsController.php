@@ -17,7 +17,6 @@ class ProductsController extends AssetsController
 
 	public function index()
 	{
-//		echo "<pre>";
 		$products = $this->productRepo->all('id','DESC');
 		$javascripts = $this->getJsDataTables();
 		$data = $this->getProductsData();
