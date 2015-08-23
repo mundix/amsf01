@@ -16,7 +16,7 @@ class CreateItbisTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string("name");
-			$table->float('value',2,2);
+			$table->float('value',10,2);
 			$table->boolean("available");
 			$table->timestamps();
 		});

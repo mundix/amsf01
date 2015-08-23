@@ -14,7 +14,7 @@
             </div>
             {{ Form::close() }}
             <div id="resultlist">
-                <table class="table table-hover">
+                <table class="table table-hover" id="search-table">
                     <thead>
                     <tr>
                         <th>id</th>
@@ -61,6 +61,7 @@
                             <th>nombre</th>
                             <th>categoria</th>
                             <th>precio</th>
+                            <th>itbis</th>
                             <th>stock</th>
                             <th>qty</th>
                             <th></th>
@@ -105,18 +106,18 @@
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="discount" role="percent" id="discount_percent" value="1">
-                                    Porciento %
+                                    Porciento
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="discount" role="money" id="discount_amount" value="2" >
-                                    Monto RD$
+                                    Monto
                                 </label>
                             </div>
                         </div>
                         <div class="form-group" id="discount_div" style="display:none;">
                             <label class="col-md-3 control-label">Valor</label>
                             <div class="col-md-9">
-                                <input type="text" disabled id="discount_total" class="form-control">
+                                <input type="text" disabled id="discount_total" class="form-control" value="0.00">
                             </div>
                         </div>
                         <div class="form-group">
@@ -129,6 +130,12 @@
                             {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">
                                 <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{--<label class="col-md-3 control-label">HEX format:</label>--}}
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-info btn-block" disabled value="Crear Orden">
                             </div>
                         </div>
                     </form>

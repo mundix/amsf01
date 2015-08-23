@@ -44,6 +44,10 @@ class Product extends \Eloquent
 		return $this->belongsTo('Inventory\Entities\ProductCategory');
 	}
 
+	public function itbis()
+	{
+		return $this->belongsTo('Billing\Entities\Itbis');
+	}
 
 
 }

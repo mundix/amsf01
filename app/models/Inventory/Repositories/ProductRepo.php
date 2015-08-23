@@ -44,7 +44,8 @@ class ProductRepo extends BaseRepo
 //        $products = Product::where('name','like','%'.$input.'%')->take(20)->get();
         if(!is_null($input))
         {
-            $products  = Product::with('category')->where('name','like','%'.$input.'%')
+            $products  = Product::with('category','itbis')
+                ->where('name','like','%'.$input.'%')
                 ->orWhere('id','like',$input)
                 ->orWhere('description','like','%'.$input.'%')
                 ->orWhere('sku','like','%'.$input.'%')
