@@ -6,6 +6,7 @@ class ProductTableSeeder extends Seeder {
 
 	public function run()
 	{
+        DB::table('products')->truncate();
         $faker = Faker::create();
 
         foreach(range(1, 100) as $index)
@@ -17,6 +18,7 @@ class ProductTableSeeder extends Seeder {
                 'description'   =>  $faker->text(300),
                 'available'     =>  1,
                 'user_id'       =>  1,
+                'itbis_id'       =>  $faker->randomElement([1,2,3,4]),
                 'category_id'   =>  $faker->randomElement(range(1,9)),
                 'price'         =>  $faker->randomElement(range(100,10000)),
                 'min_price'     =>  $faker->randomElement(range(5,10)),
