@@ -292,7 +292,7 @@ function getTotalWTaxes()
 
 /**
  * Returns the Value to discount
- *
+ * 
  * @param type = 1 Percentual
  * @param type = 2 Direct Amount
  *
