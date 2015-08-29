@@ -13,7 +13,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
-	protected $fillable = ['full_name','email','password'];
+	protected $fillable = ['full_name','email','password','location_id'];
 
 
 	public function candidate()

@@ -18,4 +18,11 @@ class RegisterManager extends  BaseManager
         return $rules;
     }
 
+    public function prepareData($data)
+    {
+        $this->entity->location_id = 1;
+        $data['location_id'] = 1;
+        return $data;
+    }
+
 }

@@ -7,7 +7,6 @@ namespace Commons\Managers;
  */
 abstract class BaseManager
 {
-
     public $entity;
     public $data;
 
@@ -15,6 +14,8 @@ abstract class BaseManager
     {
         $this->entity = $entity;
         $this->data = array_only($data,array_keys($this->getRules()));
+//        echo "llego el rules:";
+//        dd($data);
         //ESto es para validar la data directamente desde nuestras reglas.
     }
 

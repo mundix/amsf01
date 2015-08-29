@@ -8,6 +8,14 @@ Route::get('/',['as' => 'login','uses' => 'HomeController@index']);
 //Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
 
+Route::get('test',function(){
+    return str_pad(1,8,0,STR_PAD_LEFT);
+});
+
+Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
+
+
+
 /**
  * Segmento para los buscadores Candiadtes, el cual tendra un controller llamado
  * Candidates y apunte al meotdo de category()

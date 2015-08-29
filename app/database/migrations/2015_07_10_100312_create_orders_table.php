@@ -23,13 +23,14 @@ class CreateOrdersTable extends Migration {
 			$table->string("email");
 			$table->string("first_name");
 			$table->string("last_name");
-			$table->float("itbis",2);
-			$table->float("itbis_amount",2);
-			$table->float("total",2);
-			$table->float("sub_total",2);
-			$table->float("discount",2);
-			$table->float("total_credits",2);
-			$table->float("percent_credits",2);
+			$table->float("itbis",10,2);
+			$table->float("itbis_amount",10,2);
+			$table->string("ncf",20);
+			$table->float("total",10,2);
+			$table->float("sub_total",10,2);
+			$table->float("discount",10,2);
+			$table->float("total_credits",10,2);
+			$table->float("percent_credits",10,2);
 			$table->enum("status",["pending","pending payment","status credit","canceled"]);
 			$table->boolean("available");
 

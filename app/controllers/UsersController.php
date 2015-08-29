@@ -26,6 +26,7 @@ class UsersController extends BaseController
     {
         $user = $this->candidateRepo->newCandidate();
         $manager = new RegisterManager($user,Input::all());
+//        dd(Input::all());
         $manager->save();
         return Redirect::route('home');
 

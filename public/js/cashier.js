@@ -3,6 +3,8 @@
 //Iniciando mi app
 var AmSisFactura = angular.module('AmSisFactura',[]);
 
+
+
 //Un controlador con una function
 //Ya esto es codigo de angular.
 AmSisFactura.controller('SearchCtrl',function($scope,$http)
@@ -17,9 +19,11 @@ AmSisFactura.controller('SearchCtrl',function($scope,$http)
     {
         $('#search-table').show();
         //Este es un servicio de angular, para hacer las peticione de ajax.
-        $http.get('products.search',{
+        $http.get('products.search',
+            {
             params: {search:$scope.searchInput}
-        }).success(function(data){
+        }).success(function(data)
+        {
             $scope.products = data;
         })
     };
@@ -30,6 +34,7 @@ $(function()
     //bootbox.alert("Hello world!");
     $("#cashier").val("RD$ 0.00");
     $("#subtotal").val("RD$ 0.00");
+
     /**
      * Add products to the result table table
      * */
@@ -252,8 +257,6 @@ function getTotal()
 
     });
 
-
-
     getTotalWTaxes();
     var string = numeral(total_neto).format('0,0.00');
     $("#cashier").val("RD$ "+(string));
@@ -292,7 +295,7 @@ function getTotalWTaxes()
 
 /**
  * Returns the Value to discount
- * 
+ *
  * @param type = 1 Percentual
  * @param type = 2 Direct Amount
  *

@@ -13,7 +13,6 @@
             {{ Field::email('email') }}
             {{ Field::password('password') }}
             {{ Field::password('password_confirmation',['placeholder'=>'Repite tu clave']) }}
-
             <p>
                 <input type="submit" value="Register" class="btn btn-success">
             </p>

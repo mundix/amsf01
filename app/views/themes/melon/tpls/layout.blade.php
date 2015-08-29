@@ -121,7 +121,7 @@
         </ul>
 
         <!-- Logo -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
             <img src="{{ asset('melon/img/logo.png')}}" alt="logo" />
             <strong>ME</strong>LON
         </a>
@@ -349,7 +349,7 @@
                     <i class="icon-caret-down small"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="pages_user_profile.html"><i class="icon-user"></i> Mi Perfil</a></li>
+                    <li><a href="#"><i class="icon-user"></i> Mi Perfil</a></li>
                     {{--<li><a href="pages_calendar.html"><i class="icon-calendar"></i> My Calendar</a></li>--}}
                     {{--<li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>--}}
                     <li class="divider"></li>
@@ -517,7 +517,7 @@
             <!--=== Navigation ===-->
             <ul id="nav">
                 <li class="current">
-                    <a href="index.html">
+                    <a href="#">
                         <i class="icon-dashboard"></i>
                         RESUMEN
                     </a>
@@ -579,19 +579,19 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="form_components.html">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 Clientes
                             </a>
                         </li>
                         <li>
-                            <a href="form_layouts.html">
+                            <a href="#">
                                 <i class="icon-user"></i>
                                 Empleados
                             </a>
                         </li>
                         <li>
-                            <a href="form_validation.html">
+                            <a href="#">
                                 <i class="icon-building"></i>
                                 Proveedores
                             </a>
@@ -611,7 +611,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tables_dynamic.html">
+                            <a href="#">
                                 <i class="icon-hand-left"></i>
                                 Compras
                             </a>
@@ -631,7 +631,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tables_dynamic.html">
+                            <a href="#">
                                 <i class="icon-angle-right"></i>
                                 Compras
                             </a>
@@ -705,11 +705,11 @@
                 </ul>
 
                 <ul class="crumb-buttons">
-                    <li><a href="charts.html" title=""><i class="icon-signal"></i><span>Statistics</span></a></li>
+                    <li><a href="#" title=""><i class="icon-signal"></i><span>Statistics</span></a></li>
                     <li class="dropdown"><a href="#" title="" data-toggle="dropdown"><i class="icon-tasks"></i><span>Usuarios <strong>(+3)</strong></span><i class="icon-angle-down left-padding"></i></a>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="form_components.html" title=""><i class="icon-plus"></i>Agregar Nuevo Usuario</a></li>
-                            <li><a href="tables_dynamic.html" title=""><i class="icon-reorder"></i>Overview</a></li>
+                            <li><a href="#" title=""><i class="icon-plus"></i>Agregar Nuevo Usuario</a></li>
+                            <li><a href="#" title=""><i class="icon-reorder"></i>Overview</a></li>
                         </ul>
                     </li>
                     <li class="range"><a href="#">
