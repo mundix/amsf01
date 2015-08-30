@@ -18,7 +18,8 @@ class Product extends \Eloquent
 		'user_id',
 		'date_in',
 		'date_out',
-		'available'
+		'available',
+		'fix_itbis',
 	];
 	protected $perPage = 20;
 

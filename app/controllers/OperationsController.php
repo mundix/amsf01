@@ -33,4 +33,6 @@ class OperationsController extends AssetsController
 
 		return View::make('themes/melon/forms/operations/sales',compact('products','javascripts','data','styles'));
 	}
+
+
 }

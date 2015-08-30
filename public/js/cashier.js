@@ -3,8 +3,6 @@
 //Iniciando mi app
 var AmSisFactura = angular.module('AmSisFactura',[]);
 
-
-
 //Un controlador con una function
 //Ya esto es codigo de angular.
 AmSisFactura.controller('SearchCtrl',function($scope,$http)
@@ -68,6 +66,10 @@ $(function()
                     $("<td>").text(numeral(obj.price).format('0,0.00')),
                     $("<td>").text(function()
                     {
+                        console.log(parseInt(obj.id));
+                        itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
+                        if(parseFloat(obj.fix_itbis) > 0.00)
+                            return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
                         return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                     }),
                     $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
@@ -87,23 +89,27 @@ $(function()
         }
 
         /**
+         * Prevent Apply or not a discount input field
+         * */
+        if( $("input[name=discount]:checked").attr("id") == "discount_na")
+        {
+            $(".is_percent").prop("disabled", false);
+        }else{
+            $(".is_percent").prop("disabled", true);
+        }
+
+        /**
          * Display total on the black input
          * */
         getTotal();
         $("#search_input").val("");
     });
-    $(document).on("load","input.is_qty",function()
-    {
-        console.log("dispara");
-        //$('.bs-popover').popover();
-    });
+
     /**
      * If input qty changes, recalculate the total
      * */
     $(document).on("change","input[type=number]",function()
     {
-        //console.log("Estamos en algo");
-
         getTotal();
     });
 
@@ -202,8 +208,19 @@ var total_itbis = 0;
 var total_discount = 0;
 var discount = 0;
 var value = 0;
-var individual_discount = false;
-
+var same_discount = false;
+/**
+ * Types By Cases
+ * #1 Same Taxes, apply discount to the main amount.
+ * #2 Same Taxes, apply discont on each products.
+ * #3 Differents Taxes, apply percent discount on each products.
+ * #4 Different Taxes, can't apply discount to the main amount.
+ *
+ * if taxes_type == 0 don't apply discount
+ *
+ * */
+var taxes_type = 0;
+var itbis_array = [];
 /**
  * Display Total
  * Black Display
@@ -213,34 +230,46 @@ function getTotal()
     total_neto  = 0;
     total_itbis = 0;
     total_discount = 0;
-    individual_discount = false;
+    same_discount = false;
 
     $("#products-list tbody tr").each(function( key, value )
     {
-        var obj = JSON.parse($(value).attr("data-product"));
-        var qty = parseInt($("#qty-"+obj.id).val());
-        var price = parseFloat(obj.price);
-        var itbis = parseFloat(obj.itbis.value);
 
-        var discount = parseFloat(obj.discount);
-        var discount_apply = obj.discount_apply;
+        var obj     = JSON.parse($(value).attr("data-product"));
+        var qty     = parseInt($("#qty-"+obj.id).val());
+        var price   = parseFloat(obj.price);
+        var itbis   = parseFloat(obj.itbis.value);
+
+        //itbis_array.push(itbis);
+
+        if(parseFloat(obj.fix_itbis) > 0.00)
+        {
+            itbis = parseFloat(obj.fix_itbis);
+        }
+
+        var discount = parseFloat(obj.discount); //Discount fron DB
+        var discount_apply = obj.discount_apply; //if apply discount
+
         total_neto  += qty * price;
 
         /**
-         * DB Discount Table Offerts
+         * Discount by DB Field discount_apply and discount
+         * only if the field discount_apply is 1
          * */
         if(parseInt(discount_apply) == 1)
         {
-            price = price - price*(discount/100);
+            price = price * (1 - (discount/100));
         }
+
         /**
-         * If dicount came from input id =
+         *
+         * Discount by INPUT id="discount-(item.id)"
+         * only apply if more than 0
          * */
         var discount = parseFloat($("#discount-"+obj.id).val());
-        if(discount>0)
+        if(discount>0.00)
         {
-            price = price - price*(discount/100);
-            individual_discount = true;
+            price = price * (1 - (discount/100));
         }
 
         /**
@@ -251,11 +280,38 @@ function getTotal()
             //console.log("Estamos haciendo el calclulo");
             discount = getDiscountValue(1);
             price = price - price * discount;
+        }else{
+
         }
+
         total_discount  += qty*price;
         total_itbis += qty*price*itbis/100;
 
     });
+
+    if($("input.radio_discount:checked").val() == 2)
+    {
+        var valor = null;
+        var same = true;
+        $.each(itbis_array,function(index,value)
+        {
+            if(value != undefined)
+            {
+                if(valor != value && valor == null)
+                    valor = value;
+                if(valor != value && valor != null)
+                    same = false;
+                //console.log(index,value);
+            }
+        });
+        //console.log(same);
+        if(same)
+        {
+            same_discount = true;
+            total_discount = total_neto - parseFloat($("#discount_total").val());
+            total_itbis = total_discount *itbis;
+        }
+    }
 
     getTotalWTaxes();
     var string = numeral(total_neto).format('0,0.00');
@@ -266,9 +322,12 @@ function getTotal()
     else
         $("input[type=submit]").prop("disabled", true);
 }
+
 /**
+ *
  * Display Tota w/ Taxes
  * Yellow Display
+ *
  * */
 function getTotalWTaxes()
 {
@@ -276,13 +335,13 @@ function getTotalWTaxes()
     if($("#apply_itbis").is(":checked"))
     {
         //console.log("total_discount:",total_discount);
-        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || individual_discount)
+        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || same_discount)
         {
             total = total_discount  + total_itbis ;
         }else
             total = total_neto + total_itbis;
     }else{
-        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || individual_discount)
+        if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || same_discount)
         {
             total = total_discount ;
         }else

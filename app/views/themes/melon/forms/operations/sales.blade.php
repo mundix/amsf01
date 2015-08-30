@@ -40,6 +40,8 @@
         </div>
     </div>
     <div class="row">
+        <form class="form-horizontal row-border" action="{{ Route('add_sale') }}">
+
         <!--=== Simple Table ===-->
         <div class="col-md-8">
             <div class="widget box">
@@ -81,7 +83,6 @@
                     <h4><i class="icon-reorder"></i> Total Resumen</h4>
                 </div>
                 <div class="widget-content">
-                    <form class="form-horizontal row-border" action="#">
                         <div class="form-group">
                             {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">
@@ -90,14 +91,21 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-9">
-                                <label class="checkbox">
-                                    <input type="checkbox" value="1" name="apply_itbis" id="apply_itbis">
-                                    Aplicar ITBIS
-                                </label>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Aplicar</label>
+                                    <div class="col-md-10">
+                                        <label class="checkbox-inline">
+                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_itbis" id="apply_itbis"></span></div>ITBIS
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_ncf" id="apply_ncf" ></span></div> NCF
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Descuento </label>
+                            <label class="col-md-2 control-label">Descuento</label>
                             <div class="col-md-10">
                                 <label class="radio-inline" id="radio_discount">
                                     <input type="radio" name="discount" id="discount_na" value="-1" class="radio_discount" checked="checked">
@@ -137,9 +145,11 @@
                                 <input type="submit" class="btn btn-lg btn-info btn-block" disabled value="Crear Orden">
                             </div>
                         </div>
-                    </form>
                 </div> <!-- /.widget-content -->
             </div>
         </div>
         <!-- /Color Pickers -->
+        </form>
+
+    </div><!--.row-->
 @stop

@@ -8,9 +8,7 @@
 Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
 
-Route::get('test',function(){
-    return str_pad(1,8,0,STR_PAD_LEFT);
-});
+Route::get('test',['as' => 'test','uses' => 'HomeController@getNcf']);
 
 Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
 
@@ -43,7 +41,6 @@ Route::group(['before'=>'guest'],function()
      */
     Route::get('sign-up',['as'=>'sign_up','uses'=> 'UsersController@signUp']);
     Route::post('sign-up',['as'=>'register','uses'=> 'UsersController@register']);
-
     /**
      * Login, viene del formulario de login de layout.blade.php
      */
@@ -113,6 +110,7 @@ Route::group(['before' => 'auth'], function()
      * Ventas
     */
     Route::get('sales',['as'=>'make_sale','uses'=>'OperationsController@sales']);
+    Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@add']);
 
     Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
 });

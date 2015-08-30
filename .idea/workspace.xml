@@ -2,8 +2,685 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="911cdb2e-6fc1-460a-af47-fc376b25f17d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/colvis/ColVis.min.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/TableTools.min.js.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-colorpicker/img/alpha.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/uniform/images/bg-input-focus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/uniform/images/bg-input.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/swf/copy_csv_xls.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/swf/copy_csv_xls_pdf.swf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-colorpicker/img/hue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/responsive/img/minus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/responsive/img/plus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-colorpicker/img/saturation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2-spinner.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2x2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/img/sort_asc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/img/sort_asc_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/img/sort_both.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/img/sort_desc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/img/sort_desc_disabled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/uniform/images/sprite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_glass_75_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-bg_inset-soft_95_fef1ec_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_222222_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_2e83ff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_454545_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_888888_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_cccccc_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_f6cf3b_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/images/ui-icons_ffffff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/colvis/ColVis.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/colvis/ColVis.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/DT_bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Billing/Repositories/NcfRepo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Billing/Repositories/NcfSequencyRepo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/TableTools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/TableTools.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/tabletools/ZeroClipboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/additional-methods.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/additional-methods.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/bg_BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootbox/bootbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootbox/bootbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-colorpicker/bootstrap-colorpicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fileupload/bootstrap-fileupload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fileupload/bootstrap-fileupload.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-multiselect/bootstrap-multiselect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-multiselect/bootstrap-multiselect.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-switch/bootstrap-switch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-switch/bootstrap-switch.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/bottom.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/bottomCenter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/bottomLeft.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/bottomRight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/bs_BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/ca_ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/center.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/centerLeft.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/centerRight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/cs_CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/da_DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/responsive/datatables.responsive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/daterangepicker/daterangepicker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/de_DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/themes/default.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/el_GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/es_ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/et_EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/eu_ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/excanvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/excanvas.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/fi_FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fileinput/fileinput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/fr_FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fullcalendar/fullcalendar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fullcalendar/fullcalendar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fullcalendar/fullcalendar.print.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/fullcalendar/gcal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.af-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.af.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.am-ET.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.am.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-AE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-BH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-EG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-IQ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-JO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-KW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-LB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-LY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-MA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-OM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-QA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-SA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-TN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar-YE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.arn-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.arn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.as-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.as.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.az-Cyrl-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.az-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.az-Latn-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.az-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.az.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ba-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ba.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.be-BY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.be.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bg-BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bn-BD.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bo-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.br-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.br.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bs-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bs-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bs-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bs-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.bs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ca-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.co-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.co.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.cs-CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.cy-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.cy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.da-DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de-AT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de-LI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.dsb-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.dsb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.dv-MV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.dv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.el-GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-029.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-AU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-BZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-JM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-TT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-US.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.en-ZW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-AR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-CO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-CR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-DO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-HN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-MX.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-NI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-PA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-PR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-PY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-SV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-US.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-UY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es-VE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.et-EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.eu-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fa-IR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fi-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fil-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fil.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fo-FO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr-MC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fy-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.fy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ga-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ga.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gd-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gl-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gsw-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gsw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gu-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.gu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ha-Latn-NG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ha-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ha.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.he-IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hi-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hr-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hr-HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hsb-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hsb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hu-HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hy-AM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.hy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.id-ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ig-NG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ii-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ii.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.is-IS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.it-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.it-IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.iu-Cans-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.iu-Cans.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.iu-Latn-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.iu-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.iu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ja-JP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ka-GE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ka.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kk-KZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kl-GL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.km-KH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.km.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ko-KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kok-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.kok.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ky-KG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lb-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lo-LA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lt-LT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lv-LV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mi-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mk-MK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ml-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mn-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mn-MN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mn-Mong-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mn-Mong.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.moh-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.moh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mr-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ms-BN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ms-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mt-MT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.mt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nb-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ne-NP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ne.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nl-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nl-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nn-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nso-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.nso.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.oc-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.oc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.or-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.or.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pl-PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.prs-AF.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.prs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ps-AF.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.qut-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.qut.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.quz-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.quz-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.quz-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.quz.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.rm-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.rm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ro-RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ru-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.rw-RW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.rw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sah-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sah.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.se-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.se-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.se-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.se.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.si-LK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.si.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sk-SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sl-SI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sma-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sma-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sma.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.smj-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.smj-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.smj.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.smn-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.smn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sms-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sq-AL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sq.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Cyrl-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Cyrl-ME.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Cyrl-RS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Latn-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Latn-ME.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Latn-RS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sv-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sv-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sw-KE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.sw.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.syr-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.syr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ta-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ta.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.te-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.te.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tg-Cyrl-TJ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tg-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.th-TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tk-TM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tn-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tr-TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tt-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tzm-Latn-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tzm-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.tzm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ug-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ug.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uk-UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ur-PK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.ur.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uz-Cyrl-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uz-Cyrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uz-Latn-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uz-Latn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.uz.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.vi-VN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.wo-SN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.wo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.xh-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.xh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.yo-NG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.yo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-CHS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-CHT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-HK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-Hans.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-Hant.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-MO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zu-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.culture.zu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/cultures/globalize.cultures.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/globalize/globalize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.controls.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.geofences.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.geometry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/gmaps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.layers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.map_types.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.markers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/gmaps.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.native_extensions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.overlays.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.routes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.static.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.streetview.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.styles.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/gmaps/lib/gmaps.utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/he_IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/hr_HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/hu_HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/id_ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/inline.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/it_IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/jquery-ui-1.9.2.custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/autosize/jquery.autosize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/autosize/jquery.autosize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/blockui/jquery.blockUI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/blockui/jquery.blockUI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wizard/jquery.bootstrap.wizard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.colorhelpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.colorhelpers.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cookie/jquery.cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/cookie/jquery.cookie.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/columnfilter/jquery.dataTables.columnFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/jquery.dataTables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/datatables/jquery.dataTables.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/duallistbox/jquery.duallistbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/duallistbox/jquery.duallistbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/easy-pie-chart/jquery.easy-pie-chart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/easy-pie-chart/jquery.easy-pie-chart.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/event.swipe/jquery.event.move.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/event.swipe/jquery.event.swipe.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.canvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.canvas.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.categories.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.categories.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.crosshair.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.crosshair.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.errorbars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.errorbars.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.fillbetween.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.fillbetween.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.growraf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.growraf.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.image.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.navigate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.navigate.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.orderBars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.orderBars.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.pie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.pie.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.resize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.resize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.selection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.selection.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.stack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.stack.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.symbol.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.symbol.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.threshold.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.threshold.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.time.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.time.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/flot/jquery.flot.tooltip.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/inputlimiter/jquery.inputlimiter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/inputlimiter/jquery.inputlimiter.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-inputmask/jquery.inputmask.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-inputmask/jquery.inputmask.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/knob/jquery.knob.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/knob/jquery.knob.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/nestable/jquery.nestable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/nestable/jquery.nestable.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/jquery.noty.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/slimscroll/jquery.slimscroll.horizontal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/slimscroll/jquery.slimscroll.horizontal.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/slimscroll/jquery.slimscroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/slimscroll/jquery.slimscroll.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/sparkline/jquery.sparkline.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/sparkline/jquery.sparkline.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/tagsinput/jquery.tagsinput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/tagsinput/jquery.tagsinput.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/jquery.ui.1.10.2.ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/jquery-ui/jquery.ui.1.9.2.ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/touchpunch/jquery.ui.touch-punch.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/touchpunch/jquery.ui.touch-punch.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/uniform/jquery.uniform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/uniform/jquery.uniform.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/jquery.validate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/jquery.validate.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/ko_KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/legacy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_bg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_fa.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ka.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_kk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_my.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_pt_BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_pt_PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_si.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_sl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_sr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_th.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_uk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_zh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/messages_zh_TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/methods_de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/methods_nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/validation/localization/methods_pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/daterangepicker/moment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/daterangepicker/moment.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/nl_NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/no_NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/nprogress/nprogress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/slimscroll/patch.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/picker.date.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/picker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/picker.time.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/pl_PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/promise.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/pt_BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/pt_PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/respond/respond.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/ro_RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/ru_RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_cs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_da.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_de.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_el.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_en.js.template" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_et.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_eu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_fi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_gl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_he.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_hr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_hu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_id.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_is.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ko.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_lt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_lv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_mk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_nl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_no.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ro.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_sk.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_sv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_ua.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_vi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/select2/select2_locale_zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/sk_SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/sv_SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/tagsinput/tags_autocomplete.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/th_TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/top.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/topCenter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/topLeft.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/noty/layouts/topRight.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/tr_TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/typeahead/typeahead.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/typeahead/typeahead.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/uk_UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wysihtml5/wysihtml5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/bootstrap-wysihtml5/wysihtml5.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/pickadate/translations/zh_CN.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AuthController.php" afterPath="$PROJECT_DIR$/app/controllers/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/HireMe/Entities/Candidate.php" afterPath="$PROJECT_DIR$/app/models/HireMe/Entities/Candidate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php" afterPath="$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/OperationsController.php" afterPath="$PROJECT_DIR$/app/controllers/OperationsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Billing/Entities/Order.php" afterPath="$PROJECT_DIR$/app/models/Billing/Entities/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Inventory/Entities/Product.php" afterPath="$PROJECT_DIR$/app/models/Inventory/Entities/Product.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/cashier.js" afterPath="$PROJECT_DIR$/public/js/cashier.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php" afterPath="$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php" afterPath="$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="amsisinvoice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,40 +702,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cashier.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cashier.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/cashier.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6478122">
+              <caret line="339" column="51" selection-start-line="339" selection-start-column="51" selection-end-line="339" selection-end-column="51" />
               <folding>
-                <element signature="e#1143#3407#0" expanded="false" />
-                <element signature="e#3466#3543#0" expanded="false" />
-                <element signature="e#3679#3749#0" expanded="false" />
-                <element signature="e#4800#4899#0" expanded="false" />
-                <element signature="e#5151#6021#0" expanded="false" />
+                <element signature="e#4289#5072#0" expanded="false" />
+                <element signature="e#5212#5311#0" expanded="false" />
+                <element signature="e#5563#6433#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1942605">
-              <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+            <state vertical-scroll-proportion="-5.806452">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="e#7#137#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.935484">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -67,8 +732,50 @@
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OperationsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/OperationsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.413793">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductRepo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Inventory/Repositories/ProductRepo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.967742">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Inventory/Entities/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8387096">
+              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sales.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.225806">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="e#2121#3428#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,18 +796,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_23_154745_create_itbis_table.php" />
-        <option value="$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php" />
-        <option value="$PROJECT_DIR$/app/controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_180448_update_products_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_07_10_100312_create_orders_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_181206_update_products_rnc_fix_rnc_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_173622_create_ncf_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_182442_update_rnc_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_23_154920_update_products_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_191849_create_location_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_191827_create_ncf_table.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_191840_create_ncf_sequencies_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_192949_update_ncf_sequency_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_192635_update_ncf_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_191905_update_users_table.php" />
@@ -124,22 +819,34 @@
         <option value="$PROJECT_DIR$/app/models/Billing/Entities/Itbis.php" />
         <option value="$PROJECT_DIR$/app/models/Billing/Entities/Ncf_sequency.php" />
         <option value="$PROJECT_DIR$/app/models/Billing/Entities/Ncf.php" />
-        <option value="$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/NCFTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2015_08_29_221034_update_configurations_table.php" />
-        <option value="$PROJECT_DIR$/app/views/themes/melon/tpls/layout.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Commons/Entity/Configuration.php" />
         <option value="$PROJECT_DIR$/app/models/Billing/Repositories/ItbisRepo.php" />
         <option value="$PROJECT_DIR$/app/models/Commons/Repositories/ConfigRepo.php" />
-        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/OperationsController.php" />
         <option value="$PROJECT_DIR$/app/controllers/AssetsController.php" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/public/js/cashier.js" />
         <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/Billing/Repositories/NcfRepo.php" />
+        <option value="$PROJECT_DIR$/app/models/HireMe/Entities/Candidate.php" />
+        <option value="$PROJECT_DIR$/app/models/Billing/Entities/Order.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_30_153314_update_ncf_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_30_154532_update_ncf_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_30_154653_drop_ncf_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_08_30_154900_update_ncf_sequency_table.php" />
+        <option value="$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php" />
+        <option value="$PROJECT_DIR$/java.php" />
+        <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/app/models/Billing/Repositories/NcfSequencyRepo.php" />
+        <option value="$PROJECT_DIR$/app/controllers/OperationsController.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/views/themes/melon/tpls/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/app/models/Inventory/Entities/Product.php" />
+        <option value="$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/cashier.js" />
       </list>
     </option>
   </component>
@@ -155,7 +862,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1895" />
+    <option name="x" value="1922" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
@@ -227,7 +934,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="melon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpls" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="amsisinvoice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -245,11 +1022,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="melon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="operations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,6 +1059,22 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="melon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -281,7 +1090,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -297,11 +1106,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/app/models/Billing/Repositories" />
       <recent name="$PROJECT_DIR$/app/database/seeds" />
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/app/controllers" />
-      <recent name="$PROJECT_DIR$/app/views/themes/melon/forms/inventory/products" />
-      <recent name="$PROJECT_DIR$/app/views/themes/melon/tpls" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/models/Commons/Entity" />
@@ -353,7 +1162,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1895" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="1922" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -376,6 +1185,27 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23899849" sideWeight="0.34254992" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25825346" sideWeight="0.6574501" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -390,128 +1220,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/OrderStatus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10232558">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/OrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Commons/Repositories/BaseRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.225807">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Inventory/Entities/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_07_10_100351_create_orders_details_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.774194">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_23_154745_create_itbis_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53023255">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/CategoryTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/CategoryProductTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23023255">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/Location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15348837">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_193335_create_locations_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33255813">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/seeds/CandidateTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CandidatesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1290324">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Repositories/CandidateRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38372093">
-          <caret line="15" column="70" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="70" />
-          <folding>
-            <element signature="e#35#69#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_200722_update_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23023255">
@@ -584,30 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_202923_create_ncf_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47539017">
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_202934_create_ncf_sequencies_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39615846">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/Ncf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21128452">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/seeds/LocationsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05116279">
@@ -620,14 +1309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21744186">
           <caret line="10" column="51" selection-start-line="8" selection-start-column="8" selection-end-line="10" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8965517">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -674,22 +1355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/tpls/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22689076">
-          <caret line="348" column="46" selection-start-line="348" selection-start-column="46" selection-end-line="348" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39255702">
-          <caret line="60" column="94" selection-start-line="60" selection-start-column="94" selection-end-line="60" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_221034_update_configurations_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23769508">
@@ -724,26 +1389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Inventory/Repositories/ProductRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5629139">
-          <caret line="46" column="58" selection-start-line="46" selection-start-column="58" selection-end-line="46" selection-end-column="58" />
-          <folding>
-            <element signature="e#83#117#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6896553">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Commons/Repositories/ConfigRepo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.388521">
@@ -768,50 +1413,238 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33995584">
+          <caret line="58" column="30" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/Location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048565123">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/start/global.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8642384">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29580575">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Billing/Repositories/NcfRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09713025">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24282561">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3642384">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.100113764">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/HireMe/Entities/Candidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24282561">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_30_154900_update_ncf_sequency_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70419425">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_202934_create_ncf_sequencies_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3156733">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_08_29_202923_create_ncf_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48565122">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/Ncf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1942605">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.121412806">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Billing/Entities/NcfSequency.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3156733">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74971557">
+          <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Billing/Repositories/NcfSequencyRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26710817">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#39#73#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/plugins/flot/excanvas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30522946">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.121412806">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/tpls/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48350397">
+          <caret line="215" column="12" selection-start-line="215" selection-start-column="12" selection-end-line="215" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/tpls/page.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5335609">
+          <caret line="249" column="49" selection-start-line="249" selection-start-column="43" selection-end-line="249" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Inventory/Repositories/ProductRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.967742">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Inventory/Entities/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8387096">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/OperationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025028441">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.413793">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/themes/melon/forms/operations/sales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.225806">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#2121#3428#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/cashier.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#1143#3407#0" expanded="false" />
-            <element signature="e#3466#3543#0" expanded="false" />
-            <element signature="e#3679#3749#0" expanded="false" />
-            <element signature="e#4800#4899#0" expanded="false" />
-            <element signature="e#5151#6021#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1942605">
-          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        <state vertical-scroll-proportion="-5.806452">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
             <element signature="e#7#137#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/cashier.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6478122">
+          <caret line="339" column="51" selection-start-line="339" selection-start-column="51" selection-end-line="339" selection-end-column="51" />
+          <folding>
+            <element signature="e#4289#5072#0" expanded="false" />
+            <element signature="e#5212#5311#0" expanded="false" />
+            <element signature="e#5563#6433#0" expanded="false" />
           </folding>
         </state>
       </provider>
