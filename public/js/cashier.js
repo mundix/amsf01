@@ -66,16 +66,16 @@ $(function()
                     $("<td>").text(numeral(obj.price).format('0,0.00')),
                     $("<td>").text(function()
                     {
-                        console.log(parseInt(obj.id));
                         itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
                         if(parseFloat(obj.fix_itbis) > 0.00)
                             return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
                         return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                     }),
-                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
+                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","discount[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
                         .attr("type", 'number').attr("min", 1).attr("value", 1)
+                        .attr("name","qty[]")
                         .attr("class","form-control is_qty")
                         .attr("data-original-title","")
                         .attr("data-content","")
@@ -103,6 +103,9 @@ $(function()
          * */
         getTotal();
         $("#search_input").val("");
+
+
+
     });
 
     /**
@@ -111,6 +114,18 @@ $(function()
     $(document).on("change","input[type=number]",function()
     {
         getTotal();
+    });
+    /**
+     * If click Apply NCF can add RNC input field
+     * */
+    $("#apply_ncf").click(function()
+    {
+        if($(this).is(":checked"))
+        {
+            $("#ncf_group").show();
+            $("#ncf_group input[name=ncf]").val(ncf);
+        }else
+            $("#ncf_group").hide();
     });
 
     /**

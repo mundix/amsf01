@@ -122,8 +122,8 @@
 
         <!-- Logo -->
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('melon/img/logo.png')}}" alt="logo" />
-            <strong>ME</strong>LON
+            {{--<img src="{{ asset('melon/img/logo.png')}}" alt="logo" />--}}
+            <strong>AM</strong> SYSINVOICE
         </a>
         <!-- /logo -->
 

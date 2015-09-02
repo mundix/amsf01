@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="row">
-        <form class="form-horizontal row-border" action="{{ Route('add_sale') }}">
+        <form class="form-horizontal row-border" action="{{ Route('add_sale') }}" method="POST">
 
         <!--=== Simple Table ===-->
         <div class="col-md-8">
@@ -124,17 +124,21 @@
                         <div class="form-group" id="discount_div" style="display:none;">
                             <label class="col-md-3 control-label">Valor</label>
                             <div class="col-md-9">
-                                <input type="number" disabled id="discount_total" class="form-control" value="0.00">
+                                <input type="number" name="discount_total" disabled id="discount_total" class="form-control" value="0.00">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">NCF</label>
+                        <div class="form-group" id="ncf_group" style="display:none;">
+                            <label for="">NCF</label>
                             <div class="col-md-9">
-                                <input type="text" name="ncf" class="form-control">
+                                <input type="text" name="ncf" class="form-control" disabled>
+                            </div>
+                            <label class="col-md-3 control-label">RNC</label>
+                            <div class="col-md-9">
+                                <input type="text" name="rnc" class="form-control">
                             </div>
                         </div>
-                        <div class="form-group">
-                            {{--<label class="col-md-3 control-label">HEX format:</label>--}}
+                        <div class="form-group" id="ncf">
+                            {{--<label class="col-md-3 control-label"></label>--}}
                             <div class="col-md-12">
                                 <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
                             </div>

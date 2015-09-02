@@ -8,14 +8,16 @@ use Billing\Repositories\NcfSequencyRepo;
 
 class HomeController extends BaseController
 {
-
 	//Injection de Dependencias
 	protected $candidateRepo;
 	protected $itbisRepo;
 	protected $configRepo;
 	protected $ncfSequencyRepo;
 
-	public function __construct(CandidateRepo $candidateRepo,ItbisRepo $itbisRepo,ConfigRepo $configRepo,NcfSequencyRepo $ncfSequencyRepo)
+	public function __construct(CandidateRepo $candidateRepo,
+								ItbisRepo $itbisRepo,
+								ConfigRepo $configRepo,
+								NcfSequencyRepo $ncfSequencyRepo)
 	{
 		$this->candidateRepo 	= $candidateRepo;
 		$this->itbisRepo 		= $itbisRepo;
