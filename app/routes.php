@@ -110,7 +110,7 @@ Route::group(['before' => 'auth'], function()
      * Ventas
     */
     Route::get('sales',['as'=>'make_sale','uses'=>'OperationsController@sales']);
-    Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@add']);
+    Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@save']);
 
     Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
 });

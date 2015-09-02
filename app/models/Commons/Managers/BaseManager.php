@@ -41,7 +41,7 @@ abstract class BaseManager
         $this->entity->fill($this->prepareData($this->data));//Asigna todos los datos, function fill de eloquent y que salve
 //        dd($this->entity);
         $this->entity->save();
-        return TRUE;
+        return (int)$this->entity->id;
     }
 
     public function fillData()

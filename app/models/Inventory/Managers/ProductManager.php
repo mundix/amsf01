@@ -19,7 +19,6 @@ class ProductManager extends  BaseManager
             'min_price'     => 'required|numeric',
             'min_price'     => 'required|numeric',
             'available'     => 'in:1,0',
-
         ];
         return $rules;
     }

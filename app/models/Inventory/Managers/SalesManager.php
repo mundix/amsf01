@@ -1,52 +1,64 @@
 <?php
 
 namespace Inventory\Managers;
+
 use Commons\Managers\BaseManager;
+use HireMe\Entities\User;
 
 class SalesManager extends  BaseManager
 {
     public function getRules()
     {
         $rules = [
-            'name'          => 'required',
-            'description'   => 'required|max:1000',
-            'sku'           => 'required',
-            'stock'         => 'required|numeric',
-            'min_stock'     => 'required|numeric',
-            'category_id'   => 'required|exists:products_categories,id',
-            'price'         => 'required|numeric',
-            'min_price'     => 'required|numeric',
-            'min_price'     => 'required|numeric',
-            'available'     => 'in:1,0',
-
+            'product_id'          => 'required',
+            'qty'                 => 'required',
         ];
         return $rules;
     }
-    
-    public function prepareData($data)
+
+    public function prepareData($post)
     {
+        print_r($post);
+        /**
+         * Discount Types
+         * -1 -  N/A
+         * 1  - Percent
+         * 2  - Amount
+         */
+        $discount = 0;
+        $total = 0;
+        $sub_total = 0;
 
-        $this->entity->price = str_replace(",","",$data['price']);
-        $this->entity->min_price = str_replace(",","",$data['min_price']);
+        if(isset($post['discount']) && $post['discount'] > -1)
+        {
+            if($post['discount'] == 1)
+            {
+                $discount = ((float)$post['discount_total'])/100;
+            }elseif($post['discount'] == 2)
+            {
+                $discount = (float)$post['discount_total'];
+            }
+            $params['discount'] = $discount;
+        }
 
-        $this->entity->slug = \Str::slug(strip_tags($data['name']));
-        $this->entity->user_id = \Auth::user()->id;
-        $this->entity->description = strip_tags($data['description']);
+        foreach($post['product_id'] as $key => $item_id)
+        {
+//			echo "$key => $item_id";
+            $p = User::find($item_id);
+            $price 	= (float)$p->price;
+            $qty   	= (float)$post['qty'][$key];
+            $p_total	= $qty *  $price;
+            $total += $p_total;
+            $params['products'][] = ['id'=>$p->id,'price'=>$p->price,'qty'=>$qty,'total'=>$p_total];
+            echo "<br/>";
+        }
+//		$ncf 				= json_decode($this->ncfSequencyRepo->getNext(Auth::User()->location_id))[0];
+//		$params['ncf'] 		= "{$ncf->ncf->prefix}{$ncf->sequency}";
+        $params['total']	= $total;
 
-        if(isset($data['discount_apply']))
-            $this->entity->discount_apply = 1;
-        else
-            $this->entity->discount_apply = 0;
+        print_r($params);
+        exit();
 
-        if(isset($data['discount']))
-            $this->entity->discount = strip_tags($data['discount']);
-        else
-            $this->entity->discount = 0;
-
-        $this->entity->name = strip_tags($data['name']);
-        $this->entity->available = 1;
-
-        return $data;
     }
 
 }
