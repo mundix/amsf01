@@ -71,7 +71,7 @@ $(function()
                             return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
                         return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                     }),
-                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","discount[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
+                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
                         .attr("type", 'number').attr("min", 1).attr("value", 1)
@@ -210,6 +210,10 @@ $(function()
      * */
     $('#search-table').hide();
 
+    $(".radio_discount").click(function(){
+       getTotal();
+    });
+
 });
 
 /**
@@ -255,8 +259,6 @@ function getTotal()
         var price   = parseFloat(obj.price);
         var itbis   = parseFloat(obj.itbis.value);
 
-        //itbis_array.push(itbis);
-
         if(parseFloat(obj.fix_itbis) > 0.00)
         {
             itbis = parseFloat(obj.fix_itbis);
@@ -265,13 +267,16 @@ function getTotal()
         var discount = parseFloat(obj.discount); //Discount fron DB
         var discount_apply = obj.discount_apply; //if apply discount
 
+        /**
+         * Black Display
+         * */
         total_neto  += qty * price;
 
         /**
          * Discount by DB Field discount_apply and discount
          * only if the field discount_apply is 1
          * */
-        if(parseInt(discount_apply) == 1)
+        if(parseInt(discount_apply) == 1 && $("input.radio_discount:checked").val() == -1 && parseFloat($("#discount-"+obj.id).val()) == 0)
         {
             price = price * (1 - (discount/100));
         }
@@ -288,17 +293,17 @@ function getTotal()
         }
 
         /**
-         * Main Global Discount % or Amount Field
+         *radio_discount Main Global Discount % or Amount Field
          * */
         if($("input.radio_discount:checked").val() == 1)
         {
-            //console.log("Estamos haciendo el calclulo");
             discount = getDiscountValue(1);
             price = price - price * discount;
-        }else{
-
         }
 
+        /**
+         * Price With Discount
+         * */
         total_discount  += qty*price;
         total_itbis += qty*price*itbis/100;
 
@@ -319,7 +324,6 @@ function getTotal()
                 //console.log(index,value);
             }
         });
-        //console.log(same);
         if(same)
         {
             same_discount = true;
@@ -349,7 +353,6 @@ function getTotalWTaxes()
     var total = 0;
     if($("#apply_itbis").is(":checked"))
     {
-        //console.log("total_discount:",total_discount);
         if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || same_discount)
         {
             total = total_discount  + total_itbis ;
@@ -359,8 +362,12 @@ function getTotalWTaxes()
         if($("input.radio_discount:checked").val() == 1 || $("input.radio_discount:checked").val() == 2 || same_discount)
         {
             total = total_discount ;
-        }else
-            total = total_neto ;
+        }else{
+            if(total_discount != total_neto)
+                total = total_discount;
+            else
+                total = total_neto ;
+        }
     }
 
     var string = numeral(total).format('0,0.00');

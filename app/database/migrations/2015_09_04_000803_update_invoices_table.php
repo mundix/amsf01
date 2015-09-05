@@ -3,7 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class UpdateOrdersTable extends Migration {
+class UpdateInvoicesTable extends Migration
+{
 
 	/**
 	 * Run the migrations.
@@ -12,8 +13,9 @@ class UpdateOrdersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('orders', function(Blueprint $table)
+		Schema::table('invoices', function(Blueprint $table)
 		{
+			$table->string("rnc");
 		});
 	}
 
@@ -25,7 +27,7 @@ class UpdateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('orders', function(Blueprint $table)
+		Schema::table('invoices', function(Blueprint $table)
 		{
 			
 		});

@@ -128,10 +128,6 @@
                             </div>
                         </div>
                         <div class="form-group" id="ncf_group" style="display:none;">
-                            <label for="">NCF</label>
-                            <div class="col-md-9">
-                                <input type="text" name="ncf" class="form-control" disabled>
-                            </div>
                             <label class="col-md-3 control-label">RNC</label>
                             <div class="col-md-9">
                                 <input type="text" name="rnc" class="form-control">
@@ -157,3 +153,4 @@
 
     </div><!--.row-->
 @stop
+{{-- 3,622.68--}}

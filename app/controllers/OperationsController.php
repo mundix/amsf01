@@ -42,7 +42,7 @@ class OperationsController extends AssetsController
 		$entity = $this->orderRepo->newOrder();
 		$manager = new SalesManager($entity,Input::all());
 		$new_order_id = $manager->save();
-		
+
 		return Redirect::route('products');
 
 	}
