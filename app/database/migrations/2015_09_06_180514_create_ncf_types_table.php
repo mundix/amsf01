@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class UpdateOrdersTable extends Migration {
+class CreateNcfTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,8 +12,13 @@ class UpdateOrdersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('orders', function(Blueprint $table)
+		Schema::create('ncf_types', function(Blueprint $table)
 		{
+			$table->increments('id');
+			$table->string('name');
+			$table->integer('code');
+			$table->boolean('available');
+			$table->timestamps();
 		});
 	}
 
@@ -25,10 +30,7 @@ class UpdateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('orders', function(Blueprint $table)
-		{
-			
-		});
+		Schema::drop('ncf_types');
 	}
 
 }

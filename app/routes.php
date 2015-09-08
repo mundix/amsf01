@@ -8,7 +8,7 @@
 Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
 
-Route::get('test',['as' => 'test','uses' => 'HomeController@getNcf']);
+Route::get('test',['as' => 'test','uses' => 'HomeController@test']);
 
 Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
 

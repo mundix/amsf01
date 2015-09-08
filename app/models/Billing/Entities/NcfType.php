@@ -2,9 +2,10 @@
 
 namespace Billing\Entities;
 
-class NcfSequency extends \Eloquent {
+class NcfType extends \Eloquent
+{
 	protected $fillable = [];
-	protected $table = 'ncf_sequencies';
+	protected $table = 'ncf_types';
 
 	public function ncf()
 	{

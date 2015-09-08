@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class UpdateNcfSequencyTable extends Migration {
+class UpdateClientsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class UpdateNcfSequencyTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('ncf_sequencies', function(Blueprint $table)
+		Schema::table('clients', function(Blueprint $table)
 		{
-			$table->enum('status',['available','used']);
+			$table->boolean('available');
 		});
 	}
 
@@ -26,7 +26,7 @@ class UpdateNcfSequencyTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('ncf_sequencies', function(Blueprint $table)
+		Schema::table('clients', function(Blueprint $table)
 		{
 			
 		});

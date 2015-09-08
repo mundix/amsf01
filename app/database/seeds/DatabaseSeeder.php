@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder {
 //        $this->call("NCFTableSeeder");
 //        $this->call("CategoryProductTableSeeder");
 
-        $this->call("ItbisTableSeeder");
+//        $this->call("ItbisTableSeeder");
+//        $this->call("NCFTypesTableSeeder");
+//        $this->call("NCFTableSeeder");
 //        $this->call("ProductTableSeeder");
 //		 $this->call('UserTableSeeder');
 //		 $this->call('LocationsTableSeeder');

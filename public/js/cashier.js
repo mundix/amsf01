@@ -118,7 +118,7 @@ $(function()
     /**
      * If click Apply NCF can add RNC input field
      * */
-    $("#apply_ncf").click(function()
+    $("#apply_rnc").click(function()
     {
         if($(this).is(":checked"))
         {
@@ -126,6 +126,25 @@ $(function()
             $("#ncf_group input[name=ncf]").val(ncf);
         }else
             $("#ncf_group").hide();
+    });
+
+    /**
+     * Apply if cand select NCF Type
+     * */
+    $("#ncf_type_id").prop('disabled',true);
+    $(".ncf_type_id").hide();
+    $("#apply_ncf").click(function()
+    {
+        if($(this).is(":checked"))
+        {
+            $("#ncf_type_id").prop('disabled',false);
+            $(".ncf_type_id").show();
+        }else
+        {
+            $("#ncf_type_id").prop('disabled',true);
+            $(".ncf_type_id").hide();
+        }
+
     });
 
     /**

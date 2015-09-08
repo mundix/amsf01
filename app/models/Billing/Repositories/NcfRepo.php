@@ -10,4 +10,14 @@ class NcfRepo extends BaseRepo
     {
         return new Ncf;
     }
+
+    public function getTypesByLocationId($location_id)
+    {
+        return Ncf::
+            where('location_id',$location_id)
+            ->orderBy('prefix','ASC')
+            ->groupBy('type_id')
+            ->get();
+    }
+
 }

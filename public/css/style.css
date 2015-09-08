@@ -1,0 +1,22 @@
+.fix-selected-1
+{
+    width: 30% !important;
+}
+.fix-label-1
+{
+    margin-left: 15px;a
+}
+.fix-selected-2
+{
+    width: 50% !important;
+    float: left !important;
+}
+
+
+.fix-label-2
+{
+    margin-left: 15px !important;
+    /*width: 100% !important;*/
+    float: left !important;
+    margin-right: 10px;
+}

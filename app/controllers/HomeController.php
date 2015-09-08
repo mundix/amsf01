@@ -4,6 +4,8 @@ use HireMe\Repositories\CandidateRepo;
 use Billing\Repositories\ItbisRepo;
 use Commons\Repositories\ConfigRepo;
 use Billing\Repositories\NcfSequencyRepo;
+use Billing\Repositories\NcfTypeRepo;
+use Billing\Repositories\NcfRepo;
 
 
 class HomeController extends BaseController
@@ -13,16 +15,21 @@ class HomeController extends BaseController
 	protected $itbisRepo;
 	protected $configRepo;
 	protected $ncfSequencyRepo;
+	protected $ncfRepo;
+
 
 	public function __construct(CandidateRepo $candidateRepo,
 								ItbisRepo $itbisRepo,
 								ConfigRepo $configRepo,
-								NcfSequencyRepo $ncfSequencyRepo)
+								NcfSequencyRepo $ncfSequencyRepo,
+								NcfRepo $ncfRepo
+								)
 	{
 		$this->candidateRepo 	= $candidateRepo;
 		$this->itbisRepo 		= $itbisRepo;
 		$this->configRepo 		= $configRepo;
 		$this->ncfSequencyRepo	= $ncfSequencyRepo;
+		$this->ncfRepo			= $ncfRepo;
 	}
 
 	public function index()
@@ -39,7 +46,8 @@ class HomeController extends BaseController
 				[
 					'itbis_generals' => json_decode($this->configRepo->getValueByAlias('itbis')),
 					'itbis' => json_decode($this->itbisRepo->all()),
-					'ncf'	=> json_decode($this->ncfSequencyRepo->getNext(Auth::User()->location_id))
+//					'ncf'	=> json_decode($this->ncfSequencyRepo->getNext(Auth::User()->location_id))
+					'ncf'	=> json_encode(['sequency'=>"10001010"])
 				]);
 		}
 	}
@@ -50,5 +58,10 @@ class HomeController extends BaseController
 		{
 			return $this->ncfSequencyRepo->getNext(1);
 		}
+	}
+
+	public function test()
+	{
+		return $this->ncfRepo->getTypesByLocationId(2);
 	}
 }

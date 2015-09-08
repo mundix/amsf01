@@ -33,12 +33,6 @@
     <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
-    @if(isset($styles) && sizeof($styles) && is_array($styles))
-        @foreach($styles as $css)
-            <link rel="stylesheet" href="{{asset($css)}}">
-        @endforeach
-    @endif
-
     <!--=== JavaScript ===-->
 
     <script type="text/javascript" src="{{ asset('melon/js/libs/jquery-1.10.2.min.js')}}"></script>
@@ -96,14 +90,6 @@
     <script type="text/javascript" src="{{ asset('melon/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('melon/js/plugins.js') }}"></script>
     <script type="text/javascript" src="{{ asset('melon/js/plugins.form-components.js') }}"></script>
-
-    @if(isset($javascripts) && sizeof($javascripts) && is_array($javascripts))
-        @foreach($javascripts as $js)
-            <script type="text/javascript" src="{{asset($js)}}"></script>
-        @endforeach
-    @endif
-
-    @yield('scripts')
 
     <script>
         $(document).ready(function(){
@@ -226,6 +212,126 @@
                     </li>
                 </ul>
             </li>
+
+            {{--<!-- Tasks -->--}}
+            {{--<li class="dropdown hidden-xs hidden-sm">--}}
+                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
+                    {{--<i class="icon-tasks"></i>--}}
+                    {{--<span class="badge">7</span>--}}
+                {{--</a>--}}
+                {{--<ul class="dropdown-menu extended notification">--}}
+                    {{--<li class="title">--}}
+                        {{--<p>You have 7 pending tasks</p>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+								{{--<span class="task">--}}
+									{{--<span class="desc">Preparing new release</span>--}}
+									{{--<span class="percent">30%</span>--}}
+								{{--</span>--}}
+                            {{--<div class="progress progress-small">--}}
+                                {{--<div style="width: 30%;" class="progress-bar progress-bar-info"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+								{{--<span class="task">--}}
+									{{--<span class="desc">Change management</span>--}}
+									{{--<span class="percent">80%</span>--}}
+								{{--</span>--}}
+                            {{--<div class="progress progress-small progress-striped active">--}}
+                                {{--<div style="width: 80%;" class="progress-bar progress-bar-danger"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+								{{--<span class="task">--}}
+									{{--<span class="desc">Mobile development</span>--}}
+									{{--<span class="percent">60%</span>--}}
+								{{--</span>--}}
+                            {{--<div class="progress progress-small">--}}
+                                {{--<div style="width: 60%;" class="progress-bar progress-bar-success"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+								{{--<span class="task">--}}
+									{{--<span class="desc">Database migration</span>--}}
+									{{--<span class="percent">20%</span>--}}
+								{{--</span>--}}
+                            {{--<div class="progress progress-small">--}}
+                                {{--<div style="width: 20%;" class="progress-bar progress-bar-warning"></div>--}}
+                            {{--</div>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="footer">--}}
+                        {{--<a href="javascript:void(0);">View all tasks</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
+
+            <!-- Messages -->
+            {{--<li class="dropdown hidden-xs hidden-sm">--}}
+                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
+                    {{--<i class="icon-envelope"></i>--}}
+                    {{--<span class="badge">1</span>--}}
+                {{--</a>--}}
+                {{--<ul class="dropdown-menu extended notification">--}}
+                    {{--<li class="title">--}}
+                        {{--<p>You have 3 new messages</p>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+                            {{--<span class="photo"><img src="{{ asset('melon/img/demo/avatar-1.jpg')}}" alt="" /></span>--}}
+								{{--<span class="subject">--}}
+									{{--<span class="from">Bob Carter</span>--}}
+									{{--<span class="time">Just Now</span>--}}
+								{{--</span>--}}
+								{{--<span class="text">--}}
+									{{--Consetetur sadipscing elitr...--}}
+								{{--</span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+                            {{--<span class="photo"><img src="{{ asset('melon/img/demo/avatar-2.jpg') }}" alt="" /></span>--}}
+								{{--<span class="subject">--}}
+									{{--<span class="from">{{ Auth::user()->full_name }}</span>--}}
+									{{--<span class="time">45 mins</span>--}}
+								{{--</span>--}}
+								{{--<span class="text">--}}
+									{{--Sed diam nonumy...--}}
+								{{--</span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a href="javascript:void(0);">--}}
+                            {{--<span class="photo"><img src="{{ asset('melon/img/demo/avatar-3.jpg') }}" alt="" /></span>--}}
+								{{--<span class="subject">--}}
+									{{--<span class="from">Patrick Nilson</span>--}}
+									{{--<span class="time">6 hours</span>--}}
+								{{--</span>--}}
+								{{--<span class="text">--}}
+									{{--No sea takimata sanctus...--}}
+								{{--</span>--}}
+                        {{--</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="footer">--}}
+                        {{--<a href="javascript:void(0);">Ver todos los mensajes</a>--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
+
+            <!-- .row .row-bg Toggler -->
+            <li>
+                <a href="#" class="dropdown-toggle row-bg-toggle">
+                    <i class="icon-resize-vertical"></i>
+                </a>
+            </li>
+
             <!-- Project Switcher Button -->
             <li class="dropdown">
                 <a href="#" class="project-switcher-btn dropdown-toggle">
@@ -615,9 +721,64 @@
             </div>
             <!-- /Breadcrumbs line -->
 
-            {{--@include('themes.melon.commons.header')--}}
+            @include('themes.melon.commons.header')
 
             <!--=== Page Content ===-->
+            <!--=== Statboxes ===-->
+            <div class="row row-bg"> <!-- .row-bg -->
+                <div class="col-sm-6 col-md-3">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual cyan">
+                                <div class="statbox-sparkline">30,20,15,30,22,25,26,30,27</div>
+                            </div>
+                            <div class="title">Clients</div>
+                            <div class="value">4 501</div>
+                            <a class="more" href="javascript:void(0);">View More <i class="pull-right icon-angle-right"></i></a>
+                        </div>
+                    </div> <!-- /.smallstat -->
+                </div> <!-- /.col-md-3 -->
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual green">
+                                <div class="statbox-sparkline">20,30,30,29,22,15,20,30,32</div>
+                            </div>
+                            <div class="title">Feedbacks</div>
+                            <div class="value">714</div>
+                            <a class="more" href="javascript:void(0);">View More <i class="pull-right icon-angle-right"></i></a>
+                        </div>
+                    </div> <!-- /.smallstat -->
+                </div> <!-- /.col-md-3 -->
+
+                <div class="col-sm-6 col-md-3 hidden-xs">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual yellow">
+                                <i class="icon-dollar"></i>
+                            </div>
+                            <div class="title">Total Profit</div>
+                            <div class="value">$42,512.61</div>
+                            <a class="more" href="javascript:void(0);">View More <i class="pull-right icon-angle-right"></i></a>
+                        </div>
+                    </div> <!-- /.smallstat -->
+                </div> <!-- /.col-md-3 -->
+
+                <div class="col-sm-6 col-md-3 hidden-xs">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-content">
+                            <div class="visual red">
+                                <i class="icon-user"></i>
+                            </div>
+                            <div class="title">Visitors</div>
+                            <div class="value">2 521 719</div>
+                            <a class="more" href="javascript:void(0);">View More <i class="pull-right icon-angle-right"></i></a>
+                        </div>
+                    </div> <!-- /.smallstat -->
+                </div> <!-- /.col-md-3 -->
+            </div> <!-- /.row -->
+            <!-- /Statboxes -->
 
             <!--=== Blue Chart ===-->
             <div class="row">

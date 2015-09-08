@@ -2,9 +2,6 @@
 
 @section('content')
     <div class="widget box" ng-app="AmSisFactura">
-        <div class="widget-header">
-            <h4><i class="icon-reorder"></i>Buscar productos</h4>
-        </div>
         <div class="widget-content" ng-controller="SearchCtrl">
             {{ Form::open(['route'=>'product_save','method'=>'POST','role'=>'form','class'=>'form-horizontal row-border']) }}
             <div class="form-group">
@@ -42,7 +39,7 @@
     <div class="row">
         <form class="form-horizontal row-border" action="{{ Route('add_sale') }}" method="POST">
 
-        <!--=== Simple Table ===-->
+        <!--=== Result Table ===-->
         <div class="col-md-8">
             <div class="widget box">
                 <div class="widget-header">
@@ -90,7 +87,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-9">
+                            <div class="col-md-10">
                                 <div class="form-group">
                                     <label class="col-md-2 control-label">Aplicar</label>
                                     <div class="col-md-10">
@@ -98,10 +95,40 @@
                                             <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_itbis" id="apply_itbis"></span></div>ITBIS
                                         </label>
                                         <label class="checkbox-inline">
-                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_ncf" id="apply_ncf" ></span></div> NCF
+                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_rnc" id="apply_rnc" ></span></div> RNC
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_ncf" id="apply_ncf" ></span></div> Comprobante
                                         </label>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label fix-label-1"></label>
+                             @if(isset($clients))
+                                <select name="client_id" id="client_id" class="form-control fix-selected-1">
+                                    <option value="-1">- Clientes -</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{$client->id}}">{{ $client->name }}</option>
+                                    @endforeach
+                                </select>
+                             @endif
+                        </div>
+                        <div class="form-group ncf_type_id" style="display: none;">
+                            <label class="col-md-1 control-label fix-label-1"></label>
+                            @if(isset($ncfTypes))
+                                <select name="ncf_type_id" id="ncf_type_id" class="form-control fix-selected-1">
+                                    @foreach($ncfTypes as $type)
+                                    <option value="{{$type->id}}">{{ $type->name }}</option>
+                                     @endforeach
+                                </select>
+                             @endif
+                        </div>
+                        <div class="form-group" id="ncf_group" style="display:none;">
+                            <label class="col-md-1 control-label"></label>
+                            <div class="col-md-6">
+                                <input type="text" name="rnc" placeholder="RNC" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
@@ -127,12 +154,7 @@
                                 <input type="number" name="discount_total" disabled id="discount_total" class="form-control" value="0.00">
                             </div>
                         </div>
-                        <div class="form-group" id="ncf_group" style="display:none;">
-                            <label class="col-md-3 control-label">RNC</label>
-                            <div class="col-md-9">
-                                <input type="text" name="rnc" class="form-control">
-                            </div>
-                        </div>
+
                         <div class="form-group" id="ncf">
                             {{--<label class="col-md-3 control-label"></label>--}}
                             <div class="col-md-12">

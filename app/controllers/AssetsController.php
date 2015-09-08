@@ -49,4 +49,11 @@ class AssetsController extends BaseController
             'css/cashier.css'
         ];
     }
+
+    public function getCssGeneral()
+    {
+        return [
+            'css/style.css'
+        ];
+    }
 }

@@ -20,5 +20,4 @@ class ConfigRepo extends BaseRepo
     {
         return Configuration::where('alias',$alias)->get();
     }
-
 }
