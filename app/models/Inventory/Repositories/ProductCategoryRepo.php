@@ -17,11 +17,6 @@ class ProductCategoryRepo extends BaseRepo
         return new ProductCategory();
     }
 
-    public function getList()
-    {
-        return ProductCategory::lists('name','id');
-    }
-
     public function newCategory()
     {
         $entity = new ProductCategory();

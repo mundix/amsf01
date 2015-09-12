@@ -33,4 +33,9 @@ abstract class BaseRepo
             return $this->model->orderBy($orderBy,$sort)->get();
         return $this->model->all();
     }
+
+    public function getList()
+    {
+        return $this->model->lists('name','id','value');
+    }
 }

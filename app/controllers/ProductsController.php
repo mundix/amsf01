@@ -3,16 +3,19 @@
 use Inventory\Repositories\ProductCategoryRepo;
 use Inventory\Repositories\ProductRepo;
 use Inventory\Managers\ProductManager;
+use Billing\Repositories\ItbisRepo;
 
 class ProductsController extends AssetsController
 {
 	protected $productRepo;
 	protected $productCategoryRepo;
+	protected $itbisRepo;
 
-	public function __construct(ProductRepo $productRepo,ProductCategoryRepo $productCategoryRepo)
+	public function __construct(ProductRepo $productRepo,ProductCategoryRepo $productCategoryRepo,ItbisRepo $itbisRepo)
 	{
 		$this->productRepo          = $productRepo;
 		$this->productCategoryRepo  = $productCategoryRepo;
+		$this->itbisRepo  			= $itbisRepo;
 	}
 
 	public function index()
@@ -29,8 +32,10 @@ class ProductsController extends AssetsController
 	public function add()
 	{
 		$categories = $this->productCategoryRepo->getList();
-		$data = $this->getProductsData();
-		return View::make("themes/{$this->theme}/forms/inventory/products/add",compact('categories','data'));
+		$itbis 		= $this->itbisRepo->all();
+
+		$data 		= $this->getProductsData();
+		return View::make("themes/{$this->theme}/forms/inventory/products/add",compact('categories','data','itbis'));
 	}
 	/**
 	 * Guardando la entidad atraves del manager.

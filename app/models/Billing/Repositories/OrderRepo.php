@@ -28,6 +28,28 @@ class OrderRepo extends BaseRepo
         $config = new ConfigRepo();
         $itbis_general = (float)json_decode($config->getValueByAlias('itbis'))[0]->value;
 
+
+        $itbis_array                = [];
+        $params                     = [];
+
+        $is_fix_itbix               = true;
+
+        $discount                   = 0;
+        $total                      = 0;
+        $total_neto                 = 0;
+        $total_itbis                = 0;
+
+        $item_discount              = 0;
+        $total_item_discount        = 0;
+
+        $total_discount             = 0;
+        $discount_percent           = 0;
+        $discount_amount_general    = 0;
+        $discount_percent_general   = 0;
+        $item_discount_amount       = 0;
+
+        $params['discount'] = $post['discount'];
+
         /**
          * **************************
          *  Discount Types
@@ -36,20 +58,6 @@ class OrderRepo extends BaseRepo
          *  2  -  Amount
          * **************************
          */
-        $discount           = 0;
-        $total              = 0;
-        $total_neto         = 0;
-        $total_itbis        = 0;
-        $is_fix_itbix       = true;
-        $itbis_array        = [];
-        $params             = [];
-        $item_discount      = 0;
-        $total_discount     = 0;
-        $discount_percent   = 0;
-        $discount_amount_general = 0;
-        $discount_percent_general = 0;
-
-        $params['discount'] = $post['discount'];
         if(isset($post['discount']) && $post['discount'] > -1)
         {
             if($post['discount'] == 1)
@@ -63,7 +71,6 @@ class OrderRepo extends BaseRepo
         }
 
         /**
-         * #1
          * *****************************************************
          * Reach Product Array
          * *****************************************************
@@ -74,152 +81,122 @@ class OrderRepo extends BaseRepo
             $itbis	        = (int)$item->itbis_apply?(float)$item->fix_itbis:$itbis_general;
             $itbis_array[]  = (float) $itbis;
         }
-
         /**
          * ********************************************************
          * Verify if the itbis is different of the general ITBIS
          * and all the fix itbis are different
          * ********************************************************
          */
-        foreach($itbis_array as $key => $fix_itbis)
-        {
-            if(isset($itbis_array[$key+1]) && $fix_itbis != $itbis_array[$key+1] || $itbis_array[sizeof($itbis_array)-1] != $fix_itbis)
-            {
-                $is_fix_itbix = true;
-            }
-        }
+        if(array_sum($itbis_array)%(sizeof($itbis_array)) != 0)
+            $is_fix_itbix = false;
 
         foreach($post['product_id'] as $key => $item_id)
         {
             $item           = Product::find($item_id);
-            $price 	        = (float)$item->price;
-            $qty   	        = (float)$post['qty'][$key];
-            $item_total	    = (float)$qty *  $price;
-            $item_itbis	    = $item_total*(float)$item->fix_itbis/100;
-            $itbis	        = (int)$item->itbis_apply?(float)$item->fix_itbis:$itbis_general;
+            $item_price     = (float) $item->price;
+            $item_qty       = (float) $post['qty'][$key];
+            $item_total     = (float) $item_qty * $item_price;
+            $itbis          = (int) $item->itbis_apply ? (float)$item->fix_itbis : $itbis_general;
             $itbis_array[]  = (float) $itbis;
 
+            $product['id']         = $item_id;
+            $product['price']      = $item_price;
+            $product['qty']        = $item_qty;
+            $product['total']      = $item_total;
+
+            /**
+             * Total Acumulado, sin imp. sin descuento
+             */
             $total += $item_total;
 
             /**
-             * ********************************************************
-             * Descuento #1, descuento por DB, y discount option = -1 (No Aplica)
-             * Aplicando los descuentos
-             * ********************************************************
-             */
+             * Cuando no se selecciona ningun descuento grupal, como
+             * por porciento y por monto, solo puede tener descuento
+             * si es por el input del articulo.
+            */
             if(isset($post['discount']) && $post['discount'] == -1)
             {
                 /**
-                 * Si el campo de descuento por item individual es mayor a cero, aplica
-                 * el descuento, Si no se cumple esta condicion, entonces, debo verificar,
-                 * si el campo discount_apply es 1, y de ser asi debo aplicar el descuento
-                 * con el valor que viene desde la DB.
-                 */
+                 * Si el articulo individual, primero verifica si el descuento
+                 * viene por el input del item, si no entonces utiliza el descuento
+                 * solo si tiene para aplicar desde la DB.
+                */
+                /**
+                 * Reset Discount Values
+                 * Valor del Decuento que se le hace al producto
+                */
+                $item_discount = 0;
+                $item_discount_percent = 0;
+
                 if(isset($post['items_discounts'][$key]) && (float)$post['items_discounts'][$key]>0)
                 {
-
-                    $item_discount_amount   = $item_total * (float)$post['items_discounts'][$key]/100;
-                    $discount_percent       = $post['items_discounts'][$key];
-                    $item_discount          = ($item_total - $item_discount_amount);
-                    $total_discount         += $item_discount;
+                    $item_discount          = $item_total * (float)$post['items_discounts'][$key]/100;
+                    $item_discount_percent  = (float)$post['items_discounts'][$key];
 
                 }elseif((int)$item->discount_apply)
                 {
-                    $item_discount_amount   = $item_total * (float)$item->discount/100;
-                    $discount_percent       = $item->discount;
-                    $item_discount          = ($item_total - $item_discount_amount);
-                    $total_discount         += $item_discount;
+                    $item_discount          = $item_total * (float)$item->discount/100;
+                    $item_discount_percent  = (float)$item->discount;
                 }
                 /**
-                 * *****************************************************************
-                 *   Esto es cuanod se selecciona Descuento Porcentual o por Monto
-                 * *****************************************************************
+                 * Producto aplicado Descuento
+                */
+                $item_total = $item_total - $item_discount;
+
+                $total_item_discount            += $item_discount;
+                $product['item.discount']       = $item_discount;
+                $product['item.percent']        = $item_discount_percent;
+                $product['item.discount.total'] = $item_total;
+
+                /**
+                 * Aplica ITBIS cuando no hay descuento Grupal
                  */
-            }elseif(isset($post['discount']) && $post['discount'] > -1)
-            {
-                if($post['discount'] == 1)
-                {
-                    $item_discount_amount       = $item_total * (float)$post['discount_total']/100;
-                    $discount_percent_general   = $post['discount_total'];
-                    $item_discount              = ($item_total - $item_discount_amount);
-                    $total_discount             += $item_discount;
+                $product['itbis.percent']       = $itbis;
+                $itbis_total                    = $item_total * $itbis/100;
+                $item_total                     = $item_total + $itbis_total;
 
-                }elseif($post['discount'] == 2 && !$is_fix_itbix)
-                {
-                    $discount_amount_general    = (float)$post['discount_total'];
-                    $item_total = $item_total - (float)$post['discount_total'];
-                }
-            }
+                $product['itbis']               = $itbis_total;
+                $product['item.itbis.total']    = $item_total;
+                echo "Total: $item_total <br/>";
 
-            /**
-             *
-             * calcular el itbis
-             *
-             */
-            if($item_discount>0)
-            {
-                $item_itbis_value   = $itbis/100 *  $item_discount;
-                $total_itbis        += $item_itbis_value;
-                $item_calc_itbis    = $item_discount;
-
-                echo "Con descuento: {$itbis} / 100 * {$item_discount_amount} = {$item_itbis_value}";
-                echo "<br/>";
-            }
-            else{
-
-                $item_itbis_value   = $itbis/100 *  $item_total;
-                $item_calc_itbis    = $item_total;
-                $total_itbis        += $item_itbis_value;
-
-                echo "Con descuento: {$itbis} / 100 * {$item_discount_amount} = {$item_itbis_value}";
-                echo "<br/>";
-            }
-
-            if(isset($post['apply_itbis']) && $post['apply_itbis'])
-            {
-                $item_itbis_apply   = $item_calc_itbis * (1 + $itbis/100);
-                $total_neto         +=  $item_itbis_apply;
             }else{
-                $item_itbis_value   = 0;
-                $item_itbis_apply   = 0;
-                $total_neto         +=  $item_calc_itbis;
+                /**
+                 * Cuando se selecciono algun tipo de Descuento
+                */
             }
 
-            $params['products'][] = [
-                'id'                    =>$item->id,
-                'item.price'            =>$item->price,
-                'qty'                   =>$qty,
-                'itbis'                 =>$itbis,
-                'item.total'            =>$item_total,
-                'item.discount.amount'  =>$item_discount_amount,
-                'item.itbis.value'      =>$item_itbis_value,
-                'item.itbis.apply'      =>$item_itbis_apply,
-                'item.discount.percent' =>$discount_percent,
-            ];
+            $total_neto += $item_total;
+            $params['products'][] = $product;
         }
+
 
 //		$ncf 				= json_decode($this->ncfSequencyRepo->getNext(Auth::User()->location_id))[0];
 //		$params['ncf'] 		= "{$ncf->ncf->prefix}{$ncf->sequency}";
-        $params['total.discount.percent.general']	    = $discount_percent_general;
-        $params['total.discount.amount.general']	    = $discount_amount_general;
-        $params['total.discount']	                    = $total_discount;
-        $params['total']	                            = $total;
-        $params['total.neto']	                        = $total_neto;
-        $params['client.id']	                        = $client_id;
-        $params['itbis.total']	                        = $total_itbis;
 
-        $this->products = $params;
+        $params['total']                = $total;
+        $params['total.item.discount']  = $total_item_discount;
+        $params['total.neto']           = $total_neto;
 
-        $this->model->status            = "pending";
-        $this->model->type              = $type;
-        $this->model->client_id         = $client_id;
-        $this->model->available         = 1;
-        $this->model->total             = $total;
-        $this->model->sub_total         = $total_neto;
-        $this->model->itbis             = $itbis_general;
-        $this->model->itbis_amount      = $total_itbis;
-        $this->model->discount          = $total_discount;
-        $this->model->discount_percent  = $discount_percent;
+//        $params['total.discount.percent.general']	    = $discount_percent_general;
+//        $params['total.discount.amount.general']	    = $discount_amount_general;
+//        $params['total.discount']	                    = $total_discount;
+//        $params['total']	                            = $total;
+//        $params['total.neto']	                        = $total_neto;
+//        $params['client.id']	                        = $client_id;
+//        $params['itbis.total']	                        = $total_itbis;
+
+//        $this->products = $params;
+//
+//        $this->model->status            = "pending";
+//        $this->model->type              = $type;
+//        $this->model->client_id         = $client_id;
+//        $this->model->available         = 1;
+//        $this->model->total             = $total;
+//        $this->model->sub_total         = $total_neto;
+//        $this->model->itbis             = $itbis_general;
+//        $this->model->itbis_amount      = $total_itbis;
+//        $this->model->discount          = $total_discount;
+//        $this->model->discount_percent  = $discount_percent;
 
 //        Session::push('order.products',$params);
         echo "<pre>";

@@ -53,6 +53,30 @@
                         {{ Form::text('min_price',null,['placeholder'=>'(Optional)','class'=>'form-control']) }}
                     </div>
                 </div>
+
+                @if(isset($itbis))
+                    <div class="form-group">
+                        {{ Form::label('itbis_id','Itbis',['class'=>'col-md-2 control-label']) }}
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-4">
+{{--                                    {{ Form::select('itbis',$itbis,null,['class'=>'col-md-12 select2 full-width-fix required']) }}--}}
+                                    <select name="itbis_id" id="itbis_id"
+                                            class="{col-md-12 select2 full-width-fix required}">
+                                            <option value="Seleccione Itbis">Seleccione Itbis</option>
+                                        @foreach($itbis as $i)
+                                            <option value="{{ $i->id }}">{{ $i->name }} ({{ $i->value }}%)</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" id="sub-category">
+                                <div class="col-md-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <div class="form-group">
                     {{ Form::label('discount_apply','Aplicar Descuento',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-9">
