@@ -9,8 +9,8 @@
 namespace Inventory\Repositories;
 use Commons\Repositories\BaseRepo;
 use Illuminate\Support\Facades\Response;
-use Inventory\Entities\Product;
 use Illuminate\Support\Facades\DB;
+use Inventory\Entities\Product;
 
 class ProductRepo extends BaseRepo
 {

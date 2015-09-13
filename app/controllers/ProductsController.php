@@ -4,6 +4,7 @@ use Inventory\Repositories\ProductCategoryRepo;
 use Inventory\Repositories\ProductRepo;
 use Inventory\Managers\ProductManager;
 use Billing\Repositories\ItbisRepo;
+use Inventory\Managers\ProductUpdateManager;
 
 class ProductsController extends AssetsController
 {
@@ -57,8 +58,10 @@ class ProductsController extends AssetsController
 
 	public function update()
 	{
-		echo "<pre>";
-		print_r(Input::all());
+		$entity = $this->productRepo->find(Input::get("id"));
+		$manager = new ProductUpdateManager($entity,Input::all());
+		$manager->save();
+		return Redirect::route("product_edit",[$entity->slug,$entity->id]);
 	}
 
 	public function show($sluge,$id)

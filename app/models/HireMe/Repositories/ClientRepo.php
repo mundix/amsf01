@@ -8,6 +8,11 @@ class ClientRepo extends BaseRepo
 {
     public function getModel()
     {
-        return new Client;
+        return new Client();
+    }
+    public function newClient()
+    {
+        $entity = new Client();
+        return $entity;
     }
 }

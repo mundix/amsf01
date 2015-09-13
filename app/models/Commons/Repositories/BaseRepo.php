@@ -38,4 +38,9 @@ abstract class BaseRepo
     {
         return $this->model->lists('name','id','value');
     }
+
+    public function getTotal()
+    {
+        return $this->model->get()->count();
+    }
 }

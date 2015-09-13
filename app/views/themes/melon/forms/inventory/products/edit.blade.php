@@ -11,6 +11,7 @@
                     {{ Form::label('name','Nombre Producto',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">
                         {{ Form::text('name',null,['placeholder'=>'Requerido','class'=>'form-control']) }}
+                        {{ Form::hidden('id',null) }}
                     </div>
                 </div>
                 @if(isset($categories))

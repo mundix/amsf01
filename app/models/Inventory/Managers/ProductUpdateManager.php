@@ -29,7 +29,6 @@ class ProductUpdateManager extends  BaseManager
         $this->entity->min_price = str_replace(",","",$data['min_price']);
 
         $this->entity->slug = \Str::slug(strip_tags($data['name']));
-        $this->entity->user_id = \Auth::user()->id;
         $this->entity->description = strip_tags($data['description']);
 
         if(isset($data['discount_apply']))
@@ -43,7 +42,11 @@ class ProductUpdateManager extends  BaseManager
             $this->entity->discount = 0;
 
         $this->entity->name = strip_tags($data['name']);
-        $this->entity->available = 1;
+
+        if(isset($data['available']))
+            $this->entity->available = 1;
+        else
+            $this->entity->available = 0;
 
         return $data;
     }

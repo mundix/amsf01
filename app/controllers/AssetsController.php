@@ -5,14 +5,19 @@
  * como javascript y css para los templates
 */
 use Inventory\Repositories\ProductRepo;
+use Billing\Repositories\ReportsRepo;
 
 class AssetsController extends BaseController
 {
     protected $productRepo;
+    protected $reportsRepo;
 
-    public function __construct(ProductRepo $productRepo)
+    public function __construct(ProductRepo $productRepo,
+                                ReportsRepo $reportsRepo
+    )
     {
-        $this->productRepo = $productRepo;
+        $this->productRepo			= $productRepo;
+        $this->reportsRepo	        = $reportsRepo;
     }
 
     protected function getJsDataTables()
@@ -38,8 +43,10 @@ class AssetsController extends BaseController
     public function getProductsData()
     {
         return [
-            'total_inventory_amount' => $this->productRepo->getTotalProductsAmount(),
-            'total_inventory_products' => $this->productRepo->getTotalProducts(),
+            'total_inventory_amount'    => $this->productRepo->getTotalProductsAmount(),
+            'total_inventory_products'  => $this->productRepo->getTotalProducts(),
+            'total_today_sales'         => $this->reportsRepo->getTodayTotalSales(),
+            'total_today_amount_sales'  => $this->reportsRepo->getTodayTotalAmountSales(),
         ];
     }
 

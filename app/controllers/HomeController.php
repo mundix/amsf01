@@ -6,9 +6,10 @@ use Commons\Repositories\ConfigRepo;
 use Billing\Repositories\NcfSequencyRepo;
 use Billing\Repositories\NcfTypeRepo;
 use Billing\Repositories\NcfRepo;
+use HireMe\Repositories\ClientRepo;
 
 
-class HomeController extends BaseController
+class HomeController extends AssetsController
 {
 	//Injection de Dependencias
 	protected $candidateRepo;
@@ -16,13 +17,15 @@ class HomeController extends BaseController
 	protected $configRepo;
 	protected $ncfSequencyRepo;
 	protected $ncfRepo;
+	protected $clientRepo;
 
 
 	public function __construct(CandidateRepo $candidateRepo,
 								ItbisRepo $itbisRepo,
 								ConfigRepo $configRepo,
 								NcfSequencyRepo $ncfSequencyRepo,
-								NcfRepo $ncfRepo
+								NcfRepo $ncfRepo,
+								ClientRepo $clientRepo
 								)
 	{
 		$this->candidateRepo 	= $candidateRepo;
@@ -30,6 +33,7 @@ class HomeController extends BaseController
 		$this->configRepo 		= $configRepo;
 		$this->ncfSequencyRepo	= $ncfSequencyRepo;
 		$this->ncfRepo			= $ncfRepo;
+		$this->clientRepo	    = $clientRepo;
 	}
 
 	public function index()
@@ -62,6 +66,7 @@ class HomeController extends BaseController
 
 	public function test()
 	{
-		return $this->ncfRepo->getTypesByLocationId(2);
+//		return $this->ncfRepo->getTypesByLocationId(2);
+		return $this->getProductsData();
 	}
 }

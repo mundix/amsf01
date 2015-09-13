@@ -111,54 +111,50 @@ class OrderRepo extends BaseRepo
              */
             $total += $item_total;
 
-            /**
-             * Cuando no se selecciona ningun descuento grupal, como
-             * por porciento y por monto, solo puede tener descuento
-             * si es por el input del articulo.
-            */
-            if(isset($post['discount']) && $post['discount'] == -1)
-            {
                 /**
-                 * Si el articulo individual, primero verifica si el descuento
-                 * viene por el input del item, si no entonces utiliza el descuento
-                 * solo si tiene para aplicar desde la DB.
-                */
-                /**
-                 * Reset Discount Values
-                 * Valor del Decuento que se le hace al producto
-                */
-                $item_discount = 0;
-                $item_discount_percent = 0;
-
-                if(isset($post['items_discounts'][$key]) && (float)$post['items_discounts'][$key]>0)
-                {
-                    $item_discount          = $item_total * (float)$post['items_discounts'][$key]/100;
-                    $item_discount_percent  = (float)$post['items_discounts'][$key];
-
-                }elseif((int)$item->discount_apply)
-                {
-                    $item_discount          = $item_total * (float)$item->discount/100;
-                    $item_discount_percent  = (float)$item->discount;
-                }
-
-            }else{
-                /**
-                 * Cuando se selecciono algun tipo de Descuento
-                */
-                /**
-                 * Descuento Porcentual
-                */
-                if(isset($post['discount']) && $post['discount'] == 1)
-                {
-                    $percent = ((float)$post['discount_total']);
-
+                 * Cuando no se selecciona ningun descuento grupal, como
+                 * por porciento y por monto, solo puede tener descuento
+                 * si es por el input del articulo.
+                 */
+                if (isset($post['discount']) && $post['discount'] == -1) {
+                    /**
+                     * Si el articulo individual, primero verifica si el descuento
+                     * viene por el input del item, si no entonces utiliza el descuento
+                     * solo si tiene para aplicar desde la DB.
+                     */
+                    /**
+                     * Reset Discount Values
+                     * Valor del Decuento que se le hace al producto
+                     */
                     $item_discount = 0;
                     $item_discount_percent = 0;
 
-                    $item_discount          = $item_total * (float) $percent /100;
-                    $item_discount_percent  = (float) $percent;
+                    if (isset($post['items_discounts'][$key]) && (float)$post['items_discounts'][$key] > 0) {
+                        $item_discount = $item_total * (float)$post['items_discounts'][$key] / 100;
+                        $item_discount_percent = (float)$post['items_discounts'][$key];
+
+                    } elseif ((int)$item->discount_apply) {
+                        $item_discount = $item_total * (float)$item->discount / 100;
+                        $item_discount_percent = (float)$item->discount;
+                    }
+
+                } else {
+                    /**
+                     * Cuando se selecciono algun tipo de Descuento
+                     */
+                    /**
+                     * Descuento Porcentual
+                     */
+                    if (isset($post['discount']) && $post['discount'] == 1) {
+                        $percent = ((float)$post['discount_total']);
+
+                        $item_discount = 0;
+                        $item_discount_percent = 0;
+
+                        $item_discount = $item_total * (float)$percent / 100;
+                        $item_discount_percent = (float)$percent;
+                    }
                 }
-            }
 
             /**
              * Producto aplicado Descuento
@@ -196,9 +192,9 @@ class OrderRepo extends BaseRepo
 
         $params['total']                = $total;
         $params['total.item.discount']  = $total_item_discount;
-        $params['total.itbis']           = $total_itbis;
+        $params['total.itbis']          = $total_itbis;
         $params['total.neto']           = $total_neto;
-        $params['client.id']	                        = $client_id;
+        $params['client.id']	        = $client_id;
 
         $this->products = $params;
 
@@ -220,6 +216,14 @@ class OrderRepo extends BaseRepo
         {
             foreach($params['products'] as $product)
             {
+                $p = Product::find($product['id']);
+                if($type == "sale")
+                    $stock = (int)$p->stock -  (int)$product["qty"];
+                elseif($type == "buy")
+                    $stock = (int)$p->stock +  (int)$product["qty"];
+
+                $p->stock = $stock;
+                $p->save();
                 $od = OrderDetail::create([
                     'order_id'      => $this->model->id,
                     'product_id'    => $product["id"],

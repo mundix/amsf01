@@ -8,7 +8,7 @@
 Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
 
-Route::get('test',['as' => 'test','uses' => 'HomeController@test']);
+Route::get('test',['as' => 'test','uses' => 'DashboardController@test']);
 
 Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
 
@@ -87,7 +87,7 @@ Route::group(['before' => 'auth'], function()
 
     Route::get('products.edit/{slug}/{id}',['as'=>'product_edit','uses'=>'ProductsController@edit']);
     Route::post('products.edit/{slug}/{id}',['as'=>'product_update','uses'=>'ProductsController@update']);
-    Route::get('products.show/{slug}/{id}',['as'=>'product_show','uses'=>'ProductsController@show']);
+    Route::get('products/{slug}/{id}',['as'=>'product_show','uses'=>'ProductsController@show']);
 
     /**
      * Rutas de Las categorias de Productos
@@ -111,7 +111,10 @@ Route::group(['before' => 'auth'], function()
      * Ventas
     */
     Route::get('sales',['as'=>'make_sale','uses'=>'OperationsController@sales']);
-    Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@save']);
+    Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@saveSales']);
+
+    Route::get('buy',['as'=>'make_buy','uses'=>'OperationsController@buy']);
+    Route::post('buy',['as'=>'add_buy','uses'=>'OperationsController@saveBuy']);
 
     Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
 });
