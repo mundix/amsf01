@@ -32,8 +32,7 @@ class ProductsController extends AssetsController
 	public function add()
 	{
 		$categories = $this->productCategoryRepo->getList();
-		$itbis 		= $this->itbisRepo->all();
-
+		$itbis 		= $this->itbisRepo->getItbisFormSelect();
 		$data 		= $this->getProductsData();
 		return View::make("themes/{$this->theme}/forms/inventory/products/add",compact('categories','data','itbis'));
 	}
@@ -51,9 +50,17 @@ class ProductsController extends AssetsController
 	{
 		$entity = $this->productRepo->find($id);
 		$categories = $this->productCategoryRepo->getList();
+		$itbis 		= $this->itbisRepo->getItbisFormSelect();
 		$data = $this->getProductsData();
-		return View::make("themes/{$this->theme}/forms/inventory/products/edit",compact('entity','categories','data'));
+		return View::make("themes/{$this->theme}/forms/inventory/products/edit",compact('entity','categories','data','itbis'));
 	}
+
+	public function update()
+	{
+		echo "<pre>";
+		print_r(Input::all());
+	}
+
 	public function show($sluge,$id)
 	{
 		return "presentando el producto $id";

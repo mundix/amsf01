@@ -4,6 +4,7 @@ namespace Billing\Entities;
 
 class OrderDetail extends \Eloquent {
 
+	protected $table = "orders_details";
 	protected $fillable = [
 		"order_id",
 		"product_id",

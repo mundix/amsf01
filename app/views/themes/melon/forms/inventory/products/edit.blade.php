@@ -5,7 +5,7 @@
             <h4><i class="icon-reorder"></i>Nuevo Producto</h4>
         </div>
         <div class="widget-content">
-            {{ Form::model($entity,['route'=>'product_save','method'=>'POST','role'=>'form','class'=>'form-horizontal row-border']) }}
+            {{ Form::model($entity,['route'=>'product_update','method'=>'POST','role'=>'form','class'=>'form-horizontal row-border']) }}
 
                 <div class="form-group">
                     {{ Form::label('name','Nombre Producto',['class'=>'col-md-2 control-label']) }}
@@ -53,6 +53,21 @@
                         {{ Form::text('min_price',null,['placeholder'=>'(Optional)','class'=>'form-control']) }}
                     </div>
                 </div>
+                @if(isset($itbis))
+                    <div class="form-group">
+                        {{ Form::label('itbis_id','ITBIS',['class'=>'col-md-2 control-label']) }}
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    {{ Form::select('itbis_id',$itbis,null,['class'=>'col-md-12 select2 full-width-fix required']) }}
+                                </div>
+                            </div>
+                            <div class="row" id="sub-category">
+                                <div class="col-md-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
                 <div class="form-group">
                     {{ Form::label('discount_apply','Aplicar Descuento',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-9">
@@ -79,9 +94,16 @@
                         {{ Form::text('min_stock',null,['class'=>'form-control']) }}
                     </div>
                 </div>
-
+                <div class="form-group">
+                    {{ Form::label('available','Displnible',['class'=>'col-md-2 control-label']) }}
+                    <div class="col-md-9">
+                        <label class="checkbox">
+                            {{ Form::checkbox('available',1) }}
+                        </label>
+                    </div>
+                </div>
                 <div class="form-actions">
-                    <input type="submit" value="Crear" class="btn btn-primary pull-right">
+                    <input type="submit" value="Guardar" class="btn btn-primary pull-right">
                 </div>
 
             {{ Form::close() }}

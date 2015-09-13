@@ -86,6 +86,7 @@ Route::group(['before' => 'auth'], function()
     Route::post('products.add',['as'=>'product_save','uses'=>'ProductsController@save']);
 
     Route::get('products.edit/{slug}/{id}',['as'=>'product_edit','uses'=>'ProductsController@edit']);
+    Route::post('products.edit/{slug}/{id}',['as'=>'product_update','uses'=>'ProductsController@update']);
     Route::get('products.show/{slug}/{id}',['as'=>'product_show','uses'=>'ProductsController@show']);
 
     /**
