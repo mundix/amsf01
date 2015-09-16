@@ -19,8 +19,8 @@ class InvoiceRepo extends BaseRepo
 
     public function create($data = [])
     {
-        echo "<pre>";
-        print_r($data);
+//        echo "<pre>";
+//        print_r($data);
 //        exit();
         $total = 0;
         if(isset($data[1]['payment']))
@@ -31,22 +31,28 @@ class InvoiceRepo extends BaseRepo
             }
         }
 
-         $order_id = $data[0];
-         $post = $data[1];
+        $order_id = $data[0];
 
         $params = [
             "order_id"  => $order_id,
-            "total_paid"  => $total,
-            "rnc"  => $data[1]['rnc'],
+            "total_paid"  => str_replace(",","",$total),
+            "rnc"  => isset($data[1]['rnc'])?$data[1]['rnc']:"",
         ];
+        
         $invoice = Invoice::create($params);
-        $params = [
-            ""=>""
-        ];
-        InvoicePayment::create($params);
-        print_r($params);
-        exit();
-//        print_r($post['payment_method']);
+
+        if(isset($data[1]['payment']))
+        {
+            foreach($data[1]['payment'] as $key=>$payment)
+            {
+                $params = [
+                    "invoice_id"=>$invoice->id,
+                    "amount"=>str_replace(",","",$payment),
+                    "payment_method"=>$data[1]['payment_method'][$key],
+                ];
+                InvoicePayment::create($params);
+            }
+        }
 
     }
 
