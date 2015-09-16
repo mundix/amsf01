@@ -76,7 +76,7 @@ $(function()
                             return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
                         return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                     }),
-                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
+                    //$("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
                         .attr("type", 'number').attr("min", 1).attr("value", 1)

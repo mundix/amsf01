@@ -23,7 +23,7 @@
                 </div>
                 <div class="widget-content">
                     @if(isset($products))
-                        <table class="table table-striped table-bordered table-hover table-checkable datatable">
+                        <table class="table table-striped table-bordered table-hover table-checkable  datatable">
                             <thead>
                                 <tr>
                                     <th class="checkbox-column">

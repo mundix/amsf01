@@ -34,6 +34,7 @@ class HomeController extends AssetsController
 		$this->ncfSequencyRepo	= $ncfSequencyRepo;
 		$this->ncfRepo			= $ncfRepo;
 		$this->clientRepo	    = $clientRepo;
+
 	}
 
 	public function index()

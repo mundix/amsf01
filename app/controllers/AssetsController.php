@@ -6,20 +6,10 @@
 */
 use Inventory\Repositories\ProductRepo;
 use Billing\Repositories\ReportsRepo;
+use Billing\Repositories\OrderRepo;
 
 class AssetsController extends BaseController
 {
-    protected $productRepo;
-    protected $reportsRepo;
-
-    public function __construct(ProductRepo $productRepo,
-                                ReportsRepo $reportsRepo
-    )
-    {
-        $this->productRepo			= $productRepo;
-        $this->reportsRepo	        = $reportsRepo;
-    }
-
     protected function getJsDataTables()
     {
         return [
@@ -42,12 +32,28 @@ class AssetsController extends BaseController
 
     public function getProductsData()
     {
+        $productRepo = new ProductRepo();
+        $reportReport =  new ReportsRepo();
         return [
-            'total_inventory_amount'    => $this->productRepo->getTotalProductsAmount(),
-            'total_inventory_products'  => $this->productRepo->getTotalProducts(),
-            'total_today_sales'         => $this->reportsRepo->getTodayTotalSales(),
-            'total_today_amount_sales'  => $this->reportsRepo->getTodayTotalAmountSales(),
+            'total_inventory_amount'    => $productRepo->getTotalProductsAmount(),
+            'total_inventory_products'  => $productRepo->getTotalProducts(),
+            'total_today_sales'         => $reportReport->getTodayTotalSales(),
+            'total_today_amount_sales'  => $reportReport->getTodayTotalAmountSales(),
+            'total_today_buy'           => $reportReport->getTodayTotalBuy(),
+            'total_today_amount_buy'    => $reportReport->getTodayTotalAmountBuy(),
         ];
+    }
+
+    public function getOrdersSales()
+    {
+        $orderRepo = new OrderRepo();
+        return $orderRepo->getAllbyType("sale");
+    }
+
+    public function getOrdersBuy()
+    {
+        $orderRepo = new OrderRepo();
+        return $orderRepo->getAllbyType("buy");
     }
 
     public function cashierStyle()

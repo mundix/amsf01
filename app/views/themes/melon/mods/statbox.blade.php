@@ -30,7 +30,7 @@
                     <i class="icon-dollar"></i>
                 </div>
                 <div class="title">Compras Realizadas Hoy</div>
-                <div class="value">0</div>
+                <div class="value">{{ $data['total_today_buy'] }}</div>
                 <a class="more" href="javascript:void(0);">Ver m&aacute;s <i class="pull-right icon-angle-right"></i></a>
             </div>
         </div> <!-- /.smallstat -->
@@ -42,7 +42,7 @@
                     <i class="icon-user"></i>
                 </div>
                 <div class="title">Monto Compras Hoy</div>
-                <div class="value">$0.00</div>
+                <div class="value">${{ number_format($data['total_today_amount_buy'],2)}}</div>
                 <a class="more" href="javascript:void(0);">Ver m&aacute;s <i class="pull-right icon-angle-right"></i></a>
             </div>
         </div> <!-- /.smallstat -->

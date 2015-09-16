@@ -18,3 +18,10 @@
     border-radius: 9px;
     /*border:5px solid gray !important;*/
 }
+
+div.payments,div.sub-payments{
+    margin-bottom: 10px;
+}
+#add_payments{
+    margin-left: 15px;
+}

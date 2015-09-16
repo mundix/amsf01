@@ -34,4 +34,13 @@ class Order extends \Eloquent
 	{
 		return $this->hasMany('OrderDetail');
 	}
+	//Order()->status_title
+	public function getStatusTitleAttribute()
+	{
+		return \Lang::get('orders.status.'.$this->status);
+	}
+	public function getTypeTitleAttribute()
+	{
+		return \Lang::get('orders.types.'.$this->type);
+	}
 }

@@ -2,13 +2,22 @@
 
 class DashboardController extends AssetsController
 {
+
+	public function __construct()
+	{
+
+	}
 	/**
 	 * Presenta Formulario de login
 	*/
 	public function index()
 	{
-		$data = $this->getProductsData();
-		return View::make('themes/melon/pages/dashboard',compact('data'));
+		$data 			= $this->getProductsData();
+		$javascripts 	= $this->getJsDataTables();
+		$sales 			= $this->getOrdersSales();
+		$shopings 		= $this->getOrdersBuy();
+
+		return View::make('themes/melon/pages/dashboard',compact('data','javascripts','sales','shopings'));
 	}
 
 	public function test()

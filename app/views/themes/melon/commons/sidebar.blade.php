@@ -2,7 +2,7 @@
     <div id="sidebar-content">
         @include('themes.melon.commons.search')
         <!--=== Navigation ===-->
-        @include('themes.melon.commons.main-nav')
+        @include('themes.melon.navs.main-nav')
                 <!-- /Navigation -->
         <div class="sidebar-title">
             <span>Notifications</span>

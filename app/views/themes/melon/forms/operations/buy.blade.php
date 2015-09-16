@@ -1,5 +1,4 @@
 @extends('themes.melon.tpls.page')
-
 @section('content')
     <div class="widget box" ng-app="AmSisFactura">
         <div class="widget-content" ng-controller="SearchCtrl">
@@ -37,13 +36,12 @@
         </div>
     </div>
     <div class="row">
-        <form class="form-horizontal row-border" action="{{ Route('add_sale') }}" method="POST">
-
+        <form class="form-horizontal row-border" action="{{ Route('add_buy') }}" method="POST">
         <!--=== Result Table ===-->
         <div class="col-md-8">
             <div class="widget box">
                 <div class="widget-header">
-                    <h4><i class="icon-reorder"></i> Resumen de Productos</h4>
+                    <h4><i class="icon-reorder"></i>Compra de Productos</h4>
                     <div class="toolbar no-padding">
                         <div class="btn-group">
                             <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
@@ -59,7 +57,6 @@
                             <th>categoria</th>
                             <th>precio</th>
                             <th>itbis</th>
-                            <th>descuento %</th>
                             <th>stock</th>
                             <th>qty</th>
                             <th></th>
@@ -161,8 +158,8 @@
                                 <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
                             </div>
                         </div>
+
                         <div class="form-group">
-                            {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">
                                 <input type="submit" class="btn btn-lg btn-info btn-block" disabled value="Crear Orden">
                             </div>

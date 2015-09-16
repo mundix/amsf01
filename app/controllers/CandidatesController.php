@@ -12,6 +12,7 @@ class CandidatesController extends BaseController
 	{
 		$this->categoryRepo = $categoryRepo;
 		$this->candidateRepo = $candidateRepo;
+
 	}
 
 	public function category($slug,$id)

@@ -20,7 +20,10 @@ class OrderRepo extends BaseRepo
         $entity = new Order();
         return $entity;
     }
-
+    /**
+     * @param Array $post
+     * @return Array (Int $order_id,Input)
+    */
     public function create($post,$type='sale')
     {
         $this->model->user_id = Auth::User()->id;
@@ -28,7 +31,6 @@ class OrderRepo extends BaseRepo
 
         $config = new ConfigRepo();
         $itbis_general = (float)json_decode($config->getValueByAlias('itbis'))[0]->value;
-
 
         $itbis_array                = [];
         $params                     = [];
@@ -234,7 +236,7 @@ class OrderRepo extends BaseRepo
                 ]);
             }
         }
-        return $this->model;
+        return [(int)$this->model->id,$post,$params];
     }
 
     private function array_is_same_values($arr = array())
@@ -246,5 +248,12 @@ class OrderRepo extends BaseRepo
                 return FALSE;
         }
         return TRUE;
+    }
+
+    public function getAllbyType($type = 'sale',$date = null)
+    {
+        if(!is_null($date))
+            return $this->getModel()->where('type',$type)->where("created_at",'>=',$date)->orderBy('created_at','DESC')->get();
+        return $this->getModel()->where('type',$type)->where("created_at",'>=',date("Y-n-j"))->orderBy('created_at','DESC')->get();
     }
 }

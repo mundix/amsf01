@@ -2,16 +2,26 @@
 {
     width: 30% !important;
 }
+.fix-selected-3
+{
+    width: 23% !important;
+    float: left;
+    margin-right: 15px;
+}
 .fix-label-1
 {
-    margin-left: 15px;a
+    margin-left: 15px;
+}
+.fix-button-1
+{
+    margin-top: 2px;
+    float: left;
 }
 .fix-selected-2
 {
     width: 50% !important;
     float: left !important;
 }
-
 
 .fix-label-2
 {

@@ -117,4 +117,6 @@ Route::group(['before' => 'auth'], function()
     Route::post('buy',['as'=>'add_buy','uses'=>'OperationsController@saveBuy']);
 
     Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
+
+    Route::get('invoice.details',['as'=>'invoices','uses'=>'ProductsController@search'] );
 });

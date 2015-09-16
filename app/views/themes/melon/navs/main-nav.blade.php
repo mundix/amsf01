@@ -94,7 +94,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ route('make_buy') }}">
                     <i class="icon-hand-left"></i>
                     Compras
                 </a>
@@ -108,7 +108,7 @@
         </a>
         <ul class="sub-menu">
             <li>
-                <a href="{{ route('make_sale') }}">
+                <a href="#">
                     <i class="icon-angle-right"></i>
                     Ventas
                 </a>

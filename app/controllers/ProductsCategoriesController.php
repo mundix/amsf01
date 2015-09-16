@@ -14,6 +14,7 @@ class ProductsCategoriesController extends AssetsController
 	{
 		$this->productRepo = $productRepo;
 		$this->productCategoryRepo =  $productCategoryRepo;
+		$this->reportsRepo			= new \Billing\Repositories\ReportsRepo();
 	}
 	/**
 	 *

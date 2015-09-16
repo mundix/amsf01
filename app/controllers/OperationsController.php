@@ -3,10 +3,9 @@
 use Inventory\Repositories\ProductCategoryRepo;
 use Inventory\Repositories\ProductRepo;
 use Billing\Repositories\OrderRepo;
-//use Inventory\Managers\SalesManager;
 use HireMe\Repositories\ClientRepo;
 use Billing\Repositories\NcfRepo;
-use Billing\Repositories\ReportsRepo;
+use Billing\Repositories\InvoiceRepo;
 
 class OperationsController extends AssetsController
 {
@@ -15,13 +14,15 @@ class OperationsController extends AssetsController
 	protected $orderRepo;
 	protected $clientRepo;
 	protected $ncfRepo;
+	protected $invoiceRepo;
 
 	public function __construct(
 		ProductRepo $productRepo,
 		ProductCategoryRepo $productCategoryRepo,
 		OrderRepo $orderRepo,
 		ClientRepo $clientRepo,
-		NcfRepo $ncfRepo
+		NcfRepo $ncfRepo,
+		InvoiceRepo $invoiceRepo
 	)
 	{
 		$this->productRepo          = $productRepo;
@@ -29,8 +30,8 @@ class OperationsController extends AssetsController
 		$this->orderRepo			= $orderRepo;
 		$this->clientRepo			= $clientRepo;
 		$this->ncfRepo				= $ncfRepo;
-		$this->reportsRepo			= new ReportsRepo;
-		parent::__construct($productRepo,$this->reportsRepo);
+		$this->invoiceRepo			= $invoiceRepo;
+
 	}
 
 	public function sales()
@@ -85,7 +86,7 @@ class OperationsController extends AssetsController
 
 	public function saveSales()
 	{
-		$this->orderRepo->create(Input::all());
+		$this->invoiceRepo->create($this->orderRepo->create(Input::all()));
 		return Redirect::route('home');
 	}
 	public function saveBuy()

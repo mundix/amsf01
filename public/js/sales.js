@@ -253,6 +253,35 @@ $(function()
        getTotal();
     });
 
+    /**
+     * Activando el campo del pago , segun el metodo de pago seleccionado
+     * */
+    $(document).on("change",'select.payments_methods',function()
+    {
+        if($(this).val()!=-1)
+        {
+            $(this).parent().find("input").prop('disabled',false);
+        }else{
+            $(this).parent().find("input").prop('disabled',true);
+        }
+    });
+    /**
+     * Boton para agregar mas metodos de pagos.
+     * */
+    var divClone = new $("#payments").parent().find(".payments");
+    $("#add_payments").click(function(e)
+    {
+        e.preventDefault();
+        $("#payments").append(
+            $(divClone).clone(true).append($("<a>").attr("href","#").addClass("removePayment").html(" Remover"))
+        );
+    });
+    $(document).on("click",".removePayment",
+        function(e){
+            e.preventDefault();
+            $(this).parent().remove();
+        }
+    );
 });
 
 /**

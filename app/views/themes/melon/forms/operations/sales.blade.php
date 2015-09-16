@@ -43,7 +43,7 @@
         <div class="col-md-8">
             <div class="widget box">
                 <div class="widget-header">
-                    <h4><i class="icon-reorder"></i> Resumen de Productos</h4>
+                    <h4><i class="icon-reorder"></i> Venta de Productos</h4>
                     <div class="toolbar no-padding">
                         <div class="btn-group">
                             <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
@@ -161,6 +161,26 @@
                                 <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
                             </div>
                         </div>
+                    <div class="form-group" >
+                        <div class="row col-md-4" >
+                            <button type="button" class="btn btn-sm btn-primary fix-button-1" id="add_payments"> Agregar Pagos </button>
+                        </div>
+                    </div>
+                    <div class="form-group" id="payments">
+                            {{--<label class="col-md-3 control-label"></label>--}}
+                            <div class="row col-md-12 payments" id="pay-1">
+                                <div class="col-md-6">
+                                    <input type="text"  name="payment[]" class="form-control"   role="money" disabled placeholder="Elija Forma de Pago $0.00">
+                                </div>
+                                <select name="payment_method[]" class="form-control fix-selected-3 payments_methods">
+                                    <option value="-1">Forma Pago</option>
+                                    <option value="cash">Efectivo</option>
+                                    <option value="credit_card">Tarjeta</option>
+                                    <option value="check">Ceque</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">

@@ -20,12 +20,31 @@ class ReportsRepo extends BaseRepo
 
     public function getTodayTotalSales()
     {
-        return Order::where('created_at','>=',date('Y-n-j'))->get()->count();
+        return Order::where('created_at','>=',date('Y-n-j'))
+            ->where('type','sale')
+            ->get()
+            ->count();
+    }
+    public function getTodayTotalBuy()
+    {
+        return Order::where('created_at','>=',date('Y-n-j'))
+            ->where('type','buy')
+            ->get()
+            ->count();
     }
 
     public function getTodayTotalAmountSales()
     {
-        $total_inventory_amount = Order::where('created_at','>=',date('Y-n-j'))->sum('sub_total');
+        $total_inventory_amount = Order::where('created_at','>=',date('Y-n-j'))
+            ->where('type','sale')
+            ->sum('sub_total');
+        return $total_inventory_amount;
+    }
+    public function getTodayTotalAmountBuy()
+    {
+        $total_inventory_amount = Order::where('created_at','>=',date('Y-n-j'))
+            ->where('type','buy')
+            ->sum('sub_total');
         return $total_inventory_amount;
     }
 
