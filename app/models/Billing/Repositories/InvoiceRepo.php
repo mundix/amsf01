@@ -5,6 +5,7 @@ namespace Billing\Repositories;
 use Commons\Repositories\BaseRepo;
 use \Billing\Entities\Invoice;
 use \Billing\Entities\InvoicePayment;
+use \Billing\Entities\Order;
 
 class InvoiceRepo extends BaseRepo
 {
@@ -54,7 +55,23 @@ class InvoiceRepo extends BaseRepo
                 InvoicePayment::create($params);
             }
         }
+        $status = $this->get_status_order_by_payments(['total'=>$data[2]['total.neto'],'total_paid'=>$total]);
+        $entity = Order::find($order_id);
+        $entity->status = $status;
+        $entity->save();
         return $order_id;
+    }
+
+    private function get_status_order_by_payments($payments = [])
+    {
+        if((float)$payments['total']>(float)$payments['total_paid'])
+        {
+            return "pending_payment";
+        }elseif((float)$payments['total']<=(float)$payments['total_paid'])
+        {
+            return "completed";
+        }else
+            return "pending";
     }
 
 }
