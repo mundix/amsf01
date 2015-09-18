@@ -7,6 +7,23 @@ $(function(){
         itbis_general = parseFloat(data.itbis_generals[0].value)/100;
         //ncf = data.ncf[0].ncf.prefix + data.ncf[0].sequency;
     });
+
+
+    /**
+     * Delete Functions for everything
+     * */
+    $(document).on('click','.delete_entity',function(e)
+    {
+        e.preventDefault();
+        var route = $(this).attr('data-entity-route');
+        bootbox.confirm("Hello world!",function(result)
+        {
+            if(result)
+                location.href = route;
+        });
+
+    });
+
 });
 
 

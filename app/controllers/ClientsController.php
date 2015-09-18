@@ -14,7 +14,11 @@ class ClientsController extends AssetsController
 	public function dashboard()
 	{
 		$clients = $this->clientsRepo->getAllClients();
-		$javascripts = $this->getJsDataTables();
+		$javascripts = ['melon/plugins/bootbox/bootbox.min.js',
+			'js/jquery/plugin/numeral.min.js',
+			'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
+			'js/buy.js',
+			'js/app.js'];
 		$data = $this->getProductsData();
 		return View::make("themes/{$this->theme}/pages/resources/clients/dashboard",compact('clients','data','javascripts'));
 	}
@@ -54,6 +58,9 @@ class ClientsController extends AssetsController
 
 	public function delete($id)
 	{
-
+		$entity = $this->clientsRepo->find($id);
+		$entity->forceDelete();
+		\Session::push('form.validation.success','El cliente fu&eacute; eliminado.');
+		return Redirect::route('clients');
 	}
 }
