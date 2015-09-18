@@ -6,9 +6,11 @@
     <!-- /Sidebar -->
     <div id="content">
         <div class="container">
+
             <!-- Breadcrumbs line -->
                 @include('themes.melon.commons.crumbs')
             <!-- /Breadcrumbs line -->
+
             {{--@include('themes.melon.commons.header')--}}
             <!--=== Page Content ===-->
             <!--=== Blue Chart ===-->

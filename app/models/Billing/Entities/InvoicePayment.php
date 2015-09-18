@@ -7,8 +7,8 @@ class InvoicePayment extends \Eloquent
 	protected $fillable = ['invoice_id','amount'];
 	protected $table = "invoices_payments";
 
-	public function payment()
+	public function invoice()
 	{
-		return $this->belongsTo("Payment");
+		return $this->belongsTo('\Billing\Entities\Invoice');
 	}
 }

@@ -204,11 +204,11 @@ class OrderRepo extends BaseRepo
         $this->model->type              = $type;
         $this->model->client_id         = $client_id;
         $this->model->available         = 1;
-        $this->model->total             = $total;
-        $this->model->sub_total         = $total_neto;
+        $this->model->total             = str_replace(",","",$total);
+        $this->model->sub_total         = str_replace(",","",$total_neto);
         $this->model->itbis             = $itbis_general;
-        $this->model->itbis_amount      = $total_itbis;
-        $this->model->discount          = $total_discount;
+        $this->model->itbis_amount      = str_replace(",","",$total_itbis);
+        $this->model->discount          = str_replace(",","",$total_discount);
         $this->model->discount_percent  = $discount_percent;
 
         Session::push('order.products',$params);
@@ -230,9 +230,9 @@ class OrderRepo extends BaseRepo
                     'order_id'      => $this->model->id,
                     'product_id'    => $product["id"],
                     'qty'           => $product["qty"],
-                    'price'         => $product["item.percent"],
-                    'discount'      => $product['item.discount'],
-                    'itbis'         => $product['itbis']
+                    'price'         => str_replace(",","",$product["item.itbis.total"]),
+                    'discount'      => str_replace(",","",$product['item.discount']),
+                    'itbis'         => str_replace(",","",$product['itbis'])
                 ]);
             }
         }
@@ -252,8 +252,12 @@ class OrderRepo extends BaseRepo
 
     public function getAllbyType($type = 'sale',$date = null)
     {
-        if(!is_null($date))
-            return $this->getModel()->where('type',$type)->where("created_at",'>=',$date)->orderBy('created_at','DESC')->get();
-        return $this->getModel()->where('type',$type)->where("created_at",'>=',date("Y-n-j"))->orderBy('created_at','DESC')->get();
+//        if(!is_null($date))
+//            return $this->getModel()->with('invoice')->where('type',$type)->where("created_at",'>=',$date)->orderBy('created_at','DESC')->get();
+        return $this->getModel()
+            ->where('type',$type)
+            ->where("created_at",'>=',date("Y-n-j"))
+            ->orderBy('created_at','DESC')
+            ->get();
     }
 }

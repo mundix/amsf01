@@ -30,9 +30,9 @@ class Order extends \Eloquent
 	{
 		return $this->belongsTo('HireMe\Entities\Client');
 	}
-	public function orderdetail()
+	public function details()
 	{
-		return $this->hasMany('OrderDetail');
+		return $this->hasMany('\Billing\Entities\OrderDetail');
 	}
 	//Order()->status_title
 	public function getStatusTitleAttribute()
@@ -43,4 +43,10 @@ class Order extends \Eloquent
 	{
 		return \Lang::get('orders.types.'.$this->type);
 	}
+
+	public function invoice()
+	{
+		return $this->hasOne('\Billing\Entities\Invoice');
+	}
+
 }

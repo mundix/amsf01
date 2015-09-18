@@ -18,4 +18,9 @@ class OrderDetail extends \Eloquent {
 	{
 		return $this->belongsTo('Order');
 	}
+
+	public function product()
+	{
+		return $this->belongsTo('\Inventory\Entities\Product');
+	}
 }

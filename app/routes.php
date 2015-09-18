@@ -25,13 +25,13 @@ Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
  * candidates/backend-developer/1
  *
 */
-Route::get('candidates/{slug}/{id}',['as' => 'category','uses' => 'CandidatesController@category']);
+//Route::get('candidates/{slug}/{id}',['as' => 'category','uses' => 'CandidatesController@category']);
 
 /**
  * la ruta para un candidate seria
  * edmundo-pichardo/1
 */
-Route::get('{slug}/{id}',['as' => 'candidate', 'uses' => 'CandidatesController@show']);
+//Route::get('{slug}/{id}',['as' => 'candidate', 'uses' => 'CandidatesController@show']);
 Route::get('melons',['as'=>'product','uses'=> 'ProductsController@melon']);
 
 Route::group(['before'=>'guest'],function()
@@ -100,11 +100,9 @@ Route::group(['before' => 'auth'], function()
     Route::post('products.categories.edit/{slug}/{id}',['as'=>'product_category_edit','uses'=>'ProductsCategoriesController@edit']);
     Route::get('products.categories.show',['as'=>'product_category_show','uses'=>'ProductsCategoriesController@show']);
 
-
-
     /**
      * ###############################
-     * Operciones
+     * Operaciones
      * ###############################
     */
     /**
@@ -118,5 +116,27 @@ Route::group(['before' => 'auth'], function()
 
     Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
 
-    Route::get('invoice.details',['as'=>'invoices','uses'=>'ProductsController@search'] );
+    /**
+     * Invoice Details
+    */
+    Route::get('invoice.details/{id}',['as'=>'invoices','uses'=>'InvoicesController@show']);
+
+    /**
+     * Client Administrator
+    */
+    Route::get('clients.dashboard',['as'=>'clients','uses'=>'ClientsController@dashboard']);
+
+    Route::get('client.add',['as'=>'client_add','uses'=>'ClientsController@add']);
+    Route::post('client.add',['as'=>'client_save','uses'=>'ClientsController@save']);
+
+    Route::get('client.edit/{id}',['as'=>'client_edit','uses'=>'ClientsController@edit']);
+    Route::post('client.edit',['as'=>'client_update','uses'=>'ClientsController@update']);
+
+    Route::get('client.delete/{id}',['as'=>'client_delete','uses'=>'ClientsController@delete']);
+
+    Route::get('user.reset',function()
+    {
+       return \Hash::make('SupeR@.#-2014!');
+    });
+
 });

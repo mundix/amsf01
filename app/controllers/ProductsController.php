@@ -24,7 +24,7 @@ class ProductsController extends AssetsController
 		$products = $this->productRepo->all('id','DESC');
 		$javascripts = $this->getJsDataTables();
 		$data = $this->getProductsData();
-		return View::make('themes/melon/pages/inventory/products/show',compact('products','javascripts','data'));
+		return View::make("themes/{$this->theme}/pages/inventory/products/show",compact('products','javascripts','data'));
 	}
 
 	/**

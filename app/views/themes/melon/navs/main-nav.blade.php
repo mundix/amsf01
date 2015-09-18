@@ -1,8 +1,8 @@
 <ul id="nav">
     <li class="current">
-        <a href="#">
+        <a href="{{ Route('home') }}">
             <i class="icon-dashboard"></i>
-            RESUMEN
+            Inicio
         </a>
     </li>
     <li>
@@ -62,7 +62,7 @@
         </a>
         <ul class="sub-menu">
             <li>
-                <a href="#">
+                <a href="{{Route('clients')}}">
                     <i class="icon-user"></i>
                     Clientes
                 </a>

@@ -30,3 +30,12 @@
     float: left !important;
     margin-right: 10px;
 }
+.fix-select-2-group
+{
+
+}
+.fix-select-2-group select
+{
+    float: left !important;
+    margin-right: 15px;
+}

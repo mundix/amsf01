@@ -56,7 +56,7 @@ class OperationsController extends AssetsController
 		);
 		$data 			= $this->getProductsData();
 
-		return View::make('themes/melon/forms/operations/sales',compact('products','javascripts','data','styles','clients','ncfTypes'));
+		return View::make("themes/{$this->theme}/forms/operations/sales",compact('products','javascripts','data','styles','clients','ncfTypes'));
 	}
 
 	public function buy()
@@ -81,13 +81,13 @@ class OperationsController extends AssetsController
 		);
 		$data 			= $this->getProductsData();
 
-		return View::make('themes/melon/forms/operations/buy',compact('products','javascripts','data','styles','clients','ncfTypes'));
+		return View::make("themes/{$this->theme}/forms/operations/buy",compact('products','javascripts','data','styles','clients','ncfTypes'));
 	}
 
 	public function saveSales()
 	{
-		$this->invoiceRepo->create($this->orderRepo->create(Input::all()));
-		return Redirect::route('home');
+		$order_id = $this->invoiceRepo->create($this->orderRepo->create(Input::all()));
+		return Redirect::route('invoices',[$order_id]);
 	}
 	public function saveBuy()
 	{

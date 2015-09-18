@@ -15,4 +15,9 @@ class ClientRepo extends BaseRepo
         $entity = new Client();
         return $entity;
     }
+
+    public function getAllClients()
+    {
+        return Client::where('id','>',1)->orderBy('name','ASC')->get();
+    }
 }

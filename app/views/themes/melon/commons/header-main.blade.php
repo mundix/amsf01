@@ -22,8 +22,9 @@
 
         <!-- Top Right Menu -->
         @include('themes.melon.navs.nav-right')
-                <!-- /Top Right Menu -->
+        <!-- /Top Right Menu -->
     </div>
     <!-- /top navigation bar -->
     <!--=== Project Switcher ===-->
 </header> <!-- /.header -->
+

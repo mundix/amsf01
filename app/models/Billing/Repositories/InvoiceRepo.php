@@ -1,6 +1,7 @@
 <?php
 
 namespace Billing\Repositories;
+
 use Commons\Repositories\BaseRepo;
 use \Billing\Entities\Invoice;
 use \Billing\Entities\InvoicePayment;
@@ -16,12 +17,12 @@ class InvoiceRepo extends BaseRepo
         $entity = new Invoice();
         return $entity;
     }
-
+    /**
+     * @param Array $data
+     * @return Int ($order_id)
+    */
     public function create($data = [])
     {
-//        echo "<pre>";
-//        print_r($data);
-//        exit();
         $total = 0;
         if(isset($data[1]['payment']))
         {
@@ -38,7 +39,7 @@ class InvoiceRepo extends BaseRepo
             "total_paid"  => str_replace(",","",$total),
             "rnc"  => isset($data[1]['rnc'])?$data[1]['rnc']:"",
         ];
-        
+
         $invoice = Invoice::create($params);
 
         if(isset($data[1]['payment']))
@@ -53,7 +54,7 @@ class InvoiceRepo extends BaseRepo
                 InvoicePayment::create($params);
             }
         }
-
+        return $order_id;
     }
 
 }

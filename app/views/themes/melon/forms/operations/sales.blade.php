@@ -94,17 +94,17 @@
                                         <label class="checkbox-inline">
                                             <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_itbis" id="apply_itbis"></span></div>ITBIS
                                         </label>
-                                        <label class="checkbox-inline">
-                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_rnc" id="apply_rnc" ></span></div> RNC
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_ncf" id="apply_ncf" ></span></div> Comprobante
-                                        </label>
+                                        {{--<label class="checkbox-inline">--}}
+                                            {{--<div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_rnc" id="apply_rnc" ></span></div> RNC--}}
+                                        {{--</label>--}}
+                                        {{--<label class="checkbox-inline">--}}
+                                            {{--<div class="checker"><span><input type="checkbox" class="uniform" value="1" name="apply_ncf" id="apply_ncf" ></span></div> Comprobante--}}
+                                        {{--</label>--}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group fix-select-2-group">
                             <label class="col-md-1 control-label fix-label-1"></label>
                              @if(isset($clients))
                                 <select name="client_id" id="client_id" class="form-control fix-selected-1">
@@ -114,22 +114,49 @@
                                     @endforeach
                                 </select>
                              @endif
-                        </div>
-                        <div class="form-group ncf_type_id" style="display: none;">
-                            <label class="col-md-1 control-label fix-label-1"></label>
                             @if(isset($ncfTypes))
                                 <select name="ncf_type_id" id="ncf_type_id" class="form-control fix-selected-1">
                                     @foreach($ncfTypes as $type)
-                                    <option value="{{$type->id}}">{{ $type->name }}</option>
-                                     @endforeach
+                                        <option value="{{$type->id}}">{{ $type->name }}</option>
+                                    @endforeach
                                 </select>
-                             @endif
+                            @endif
                         </div>
-                        <div class="form-group" id="ncf_group" style="display:none;">
-                            <label class="col-md-1 control-label"></label>
-                            <div class="col-md-6">
-                                <input type="text" name="rnc" placeholder="RNC" class="form-control">
+                        {{--<div class="form-group ncf_type_id">--}}
+                            {{--@if(isset($ncfTypes))--}}
+                                {{--<select name="ncf_type_id" id="ncf_type_id" class="form-control fix-selected-1">--}}
+                                    {{--@foreach($ncfTypes as $type)--}}
+                                    {{--<option value="{{$type->id}}">{{ $type->name }}</option>--}}
+                                     {{--@endforeach--}}
+                                {{--</select>--}}
+                             {{--@endif--}}
+                        {{--</div>--}}
+                    <div class="client_info" style="display:none;">
+                        <div class="form-group">
+                            <div class="col-md-10">
+                            <label class="col-md-6 control-label">Datos del Cliente</label>
                             </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="text" name="client_name" placeholder="Nombre *" class="form-control">
+                                </div>
+                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<div class="col-md-10">--}}
+                                    {{--<input type="text" name="client_phone" placeholder="Tel&eacute;fono" class="form-control">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="text" name="rnc" placeholder="RNC" class="form-control">
+                                </div>
+                            </div>
+                            {{--<div class="form-group">--}}
+                                {{--<div class="col-md-10">--}}
+                                    {{--<input type="text" name="client_address" placeholder="Direcci&oacute;n" class="form-control">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Descuento</label>
@@ -184,7 +211,7 @@
                         <div class="form-group">
                             {{--<label class="col-md-3 control-label">HEX format:</label>--}}
                             <div class="col-md-12">
-                                <input type="submit" class="btn btn-lg btn-info btn-block" disabled value="Crear Orden">
+                                <input type="submit" class="btn btn-lg btn-info btn-block" disabled value="Generar">
                             </div>
                         </div>
                 </div> <!-- /.widget-content -->

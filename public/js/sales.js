@@ -133,21 +133,21 @@ $(function()
     /**
      * Apply if cand select NCF Type
      * */
-    $("#ncf_type_id").prop('disabled',true);
-    $(".ncf_type_id").hide();
-    $("#apply_ncf").click(function()
-    {
-        if($(this).is(":checked"))
-        {
-            $("#ncf_type_id").prop('disabled',false);
-            $(".ncf_type_id").show();
-        }else
-        {
-            $("#ncf_type_id").prop('disabled',true);
-            $(".ncf_type_id").hide();
-        }
-
-    });
+    //$("#ncf_type_id").prop('disabled',true);
+    //$(".ncf_type_id").hide();
+    //$("#apply_ncf").click(function()
+    //{
+    //    if($(this).is(":checked"))
+    //    {
+    //        $("#ncf_type_id").prop('disabled',false);
+    //        $(".ncf_type_id").show();
+    //    }else
+    //    {
+    //        $("#ncf_type_id").prop('disabled',true);
+    //        $(".ncf_type_id").hide();
+    //    }
+    //
+    //});
 
     /**
      * Check if the qty is less has on the inventory
@@ -235,7 +235,6 @@ $(function()
                 }else
                     $("#discount_total").prop("disabled", true);
             }
-
             $("#discount_div label").html(label);
             $("#discount_total").val("0.00");
        }
@@ -282,6 +281,22 @@ $(function()
             $(this).parent().remove();
         }
     );
+
+
+    /**
+     * Client Selector, si el cliente es N/A entonces debe poder agregar un cliente nuevo.
+     * */
+    $("#client_id").change(function(e)
+    {
+        e.preventDefault();
+        if($(this).val() > 1)
+        {
+            $(".client_info").hide();
+        }else{
+            $(".client_info").show();
+        }
+        //console.log($(this).val());
+    });
 });
 
 /**

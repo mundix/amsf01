@@ -30,16 +30,15 @@ abstract class BaseManager
         $validation = \Validator::make($this->data,$rules);
         if($validation->fails())
         {
+            \Session::push('form.validation.error', $validation->messages()->all());
             throw new ValidationException('Validation Failed',$validation->messages());
         }
     }
 
     public function save()
     {
-//        echo "<pre>";
         $this->isValid();
         $this->entity->fill($this->prepareData($this->data));//Asigna todos los datos, function fill de eloquent y que salve
-//        dd($this->entity);
         $this->entity->save();
         return (int)$this->entity->id;
     }
