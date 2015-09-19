@@ -5,8 +5,9 @@ use HireMe\Repositories\CandidateRepo;
 use HireMe\Repositories\CategoryRepo;
 use HireMe\Managers\AccountManager;
 use HireMe\Managers\ProfileManager;
+use HireMe\Managers\UserProfileManager;
 
-class UsersController extends BaseController
+class UsersController extends AssetsController
 {
     protected $candidateRepo;
     protected $categoryRepo;
@@ -15,6 +16,15 @@ class UsersController extends BaseController
     {
         $this->candidateRepo = $candidateRepo;
         $this->categoryRepo = $categoryRepo;
+    }
+
+    public function dashboard()
+    {
+
+        $employees = $this->candidateRepo->all();
+        $javascripts = $this->getJsDataTables();
+        $data = $this->getProductsData();
+        return View::make("themes/{$this->theme}/pages/resources/employees/dashboard",compact('employees','javascripts','data'));
     }
 
     public function signUp()
@@ -35,14 +45,21 @@ class UsersController extends BaseController
 
     public function account()
     {
-        $user = Auth::user();
-        return View::make('users/account',compact('user')); //Tambien se pued hacer con with->('user')
+//        echo "<pre>";
+        $user = Auth::User();
+//        print_r($user->candidate->phone);
+//        return View::make('users/account',compact('user')); //Tambien se pued hacer con with->('user')
+//        $javascripts = [];
+        $data = $this->getProductsData();
+        return View::make("themes/{$this->theme}/forms/resources/employees/edit",compact('user','data','')); //Tambien se pued hacer con with->('user')
     }
 
     public function updateAccount()
     {
         $user = Auth::user();
         $manager = new AccountManager($user,Input::all());
+        $manager->save();
+        $manager = new UserProfileManager($user,Input::all());
         $manager->save();
         return Redirect::route('home');
     }

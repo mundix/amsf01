@@ -20,10 +20,10 @@ class CandidatesController extends BaseController
 		//Se va remover Category si no que se debe usar el Repo de Category
 		$category = $this->categoryRepo->find($id);
 
-		$this->notFoundUnless($category);
+//		$this->notFoundUnless($category);
 
-//		$categories = $this->categoryRepo->getCandidatesbyCategoryId($id);
-//		$category = $categories[0];
+		$categories = $this->categoryRepo->getCandidatesbyCategoryId($id);
+		$category = $categories[0];
 		//Ahora pertenece a namespace
 		return View::make('candidates/category',compact('category'));
 	}

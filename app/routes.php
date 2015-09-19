@@ -59,6 +59,7 @@ Route::group(['before' => 'auth'], function()
     Route::get('dashboard',['as'=>'home','uses'=>'DashboardController@index']);
     Route::get('logout',['as' => 'logout', 'uses' => 'AuthController@logout']);
 
+    Route::get('employees',['as'=>'employees','uses'=>'UsersController@dashboard']);
     /**
      * Formularios Account, informacion de la cuetna
      */

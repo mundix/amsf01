@@ -10,6 +10,9 @@
     </script>
     <div class="row">
         <div class="col-md-12">
+            <div class="box col-md-12 left">
+                <a href="{{ Route('client_add') }}" class="btn btn-lg btn-info">Crear Cliente</a>
+            </div>
             <div class="widget box">
                 <div class="widget-header">
                     <h4><i class="icon-reorder"></i> Nuestros Clientes</h4>
@@ -19,6 +22,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="widget-content">
                     @if(isset($clients))
                         <table class="table table-striped table-bordered table-hover table-checkable  datatable">

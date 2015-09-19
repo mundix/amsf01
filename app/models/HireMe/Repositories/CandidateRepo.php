@@ -9,9 +9,10 @@ use HireMe\Entities\User;
 
 class CandidateRepo extends BaseRepo
 {
-
     /**
+     *
      * Este metodo debe estar definido en todos los repos que lo utilizen
+     *
      */
     public function getModel()
     {

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2015 at 12:36 AM
+-- Generation Time: Sep 19, 2015 at 10:16 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.5.18
 
@@ -31,10 +31,12 @@ CREATE TABLE IF NOT EXISTS `candidates` (
 `id` int(10) unsigned NOT NULL,
   `website_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `job_type` enum('full','partial','freelance') COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(10) unsigned NOT NULL,
   `available` tinyint(1) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` enum('male','female') COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -43,16 +45,16 @@ CREATE TABLE IF NOT EXISTS `candidates` (
 -- Dumping data for table `candidates`
 --
 
-INSERT INTO `candidates` (`id`, `website_url`, `description`, `job_type`, `category_id`, `available`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'http://www.larsonkreiger.com/', 'Quia nulla a mollitia alias voluptate consequuntur praesentium quisquam. Voluptatibus blanditiis in doloremque et non odio quae.', 'full', 2, 1, 'clemente-pichardo', '2015-08-30 00:08:13', '2015-08-30 00:08:13'),
-(2, 'http://jakubowski.com/', 'Dolores libero ipsum et. Vitae rerum est nisi animi. Necessitatibus exercitationem iure sit cupiditate quia eos est ea. Libero vel occaecati expedita dolorem.', 'full', 1, 1, 'edna-oreilly', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
-(3, 'http://gerholdprice.org/', 'Nesciunt minima non cum natus repellat. Et sit quasi assumenda omnis corrupti. Nihil ut magni voluptatem facere sed atque. Corrupti sapiente quam ab rem.', 'full', 1, 1, 'margot-lockman', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
-(4, 'http://sporer.com/', 'Libero sed illo ut qui debitis. Quae cupiditate et rerum dignissimos ut. Aperiam nihil quia vel. Eum harum error exercitationem libero harum. Error sit aliquam amet sunt.', 'full', 2, 1, 'merl-hickle', '2015-08-30 00:08:15', '2015-08-30 00:08:15'),
-(5, 'http://www.starkmayer.com/', 'Culpa a natus quia distinctio eveniet. Officia laudantium ratione qui eligendi consequatur sit. Molestiae rerum sint aut ut dolore reprehenderit tenetur. Quod deserunt eum sint qui temporibus.', 'full', 3, 1, 'ms-ethyl-mclaughlin-v', '2015-08-30 00:08:15', '2015-08-30 00:08:15'),
-(6, 'http://langosh.com/', 'Nemo quos id et impedit culpa quidem. Aut sit dolore culpa neque quos qui. Quasi voluptatibus corrupti saepe vel. Quia inventore dicta cupiditate autem aut rerum et.', 'full', 1, 1, 'jillian-wunsch', '2015-08-30 00:08:16', '2015-08-30 00:08:16'),
-(7, 'http://www.dooley.info/', 'Expedita ut error adipisci tempore delectus. Ipsum ratione ex tempora. Sed voluptatem velit porro est.', 'full', 3, 1, 'mandy-olson-ii', '2015-08-30 00:08:17', '2015-08-30 00:08:17'),
-(8, 'http://renner.com/', 'Ut molestiae pariatur veniam eum temporibus vel facere. Error ipsam voluptas numquam. Praesentium omnis non tempore quod dolor.', 'full', 2, 1, 'gussie-nikolaus', '2015-08-30 00:08:17', '2015-08-30 00:08:17'),
-(9, 'http://trantow.org/', 'Quas ut sunt omnis quidem. Commodi culpa a dolorem fugit alias sequi. Architecto ab possimus nihil inventore.', 'full', 1, 1, 'dejuan-dibbert', '2015-08-30 00:08:18', '2015-08-30 00:08:18');
+INSERT INTO `candidates` (`id`, `website_url`, `description`, `phone`, `job_type`, `category_id`, `available`, `slug`, `gender`, `created_at`, `updated_at`) VALUES
+(1, 'http://www.larsonkreiger.com/', 'Quia nulla a mollitia alias voluptate consequuntur praesentium quisquam. Voluptatibus blanditiis in doloremque et non odio quae.', '849.206.5381', 'full', 2, 1, 'clemente-pichardo', 'male', '2015-08-30 00:08:13', '2015-08-30 00:08:13'),
+(2, 'http://jakubowski.com/', 'Dolores libero ipsum et. Vitae rerum est nisi animi. Necessitatibus exercitationem iure sit cupiditate quia eos est ea. Libero vel occaecati expedita dolorem.', '', 'full', 1, 1, 'edna-oreilly', 'female', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
+(3, 'http://gerholdprice.org/', 'Nesciunt minima non cum natus repellat. Et sit quasi assumenda omnis corrupti. Nihil ut magni voluptatem facere sed atque. Corrupti sapiente quam ab rem.', '', 'full', 1, 1, 'margot-lockman', 'male', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
+(4, 'http://sporer.com/', 'Libero sed illo ut qui debitis. Quae cupiditate et rerum dignissimos ut. Aperiam nihil quia vel. Eum harum error exercitationem libero harum. Error sit aliquam amet sunt.', '', 'full', 2, 1, 'merl-hickle', 'male', '2015-08-30 00:08:15', '2015-08-30 00:08:15'),
+(5, 'http://www.starkmayer.com/', 'Culpa a natus quia distinctio eveniet. Officia laudantium ratione qui eligendi consequatur sit. Molestiae rerum sint aut ut dolore reprehenderit tenetur. Quod deserunt eum sint qui temporibus.', '', 'full', 3, 1, 'ms-ethyl-mclaughlin-v', 'male', '2015-08-30 00:08:15', '2015-08-30 00:08:15'),
+(6, 'http://langosh.com/', 'Nemo quos id et impedit culpa quidem. Aut sit dolore culpa neque quos qui. Quasi voluptatibus corrupti saepe vel. Quia inventore dicta cupiditate autem aut rerum et.', '', 'full', 1, 1, 'jillian-wunsch', 'male', '2015-08-30 00:08:16', '2015-08-30 00:08:16'),
+(7, 'http://www.dooley.info/', 'Expedita ut error adipisci tempore delectus. Ipsum ratione ex tempora. Sed voluptatem velit porro est.', '', 'full', 3, 1, 'mandy-olson-ii', 'male', '2015-08-30 00:08:17', '2015-08-30 00:08:17'),
+(8, 'http://renner.com/', 'Ut molestiae pariatur veniam eum temporibus vel facere. Error ipsam voluptas numquam. Praesentium omnis non tempore quod dolor.', '', 'full', 2, 1, 'gussie-nikolaus', 'male', '2015-08-30 00:08:17', '2015-08-30 00:08:17'),
+(9, 'http://trantow.org/', 'Quas ut sunt omnis quidem. Commodi culpa a dolorem fugit alias sequi. Architecto ab possimus nihil inventore.', '', 'full', 1, 1, 'dejuan-dibbert', 'male', '2015-08-30 00:08:18', '2015-08-30 00:08:18');
 
 -- --------------------------------------------------------
 
@@ -107,8 +109,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
 INSERT INTO `clients` (`id`, `type`, `rnc`, `noid`, `name`, `contact_name`, `address`, `phone`, `cellphone`, `email`, `comments`, `created_at`, `updated_at`, `available`) VALUES
 (1, '', '', '', 'N/A', '', '', '', '', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
 (3, 'company', '131080146', '03103188318', 'Awesome Media', 'Clemente Pichardo', 'Lic. Aristides Fiallo Cabral No. 101, Suite 301', '8095658065', '8492065381', 'edmundo@awesomemedia.do', 'Publicitaria Digial', '2015-09-06 04:00:00', '2015-09-06 04:00:00', 1),
-(6, 'company', '111222', '', 'Ferreteria Ochoa', '', '', '', '', '', '', '2015-09-19 01:23:06', '2015-09-19 01:23:06', 1),
-(7, 'person', '112233333', '', 'Theorem Creations 2', 'Jobs Steve', '', '(809) 565-4068', '674311249', 'clemente.pichardo@theoreminc.net', '', '2015-09-19 01:32:34', '2015-09-19 02:33:48', 1);
+(6, 'company', '111222', '', 'Ferreteria Ochoa', '', '', '', '', '', '', '2015-09-19 01:23:06', '2015-09-19 01:23:06', 1);
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `invoices` (
   `rnc` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `invoices`
@@ -177,7 +178,8 @@ INSERT INTO `invoices` (`id`, `order_id`, `total_paid`, `pay_days`, `pay_date`, 
 (19, 48, 7000.00, 0, '0000-00-00 00:00:00', 0, '131080145', '2015-09-17 01:46:23', '2015-09-17 01:46:23'),
 (20, 49, 7000.00, 0, '0000-00-00 00:00:00', 0, '131080145', '2015-09-17 01:46:59', '2015-09-17 01:46:59'),
 (21, 50, 7000.00, 0, '0000-00-00 00:00:00', 0, '131080145', '2015-09-17 01:51:23', '2015-09-17 01:51:23'),
-(22, 51, 1000.00, 0, '0000-00-00 00:00:00', 0, '', '2015-09-17 19:31:09', '2015-09-17 19:31:09');
+(22, 51, 1000.00, 0, '0000-00-00 00:00:00', 0, '', '2015-09-17 19:31:09', '2015-09-17 19:31:09'),
+(23, 58, 6000.00, 0, '0000-00-00 00:00:00', 0, '', '2015-09-19 03:38:22', '2015-09-19 03:38:22');
 
 -- --------------------------------------------------------
 
@@ -208,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `invoices_payments` (
   `payment_method` enum('cash','credit_card','check','transfer') COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `invoices_payments`
@@ -225,7 +227,9 @@ INSERT INTO `invoices_payments` (`id`, `invoice_id`, `amount`, `payment_method`,
 (8, 20, 5000.00, 'cash', '2015-09-17 01:46:59', '2015-09-17 01:46:59'),
 (9, 21, 2000.00, 'cash', '2015-09-17 01:51:23', '2015-09-17 01:51:23'),
 (10, 21, 5000.00, 'cash', '2015-09-17 01:51:23', '2015-09-17 01:51:23'),
-(11, 22, 1000.00, 'cash', '2015-09-17 19:31:09', '2015-09-17 19:31:09');
+(11, 22, 1000.00, 'cash', '2015-09-17 19:31:09', '2015-09-17 19:31:09'),
+(12, 23, 1000.00, 'cash', '2015-09-19 03:38:22', '2015-09-19 03:38:22'),
+(13, 23, 5000.00, 'cash', '2015-09-19 03:38:22', '2015-09-19 03:38:22');
 
 -- --------------------------------------------------------
 
@@ -326,7 +330,8 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2015_09_06_180514_create_ncf_types_table', 17),
 ('2015_09_06_180556_update_ncf_table', 18),
 ('2015_09_13_220213_update_invoices_table', 19),
-('2015_09_16_210705_update_invoices_payments_table', 20);
+('2015_09_16_210705_update_invoices_payments_table', 20),
+('2015_09_19_190423_update_candidates_table', 21);
 
 -- --------------------------------------------------------
 
@@ -541,7 +546,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `available` tinyint(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `orders`
@@ -590,7 +595,14 @@ INSERT INTO `orders` (`id`, `type`, `user_id`, `client_id`, `phone`, `address`, 
 (48, 'sale', 1, 1, '', '', '', '', '', 18.00, 1651.16, 12382.00, 12949.86, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-17 01:46:23', '2015-09-17 01:46:23'),
 (49, 'sale', 1, 1, '', '', '', '', '', 18.00, 1651.16, 12382.00, 12949.86, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-17 01:46:59', '2015-09-17 01:46:59'),
 (50, 'sale', 1, 1, '', '', '', '', '', 18.00, 1651.16, 12382.00, 12949.86, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-17 01:51:23', '2015-09-17 01:51:23'),
-(51, 'sale', 1, 1, '', '', '', '', '', 18.00, 123.84, 688.00, 811.84, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-17 19:31:09', '2015-09-17 19:31:09');
+(51, 'sale', 1, 1, '', '', '', '', '', 18.00, 123.84, 688.00, 811.84, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-17 19:31:09', '2015-09-17 19:31:09'),
+(52, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:32:47', '2015-09-19 03:32:47'),
+(53, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:33:26', '2015-09-19 03:33:26'),
+(54, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:33:31', '2015-09-19 03:33:31'),
+(55, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:33:37', '2015-09-19 03:33:37'),
+(56, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:33:58', '2015-09-19 03:33:58'),
+(57, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending', 1, '2015-09-19 03:34:20', '2015-09-19 03:34:20'),
+(58, 'sale', 1, 6, '', '', '', '', '', 18.00, 2322.70, 37860.00, 30888.70, 0.00, 0.00, 0.00, 0.00, 'pending_payment', 1, '2015-09-19 03:38:22', '2015-09-19 03:38:22');
 
 -- --------------------------------------------------------
 
@@ -622,7 +634,7 @@ CREATE TABLE IF NOT EXISTS `orders_details` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `discount` float(10,2) NOT NULL,
   `itbis` float(10,2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `orders_details`
@@ -695,7 +707,21 @@ INSERT INTO `orders_details` (`id`, `order_id`, `product_id`, `qty`, `price`, `c
 (67, 49, 3, 1, 5.00, '2015-09-17 01:46:59', '2015-09-17 01:46:59', 154.90, 147.16),
 (68, 50, 2, 2, 10.00, '2015-09-17 01:51:23', '2015-09-17 01:51:23', 928.40, 1504.01),
 (69, 50, 3, 1, 5.00, '2015-09-17 01:51:23', '2015-09-17 01:51:23', 154.90, 147.16),
-(70, 51, 1, 1, 811.84, '2015-09-17 19:31:09', '2015-09-17 19:31:09', 0.00, 123.84);
+(70, 51, 1, 1, 811.84, '2015-09-17 19:31:09', '2015-09-17 19:31:09', 0.00, 123.84),
+(71, 52, 1, 10, 8118.40, '2015-09-19 03:32:47', '2015-09-19 03:32:47', 0.00, 1238.40),
+(72, 52, 3, 10, 22770.30, '2015-09-19 03:32:47', '2015-09-19 03:32:47', 9294.00, 1084.30),
+(73, 53, 1, 10, 8118.40, '2015-09-19 03:33:26', '2015-09-19 03:33:26', 0.00, 1238.40),
+(74, 53, 3, 10, 22770.30, '2015-09-19 03:33:26', '2015-09-19 03:33:26', 9294.00, 1084.30),
+(75, 54, 1, 10, 8118.40, '2015-09-19 03:33:31', '2015-09-19 03:33:31', 0.00, 1238.40),
+(76, 54, 3, 10, 22770.30, '2015-09-19 03:33:31', '2015-09-19 03:33:31', 9294.00, 1084.30),
+(77, 55, 1, 10, 8118.40, '2015-09-19 03:33:37', '2015-09-19 03:33:37', 0.00, 1238.40),
+(78, 55, 3, 10, 22770.30, '2015-09-19 03:33:37', '2015-09-19 03:33:37', 9294.00, 1084.30),
+(79, 56, 1, 10, 8118.40, '2015-09-19 03:33:58', '2015-09-19 03:33:58', 0.00, 1238.40),
+(80, 56, 3, 10, 22770.30, '2015-09-19 03:33:58', '2015-09-19 03:33:58', 9294.00, 1084.30),
+(81, 57, 1, 10, 8118.40, '2015-09-19 03:34:20', '2015-09-19 03:34:20', 0.00, 1238.40),
+(82, 57, 3, 10, 22770.30, '2015-09-19 03:34:20', '2015-09-19 03:34:20', 9294.00, 1084.30),
+(83, 58, 1, 10, 8118.40, '2015-09-19 03:38:22', '2015-09-19 03:38:22', 0.00, 1238.40),
+(84, 58, 3, 10, 22770.30, '2015-09-19 03:38:22', '2015-09-19 03:38:22', 9294.00, 1084.30);
 
 -- --------------------------------------------------------
 
@@ -744,9 +770,9 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `slug`, `sku`, `stock`, `min_stock`, `price`, `min_price`, `discount`, `discount_apply`, `user_id`, `date_in`, `date_out`, `category_id`, `available`, `created_at`, `updated_at`, `itbis_id`, `fix_itbis`, `itbis_apply`) VALUES
-(1, 'dolorem', 'Veritatis ad et magni quia rem optio at. Aut corrupti fugit est quo. Quia libero laudantium officiis sint.\nNisi et consequatur cupiditate pariatur. Eum alias ut omnis ea dignissimos hic recusandae. Animi et qui et veritatis natus sit.', 'dolorem', 'db531e1807d9e0f4fe65de4a8b344622251d06cd', 44, 9, 688.00, 5.00, 10.00, 0, 1, '0000-00-00', '0000-00-00', 5, 1, '2015-08-23 20:59:33', '2015-09-17 19:31:09', 1, 11.50, 0),
+(1, 'dolorem', 'Veritatis ad et magni quia rem optio at. Aut corrupti fugit est quo. Quia libero laudantium officiis sint.\nNisi et consequatur cupiditate pariatur. Eum alias ut omnis ea dignissimos hic recusandae. Animi et qui et veritatis natus sit.', 'dolorem', 'db531e1807d9e0f4fe65de4a8b344622251d06cd', -26, 9, 688.00, 5.00, 10.00, 0, 1, '0000-00-00', '0000-00-00', 5, 1, '2015-08-23 20:59:33', '2015-09-19 03:38:22', 1, 11.50, 0),
 (2, 'cum', 'Aliquam totam sit impedit labore earum. Omnis cum totam et numquam soluta aspernatur officia. Sint sunt adipisci aliquam qui asperiores eum totam.\nDolorem totam et inventore animi at praesentium. Rem corporis pariatur molestiae sunt ut. Enim dolor libero a dolor sapiente corporis et.', 'cum', '14a292611b41e6118a03585167d9fdba6a817763', -4, 7, 4642.00, 5.00, 20.00, 0, 1, '0000-00-00', '0000-00-00', 2, 1, '2015-08-23 20:59:33', '2015-09-17 01:51:23', 1, 0.00, 0),
-(3, 'at', 'Voluptatem et commodi totam laudantium harum quasi. Id qui sit maxime voluptas voluptate voluptatem omnis. Voluptatem occaecati sint voluptate velit ea facere. Et et repudiandae ea.', 'at', '9454f6875216bdcc8671e32fc74afd1392aa2829', 65, 6, 3098.00, 6.00, 30.00, 1, 1, '0000-00-00', '0000-00-00', 1, 1, '2015-08-23 20:59:33', '2015-09-17 01:51:23', 3, 0.00, 0),
+(3, 'at', 'Voluptatem et commodi totam laudantium harum quasi. Id qui sit maxime voluptas voluptate voluptatem omnis. Voluptatem occaecati sint voluptate velit ea facere. Et et repudiandae ea.', 'at', '9454f6875216bdcc8671e32fc74afd1392aa2829', -5, 6, 3098.00, 6.00, 30.00, 1, 1, '0000-00-00', '0000-00-00', 1, 1, '2015-08-23 20:59:33', '2015-09-19 03:38:22', 3, 0.00, 0),
 (4, 'blanditiis', 'Id illo maxime et aliquam quo sit laboriosam suscipit. Eum dolor aut ipsa error impedit. Esse nihil maiores nesciunt. Odit ut nobis aut.', 'blanditiis', '190e6229e0a5e4db798984db0c95f290fe9cc6aa', 49, 8, 9121.00, 10.00, 40.00, 1, 1, '0000-00-00', '0000-00-00', 6, 1, '2015-08-23 20:59:34', '2015-09-17 00:40:03', 4, 0.00, 0),
 (5, 'numquam', 'Perferendis et vel eius. Et repellendus quia dignissimos. Excepturi voluptatem minus tenetur et odit qui qui.\nMinima quas esse dolor. Et est quo sunt inventore ducimus ut. Veniam molestiae cumque iure exercitationem iste consectetur. Porro veritatis aperiam modi incidunt est iste molestias.', 'numquam', '8c0f1b9ce7650c1665e546dc1a675507c9e49191', 100, 6, 1678.00, 9.00, 0.00, 0, 1, '0000-00-00', '0000-00-00', 2, 1, '2015-08-23 20:59:34', '2015-08-23 20:59:34', 2, 0.00, 0),
 (6, 'amet', 'Totam molestiae vero molestiae distinctio eius autem est tempora. At voluptatem deserunt dolorum inventore dolor occaecati aut. Quas ipsa et porro non quia libero sit.', 'amet', 'f34312e9b7a2022aed55a1b40232ceab29f0feb1', 30, 7, 7209.00, 6.00, 0.00, 0, 1, '0000-00-00', '0000-00-00', 2, 1, '2015-08-23 20:59:34', '2015-08-23 20:59:34', 2, 0.00, 0),
@@ -907,7 +933,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `full_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `type` enum('admin','candidate','client','provider','employer') COLLATE utf8_unicode_ci NOT NULL,
+  `type` enum('admin','cashier','employer','superadmin') COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -919,15 +945,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `type`, `remember_token`, `created_at`, `updated_at`, `location_id`) VALUES
-(1, 'Awesome Media', 'admin@awesomemedia.do', '$2y$10$sz5SO05iwOr.Y7vv0vrA/ORQk1gax8DyHPuoNKZyFo9QS82b4gp7O', 'admin', 'VVpRXH5gVVJtEnmEGlkjwf9FUDoLUPwFRR78paQ3KkYyfL00WnRXy2tZ5OcT', '2015-08-30 00:08:13', '2015-09-18 20:03:30', 1),
-(2, 'Lali Morales', 'lalicomplemento@hotmail.com', '$2y$10$4VaspA5Y3BreHNG2MN/Y3u7aVaudi82.TuVwqkbe77pWY3k9qQXGK', 'candidate', 'XEZSOKDEqB6cNrQwbQgoXJcWSVZ5xvRI8GpZZ7iyO9ccFqaLj0M9J7KeWxej', '2015-08-30 00:08:14', '2015-09-18 20:06:01', 1),
-(3, 'Margot Lockman', 'qwunsch@erdman.info', '$2y$10$qGhzSQ3yvcpMECQRTEahoOQ2iGICFdAqvhX2lWj9ltZFE3BYqc1ei', 'candidate', NULL, '2015-08-30 00:08:14', '2015-08-30 00:08:14', 2),
-(4, 'Merl Hickle', 'daugherty.randal@hotmail.com', '$2y$10$xMY35uOK4.dCIX1v7mSfluAcMONXULHuzM2/XgX3up3/n2yfBchxK', 'candidate', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
-(5, 'Ms. Ethyl McLaughlin V', 'kirstin.bogisich@greenholt.biz', '$2y$10$9S83NttcZ3Gux8kTSmLM1uo.tAinTicJ/3ZY66wW3zeyuxUXm5kni', 'candidate', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
-(6, 'Jillian Wunsch', 'mayra.moore@feil.com', '$2y$10$Hl4metK1H/dZ.u.cofwBDe8cdjnnbG5.xbjq4Zf5J63XG00ZVlxSu', 'candidate', NULL, '2015-08-30 00:08:16', '2015-08-30 00:08:16', 3),
-(7, 'Mandy Olson II', 'kellie32@gmail.com', '$2y$10$DW/7vR7V2EGCQ8CjtolgYO7yyACfNb8QSQrc.zYgjZ/oCuaEvQpNO', 'candidate', NULL, '2015-08-30 00:08:17', '2015-08-30 00:08:17', 2),
-(8, 'Gussie Nikolaus', 'wilhelm56@yahoo.com', '$2y$10$.jWnce0yVqDlZKV84WD8IOMeIfsdevielKAIUWOmPWaLjybokmv/2', 'candidate', NULL, '2015-08-30 00:08:17', '2015-08-30 00:08:17', 3),
-(9, 'Dejuan Dibbert', 'garrick.kuvalis@yahoo.com', '$2y$10$/G19fSbxGikgm09I3KxRyuMFL80ltcnsPJcPflehcbE7RRjnMuJgK', 'candidate', NULL, '2015-08-30 00:08:18', '2015-08-30 00:08:18', 3);
+(1, 'Admin Awesome', 'admin@awesomemedia.do', '$2y$10$VS.PtA4.d6kXXC0.kmO2YuBTgPo3uQ6wVSwACu08SIcyJnj3glGY.', 'admin', 'ElmLVfM1oTkGggQFR9qstWv8b4sjIGyfPWTxwVFU9TIVRTs3aUMxRg1hk2He', '2015-08-30 00:08:13', '2015-09-20 00:15:47', 1),
+(2, 'Lali Morales', 'lalicomplemento@hotmail.com', '$2y$10$4VaspA5Y3BreHNG2MN/Y3u7aVaudi82.TuVwqkbe77pWY3k9qQXGK', 'admin', 'XEZSOKDEqB6cNrQwbQgoXJcWSVZ5xvRI8GpZZ7iyO9ccFqaLj0M9J7KeWxej', '2015-08-30 00:08:14', '2015-09-18 20:06:01', 1),
+(3, 'Margot Lockman', 'qwunsch@erdman.info', '$2y$10$qGhzSQ3yvcpMECQRTEahoOQ2iGICFdAqvhX2lWj9ltZFE3BYqc1ei', 'employer', NULL, '2015-08-30 00:08:14', '2015-08-30 00:08:14', 2),
+(4, 'Merl Hickle', 'daugherty.randal@hotmail.com', '$2y$10$xMY35uOK4.dCIX1v7mSfluAcMONXULHuzM2/XgX3up3/n2yfBchxK', 'employer', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
+(5, 'Ms. Ethyl McLaughlin V', 'kirstin.bogisich@greenholt.biz', '$2y$10$9S83NttcZ3Gux8kTSmLM1uo.tAinTicJ/3ZY66wW3zeyuxUXm5kni', 'employer', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
+(6, 'Jillian Wunsch', 'mayra.moore@feil.com', '$2y$10$Hl4metK1H/dZ.u.cofwBDe8cdjnnbG5.xbjq4Zf5J63XG00ZVlxSu', 'employer', NULL, '2015-08-30 00:08:16', '2015-08-30 00:08:16', 3),
+(7, 'Mandy Olson II', 'kellie32@gmail.com', '$2y$10$DW/7vR7V2EGCQ8CjtolgYO7yyACfNb8QSQrc.zYgjZ/oCuaEvQpNO', 'employer', NULL, '2015-08-30 00:08:17', '2015-08-30 00:08:17', 2),
+(8, 'Gussie Nikolaus', 'wilhelm56@yahoo.com', '$2y$10$.jWnce0yVqDlZKV84WD8IOMeIfsdevielKAIUWOmPWaLjybokmv/2', 'employer', NULL, '2015-08-30 00:08:17', '2015-08-30 00:08:17', 3),
+(9, 'Dejuan Dibbert', 'garrick.kuvalis@yahoo.com', '$2y$10$/G19fSbxGikgm09I3KxRyuMFL80ltcnsPJcPflehcbE7RRjnMuJgK', 'employer', NULL, '2015-08-30 00:08:18', '2015-08-30 00:08:18', 3);
 
 --
 -- Indexes for dumped tables
@@ -1081,7 +1107,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `invoices`
 --
 ALTER TABLE `invoices`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `invoices_details`
 --
@@ -1091,7 +1117,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `invoices_payments`
 --
 ALTER TABLE `invoices_payments`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `itbis`
 --
@@ -1121,7 +1147,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `orders_credits`
 --
@@ -1131,7 +1157,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `orders_details`
 --
 ALTER TABLE `orders_details`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `orders_status`
 --

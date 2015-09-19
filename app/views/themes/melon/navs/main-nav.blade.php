@@ -68,7 +68,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{Route('employees')}}">
                     <i class="icon-user"></i>
                     Empleados
                 </a>
