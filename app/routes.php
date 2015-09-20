@@ -47,6 +47,7 @@ Route::group(['before'=>'guest'],function()
 });
 Route::post('login',['as' => 'login', 'uses' => 'AuthController@login']);
 Route::get('user.reset',['as'=>'user_reset','uses'=>'UsersController@reset']);
+Route::post('forgot_password',['as'=>'forgot_password','uses'=>'RemindersController@postRemind']);
 
 
 /**
@@ -135,6 +136,20 @@ Route::group(['before' => 'auth'], function()
     Route::post('client.edit',['as'=>'client_update','uses'=>'ClientsController@update']);
 
     Route::get('client.delete/{id}',['as'=>'client_delete','uses'=>'ClientsController@delete']);
+
+    /**
+     * Supplyer
+    */
+
+    Route::get('supplyers.dashboard',['as'=>'supplyers','uses'=>'SupplyersController@dashboard']);
+    Route::get('supplyers.add',['as'=>'supplyer_add','uses'=>'SupplyersController@add']);
+    Route::post('supplyers.add',['as'=>'supplyer_save','uses'=>'SupplyersController@save']);
+
+    Route::get('supplyers.edit/{id}',['as'=>'supplyer_edit','uses'=>'SupplyersController@edit']);
+    Route::post('supplyers.edit',['as'=>'supplyer_update','uses'=>'SupplyersController@update']);
+
+    Route::get('supplyers.delete/{id}',['as'=>'supplyer_delete','uses'=>'SupplyersController@delete']);
+
 
 //    Route::get('user.reset',function()
 //    {

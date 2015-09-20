@@ -7,6 +7,7 @@ use HireMe\Entities\Candidate;
 use HireMe\Entities\Category;
 use HireMe\Entities\User;
 use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
+use Illuminate\Support\Facades\Mail;
 
 class CandidateRepo extends BaseRepo
 {
@@ -52,13 +53,13 @@ class CandidateRepo extends BaseRepo
         $password = $generator->generatePassword();
         $user->password = \Hash::make($password);
         $user->save();
-//        $data = ['password'=>$password,'user'=>$user];
-        \Mail::send('themes.melon.emails.users.reset_password',compact('user','password'),function($message) use ($user)
+        $mail = Mail::send('themes.melon.emails.users.reset_password',compact('user','password'),function($message) use ($user)
         {
-            $message->to($user->email)->from('admin@mysite.do', 'Administrator')->subject('Reset Password');
+            $message->to('ce.pichardo@gmail.com','Edmundo Pichardo')->subject('Reset Password');
         });
-        if(count(\Mail::failures()) > 0){
-            print_r(\Mail::failures());
+
+        if(count(Mail::failures()) > 0){
+            print_r(Mail::failures());
 //           return $errors = 'Failed to send password reset email, please try again.';
         }
     }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 19, 2015 at 10:16 PM
+-- Generation Time: Sep 20, 2015 at 06:51 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.5.18
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `candidates` (
 --
 
 INSERT INTO `candidates` (`id`, `website_url`, `description`, `phone`, `job_type`, `category_id`, `available`, `slug`, `gender`, `created_at`, `updated_at`) VALUES
-(1, 'http://www.larsonkreiger.com/', 'Quia nulla a mollitia alias voluptate consequuntur praesentium quisquam. Voluptatibus blanditiis in doloremque et non odio quae.', '849.206.5381', 'full', 2, 1, 'clemente-pichardo', 'male', '2015-08-30 00:08:13', '2015-08-30 00:08:13'),
+(1, 'http://www.larsonkreiger.com/', 'Quia nulla a mollitia alias voluptate consequuntur praesentium quisquam. Voluptatibus blanditiis in doloremque et non odio quae.', '849.206.5381', 'full', 2, 1, 'clemente-pichardo', 'male', '2015-08-30 00:08:13', '2015-09-20 00:54:33'),
 (2, 'http://jakubowski.com/', 'Dolores libero ipsum et. Vitae rerum est nisi animi. Necessitatibus exercitationem iure sit cupiditate quia eos est ea. Libero vel occaecati expedita dolorem.', '', 'full', 1, 1, 'edna-oreilly', 'female', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
 (3, 'http://gerholdprice.org/', 'Nesciunt minima non cum natus repellat. Et sit quasi assumenda omnis corrupti. Nihil ut magni voluptatem facere sed atque. Corrupti sapiente quam ab rem.', '', 'full', 1, 1, 'margot-lockman', 'male', '2015-08-30 00:08:14', '2015-08-30 00:08:14'),
 (4, 'http://sporer.com/', 'Libero sed illo ut qui debitis. Quae cupiditate et rerum dignissimos ut. Aperiam nihil quia vel. Eum harum error exercitationem libero harum. Error sit aliquam amet sunt.', '', 'full', 2, 1, 'merl-hickle', 'male', '2015-08-30 00:08:15', '2015-08-30 00:08:15'),
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `available` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `clients`
@@ -331,7 +331,9 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2015_09_06_180556_update_ncf_table', 18),
 ('2015_09_13_220213_update_invoices_table', 19),
 ('2015_09_16_210705_update_invoices_payments_table', 20),
-('2015_09_19_190423_update_candidates_table', 21);
+('2015_09_19_190423_update_candidates_table', 21),
+('2015_09_20_141347_create_password_reminders_table', 22),
+('2015_09_20_160546_create_supplyers_table', 22);
 
 -- --------------------------------------------------------
 
@@ -738,6 +740,18 @@ CREATE TABLE IF NOT EXISTS `orders_status` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_reminders`
+--
+
+CREATE TABLE IF NOT EXISTS `password_reminders` (
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -925,6 +939,24 @@ CREATE TABLE IF NOT EXISTS `products_logs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `supplyers`
+--
+
+CREATE TABLE IF NOT EXISTS `supplyers` (
+`id` int(10) unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contact_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `rnc` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `available` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -945,9 +977,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `type`, `remember_token`, `created_at`, `updated_at`, `location_id`) VALUES
-(1, 'Admin Awesome', 'admin@awesomemedia.do', '$2y$10$VS.PtA4.d6kXXC0.kmO2YuBTgPo3uQ6wVSwACu08SIcyJnj3glGY.', 'admin', 'ElmLVfM1oTkGggQFR9qstWv8b4sjIGyfPWTxwVFU9TIVRTs3aUMxRg1hk2He', '2015-08-30 00:08:13', '2015-09-20 00:15:47', 1),
-(2, 'Lali Morales', 'lalicomplemento@hotmail.com', '$2y$10$4VaspA5Y3BreHNG2MN/Y3u7aVaudi82.TuVwqkbe77pWY3k9qQXGK', 'admin', 'XEZSOKDEqB6cNrQwbQgoXJcWSVZ5xvRI8GpZZ7iyO9ccFqaLj0M9J7KeWxej', '2015-08-30 00:08:14', '2015-09-18 20:06:01', 1),
-(3, 'Margot Lockman', 'qwunsch@erdman.info', '$2y$10$qGhzSQ3yvcpMECQRTEahoOQ2iGICFdAqvhX2lWj9ltZFE3BYqc1ei', 'employer', NULL, '2015-08-30 00:08:14', '2015-08-30 00:08:14', 2),
+(1, 'Admin Awesome', 'admin@awesomemedia.do', '$2y$10$0kU2f3EczMdrN2XpWJJr9OjZOoNU1eD6YLip8X1c6S9B1EzrnLgme', 'admin', 'vHZ9TcCSdeeGiGcFhgAsrME3Of43WPfAK9LdRUSZqQi5YPlExNE1oC0loodi', '2015-08-30 00:08:13', '2015-09-20 18:02:36', 1),
+(2, 'Lali Morales', 'lalicomplemento@hotmail.com', '$2y$10$cisep031OaxSMGoKMH7.8.R8cdJtZq/l6x/mnvD2ymkgiLbU04pr6', 'admin', 'pE6ORfIDw0UvcFXtWxnwQF6OUsyEVY7vKEZOclSndr0TAKOLby4Jg4mbFzJ2', '2015-08-30 00:08:14', '2015-09-20 19:04:39', 1),
+(3, 'Edmundo Pichardo', 'ce.pichardo@gmail.com', '$2y$10$2JZhsKviv5HLU.2fbSzd9.79QHjK.f7eA9LWxEEdnJLsVlHJ5RY/q', 'employer', NULL, '2015-08-30 00:08:14', '2015-09-20 19:09:54', 2),
 (4, 'Merl Hickle', 'daugherty.randal@hotmail.com', '$2y$10$xMY35uOK4.dCIX1v7mSfluAcMONXULHuzM2/XgX3up3/n2yfBchxK', 'employer', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
 (5, 'Ms. Ethyl McLaughlin V', 'kirstin.bogisich@greenholt.biz', '$2y$10$9S83NttcZ3Gux8kTSmLM1uo.tAinTicJ/3ZY66wW3zeyuxUXm5kni', 'employer', NULL, '2015-08-30 00:08:15', '2015-08-30 00:08:15', 3),
 (6, 'Jillian Wunsch', 'mayra.moore@feil.com', '$2y$10$Hl4metK1H/dZ.u.cofwBDe8cdjnnbG5.xbjq4Zf5J63XG00ZVlxSu', 'employer', NULL, '2015-08-30 00:08:16', '2015-08-30 00:08:16', 3),
@@ -1056,6 +1088,12 @@ ALTER TABLE `orders_status`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `password_reminders`
+--
+ALTER TABLE `password_reminders`
+ ADD KEY `password_reminders_email_index` (`email`), ADD KEY `password_reminders_token_index` (`token`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -1072,6 +1110,12 @@ ALTER TABLE `products_categories`
 --
 ALTER TABLE `products_logs`
  ADD PRIMARY KEY (`id`), ADD KEY `products_logs_user_id_foreign` (`user_id`), ADD KEY `products_logs_product_id_foreign` (`product_id`);
+
+--
+-- Indexes for table `supplyers`
+--
+ALTER TABLE `supplyers`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -1097,7 +1141,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `configurations`
 --
@@ -1177,6 +1221,11 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 -- AUTO_INCREMENT for table `products_logs`
 --
 ALTER TABLE `products_logs`
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `supplyers`
+--
+ALTER TABLE `supplyers`
 MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`

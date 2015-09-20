@@ -51,7 +51,7 @@
                                     <td><a href="mailto:{{$client->email}}">{{$client->email}}</a></td>
                                     <td>{{$client->rnc}}</td>
                                     <td>
-                                        <a href="{{ Route('client_delete',[$client->id]) }}">Editar</a>
+                                        <a href="{{ Route('client_edit',[$client->id]) }}">Editar</a>
                                         <a href="#" class="delete_entity" data-entity-route="{{route("client_delete",[$client->id])}}">Eliminar</a>
                                     </td>
                                 </tr>

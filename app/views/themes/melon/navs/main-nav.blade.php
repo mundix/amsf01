@@ -74,9 +74,9 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{Route('supplyers')}}">
                     <i class="icon-building"></i>
-                    Proveedores
+                    Suplidores
                 </a>
             </li>
         </ul>

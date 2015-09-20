@@ -120,10 +120,8 @@
         <div class="content">
             <!-- Close Button -->
             <i class="icon-remove close hide-default"></i>
-
             <!-- Link as Toggle Button -->
             <a href="#" class="forgot-password-link">Olvidé Contraseña?</a>
-
             <!-- Forgot Password Formular -->
                 {{ Form::open(['route'=>'forgot_password','method'=>'POST','role' => 'form', 'class'=> 'form-vertical forgot-password-form hide-default' ]) }}
                 <div class="form-group">
@@ -133,10 +131,11 @@
                         {{ Form::text('email',null,['class'=>'form-control','placeholder'=>'Entrar correo electrónico.','data-rule-required'=>'true','data-rule-email'=>'true','data-msg-required'=>'Porfavor entre su correo electrónico.']) }}
                     </div>
                 </div>
+            <input type="submit" class="btn btn-default btn-block" value="Send Reminder">
                 <!-- /Input Fields -->
-                <button type="submit" class="submit btn btn-default btn-block">
-                    Restaure contraseña.
-                </button>
+                {{--<button type="submit" class="submit btn btn-default btn-block">--}}
+                    {{--Restaure contraseña.--}}
+                {{--</button>--}}
             {{ Form::close() }}
             <!-- /Forgot Password Formular -->
 
