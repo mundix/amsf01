@@ -23,9 +23,8 @@ class UserProfileManager extends  BaseManager
         {
             $data['available'] = 0;
         }
-
-//        $data['slug'] = \Str::slug($this->entity->user->full_name);
-//        $this->entity->slug = \Str::slug($this->entity->user->full_name);
+        $this->entity->gender = $data['gender'];
+        $this->entity->phone = $data['phone'];
 
         return $data;
     }

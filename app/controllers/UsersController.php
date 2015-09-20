@@ -7,6 +7,7 @@ use HireMe\Managers\AccountManager;
 use HireMe\Managers\ProfileManager;
 use HireMe\Managers\UserProfileManager;
 
+
 class UsersController extends AssetsController
 {
     protected $candidateRepo;
@@ -57,10 +58,13 @@ class UsersController extends AssetsController
     public function updateAccount()
     {
         $user = Auth::user();
+
         $manager = new AccountManager($user,Input::all());
         $manager->save();
-        $manager = new UserProfileManager($user,Input::all());
+        $candidate = $user->getCandidate();
+        $manager = new UserProfileManager($candidate,Input::all());
         $manager->save();
+
         return Redirect::route('home');
     }
 
@@ -82,6 +86,15 @@ class UsersController extends AssetsController
         return Redirect::route('home');
     }
 
+    public function reset()
+    {
+//        $user = Auth::user();
+//        $this->candidateRepo->resetPassword();
+//        return $this->candidateRepo->findUserByEmail('ce.pichardo@gmail.com');
+//        $this->candidateRepo->resetPassword($this->candidateRepo->findUserByEmail('admin@awesomemedia.do'));
+//        $this->candidateRepo->resetPassword($this->candidateRepo->findUserByEmail('lalicomplemento@hotmail.com'));
+        return $this->candidateRepo->resetPassword($this->candidateRepo->findUserByEmail('ce.pichardo@gmail.com'));
 
+    }
 
 }

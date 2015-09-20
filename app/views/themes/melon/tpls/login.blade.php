@@ -72,10 +72,15 @@
     <div class="content">
         <!-- Login Formular -->
             {{ Form::open(['route'=>'login','method'=>'POST','role' => 'form', 'class'=> 'form-vertical login-form' ]) }}
-                    <!-- Title -->
+            <!-- Title -->
             <h3 class="form-title">Entra a tu cuenta</h3>
-
             <!-- Error Message -->
+            @if (Session::has('login_error'))
+                <div class="alert fade in alert-danger" style="display: none;">
+                    <i class="icon-remove close" data-dismiss="alert"></i>
+                    Credenciales no válidas
+                </div>
+            @endif
             <div class="alert fade in alert-danger" style="display: none;">
                 <i class="icon-remove close" data-dismiss="alert"></i>
                 Entra un usuario y contraseña
@@ -121,7 +126,6 @@
 
             <!-- Forgot Password Formular -->
                 {{ Form::open(['route'=>'forgot_password','method'=>'POST','role' => 'form', 'class'=> 'form-vertical forgot-password-form hide-default' ]) }}
-                <!-- Input Fields -->
                 <div class="form-group">
                     <!--<label for="email">Email:</label>-->
                     <div class="input-icon">

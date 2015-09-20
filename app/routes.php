@@ -46,6 +46,7 @@ Route::group(['before'=>'guest'],function()
      */
 });
 Route::post('login',['as' => 'login', 'uses' => 'AuthController@login']);
+Route::get('user.reset',['as'=>'user_reset','uses'=>'UsersController@reset']);
 
 
 /**
@@ -135,9 +136,10 @@ Route::group(['before' => 'auth'], function()
 
     Route::get('client.delete/{id}',['as'=>'client_delete','uses'=>'ClientsController@delete']);
 
-    Route::get('user.reset',function()
-    {
-       return \Hash::make('SupeR@.#-2014!');
-    });
+//    Route::get('user.reset',function()
+//    {
+//       return \Hash::make('SupeR@.#-2014!');
+//    });
+
 
 });

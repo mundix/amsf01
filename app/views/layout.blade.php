@@ -57,9 +57,7 @@
                         </ul>
                     </li>
                 </ul>
-
             @else
-
 
                 {{ Form::open(['route'=>'login','method'=>'POST','role' => 'form', 'class'=> 'navbar-form navbar-right' ]) }}
                     @if (Session::has('login_error'))
