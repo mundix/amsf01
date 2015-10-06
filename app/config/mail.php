@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => 'mail',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -29,6 +29,7 @@ return array(
 	*/
 
 	'host' => 'smtp.mailgun.org',
+//	'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +55,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'admin@awesomemedia.do', 'name' => 'Administrador'),
+	'from' => array('address' => 'admin@awesomemedia.do', 'name' => 'AM Sisinvoices'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,6 +82,7 @@ return array(
 	*/
 
 	'username' => null,
+//	'username' => 'ce.pichardo@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,6 +96,7 @@ return array(
 	*/
 
 	'password' => null,
+//	'password' => 'CepR0614!',
 
 	/*
 	|--------------------------------------------------------------------------

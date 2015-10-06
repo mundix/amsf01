@@ -32,9 +32,7 @@ class InvoiceRepo extends BaseRepo
                 $total += (float)$payment;
             }
         }
-
         $order_id = $data[0];
-
         $params = [
             "order_id"  => $order_id,
             "total_paid"  => str_replace(",","",$total),
@@ -55,23 +53,37 @@ class InvoiceRepo extends BaseRepo
                 InvoicePayment::create($params);
             }
         }
-        $status = $this->get_status_order_by_payments(['total'=>$data[2]['total.neto'],'total_paid'=>$total]);
+        $status = $this->get_status_order_by_payments(['total'=>$data[2]['total.neto'],'total_paid'=>$total],$data['type']);
         $entity = Order::find($order_id);
         $entity->status = $status;
         $entity->save();
         return $order_id;
     }
 
-    private function get_status_order_by_payments($payments = [])
+    private function get_status_order_by_payments($payments = [],$type = "sale")
     {
-        if((float)$payments['total']>(float)$payments['total_paid'])
+        if($type == 'sale')
         {
-            return "pending_payment";
-        }elseif((float)$payments['total']<=(float)$payments['total_paid'])
+
+            if((float)$payments['total']>(float)$payments['total_paid'])
+            {
+                return "status_credit";
+            }elseif((float)$payments['total']<=(float)$payments['total_paid'])
+            {
+                return "completed";
+            }
+        }elseif($type == 'buy')
         {
-            return "completed";
-        }else
-            return "pending";
+            if((float)$payments['total']>(float)$payments['total_paid'])
+            {
+                return "pending_payment";
+            }elseif((float)$payments['total']<=(float)$payments['total_paid'])
+            {
+                return "completed";
+            }
+        }
+        return "pending";
+
     }
 
 }

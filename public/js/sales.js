@@ -17,8 +17,7 @@ AmSisFactura.controller('SearchCtrl',function($scope,$http)
     {
         $('#search-table').show();
         //Este es un servicio de angular, para hacer las peticione de ajax.
-        $http.get('products.search',
-            {
+        $http.get('products.search', {
             params: {search:$scope.searchInput}
         }).success(function(data)
         {
@@ -36,7 +35,7 @@ $(function()
     /**
      * Add products to the result table table
      * */
-    $(document).on("click","#resultlist a",function(e)
+    $(document).on("click","#resultlist tr",function(e)
     {
         total_neto = 0;
         e.preventDefault();
@@ -72,9 +71,12 @@ $(function()
                         //itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
                         itbis_array.push([parseInt(obj.id),parseFloat(obj.itbis.value)]);
 
-                        if(parseFloat(obj.fix_itbis) > 0.00)
-                            return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
-                        return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
+                        //if(parseInt(obj.itbis_apply))
+                            //return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
+                        if(parseInt(obj.itbis_apply))
+                            return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
+                        return numeral((itbis_general*obj.price)/100).format('0,0.00');
+
                     }),
                     $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
@@ -195,6 +197,8 @@ $(function()
         getTotal();
     });
 
+
+
     /**
      * Click on a checkbox if apply itbis is checked or not
      * */
@@ -268,12 +272,20 @@ $(function()
      * Boton para agregar mas metodos de pagos.
      * */
     var divClone = new $("#payments").parent().find(".payments");
+
     $("#add_payments").click(function(e)
     {
         e.preventDefault();
+        var new_div_cloned;
         $("#payments").append(
-            $(divClone).clone(true).append($("<a>").attr("href","#").addClass("removePayment").html(" Remover"))
+
+            new_div_cloned = $(divClone).clone(true).append(
+                $("<a>").attr("href","#").addClass("removePayment").html(" Remover")
+            )
         );
+        new_div_cloned.find("input").val(0);
+        new_div_cloned.find("input").prop("disabled",true);
+        console.log($(divClone).find("input").val());
     });
     $(document).on("click",".removePayment",
         function(e){
@@ -282,6 +294,12 @@ $(function()
         }
     );
 
+    if($("#client_id").val()>-1)
+    {
+        //$(".client_info").hide();
+    }else{
+        //$(".client_info").show();
+    }
 
     /**
      * Client Selector, si el cliente es N/A entonces debe poder agregar un cliente nuevo.
@@ -289,14 +307,100 @@ $(function()
     $("#client_id").change(function(e)
     {
         e.preventDefault();
-        if($(this).val() > 1)
+        if($(this).val() > -1)
         {
-            $(".client_info").hide();
+            //$(".client_info").hide();
+            $("input[name=client_name] ").val($(this).find("option:selected").text());
+            $("input[name=rnc] ").val($(this).find("option:selected").attr("data-rnc-value"));
+
+            $("input[name=client_name]").prop("disabled",true);
+            $("input[name=rnc]").prop("disabled",true);
         }else{
-            $(".client_info").show();
+            $("input[name=client_name]").prop("disabled",false);
+            $("input[name=rnc]").prop("disabled",false);
+
+            $("input[name=client_name]").val("");
+            $("input[name=rnc]").val("");
+            //$(".client_info").show();
         }
         //console.log($(this).val());
     });
+
+    if($("#to_credit").is(":checked"))
+    {
+        $("#refound").show();
+        $("#pay_days").show();
+        $("#pay_days").prop("disabled",false);
+    }else{
+        $("#refound").hide();
+        $("#pay_days").hide();
+        $("#pay_days").prop("disabled",true);
+    }
+
+    $("#to_credit").click(function(e)
+    {
+        if($(this).is(":checked"))
+        {
+            $("#refound").show();
+            $("#pay_days").show();
+            $("#pay_days").prop("disabled",false);
+        }else{
+            $("#refound").hide();
+            $("#pay_days").hide();
+            $("#pay_days").prop("disabled",true);
+        }
+
+    });
+
+
+    /**
+     * Submit Form
+     * */
+    $("form#operation_form input[type=submit]").click(function(e)
+    {
+        e.preventDefault();
+        var form  = $("form#operation_form");
+        total_payments = 0;
+        $("#payments .payments").each(function()
+        {
+            total_payments += parseFloat($(this).find("input").val());
+        });
+
+        /**
+         * Si no esta a credito
+         * */
+        if(!$("#to_credit").is(":checked"))
+        {
+            if (total_payments < numeral(total_neto).format('0,0.00'))
+            {
+                bootbox.dialog({
+                    message: "El pago está incompleto, favor de completarlo.",
+                    title: "Pago incompleto",
+                    buttons: {
+                        danger: {
+                            label: "Entendido",
+                            className: "btn-danger"
+                        }
+                    }
+                });
+                return false;
+            }
+        }
+        form.submit();
+    });
+
+    $("#payments .payments input").focusout(function()
+    {
+        total_payments = 0;
+        $("#payments .payments").each(function()
+        {
+            total_payments += parseFloat($(this).find("input").val());
+        });
+        console.log(total_payments);
+        var total =   total_payments - total_neto;
+        $("#refound span").html(numeral(total).format('0,0.00'));
+    });
+
 });
 
 /**
@@ -312,6 +416,7 @@ var total_discount  = 0;
 var discount        = 0;
 var value           = 0;
 var same_discount   = false;
+var total_payments  = 0;
 /**
  * Types By Cases
  * #1 Same Taxes, apply discount to the main amount.

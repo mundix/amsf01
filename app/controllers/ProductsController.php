@@ -22,7 +22,7 @@ class ProductsController extends AssetsController
 	public function index()
 	{
 		$products = $this->productRepo->all('id','DESC');
-		$javascripts = $this->getJsDataTables();
+		$javascripts = array_merge($this->getJsDataTables(),$this->getScripts());
 		$data = $this->getProductsData();
 		return View::make("themes/{$this->theme}/pages/inventory/products/show",compact('products','javascripts','data'));
 	}
@@ -45,8 +45,10 @@ class ProductsController extends AssetsController
 		$entity = $this->productRepo->newProduct();
 		$manager = new ProductManager($entity,Input::all());
 		$manager->save();
+		\Session::push('form.validation.success','El registro fu&eacute; guardado.');
 		return Redirect::route('products');
 	}
+
 	public function edit($slug,$id)
 	{
 		$entity = $this->productRepo->find($id);
@@ -61,6 +63,7 @@ class ProductsController extends AssetsController
 		$entity = $this->productRepo->find(Input::get("id"));
 		$manager = new ProductUpdateManager($entity,Input::all());
 		$manager->save();
+		\Session::push('form.validation.success','El registro fu&eacute; editado.');
 		return Redirect::route("product_edit",[$entity->slug,$entity->id]);
 	}
 
@@ -75,5 +78,24 @@ class ProductsController extends AssetsController
 		if($result = $this->productRepo->search($input))
 			return  $result;
 		return FALSE;
+	}
+
+	public function delete($id)
+	{
+		$entity = $this->productRepo->find($id);
+		$entity->forceDelete();
+		\Session::push('form.validation.success','El registro fu&eacute; eliminado.');
+		return Redirect::route('products');
+	}
+
+	public function slug()
+	{
+		$products = $this->productRepo->all();
+		foreach($products as $product)
+		{
+			$slug = \Str::slug($product->name);
+			$product->slug = $slug;
+			$product->save();
+		}
 	}
 }

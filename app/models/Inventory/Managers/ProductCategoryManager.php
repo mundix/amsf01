@@ -10,7 +10,7 @@ class ProductCategoryManager extends  BaseManager
     {
         $rules = [
             'name'   => 'required',
-            'description'   => 'required|max:1000',
+            'description'   => '',
 //            'category_id'   => 'required|exists:categories,id',
             'available'     => 'in:1,0'
         ];

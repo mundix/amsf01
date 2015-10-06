@@ -8,16 +8,15 @@ class CategoryProductTableSeeder extends Seeder {
 	{
         $faker = Faker::create();
         $categories = [
-            'Ferretería',
-            'Cocina',
-            'Jardinería',
-            'Oficinas',
-            'Computadoras',
-            'Electrodomésticos',
-            'Aires Acondicionados',
-            'Video Juegos',
+            'Auto Adornos',
+            'Cerrajería',
+            'Deporte',
+            'Eléctricos',
+            'Herramientas',
             'Hogar',
-            'Ropa',
+            'Jardinería',
+            'Maquinarias',
+            'Plomeria'
         ];
 
         foreach($categories as $category)

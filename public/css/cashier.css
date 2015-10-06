@@ -1,3 +1,6 @@
+.cashier-box{
+    border:5px solid gray !important;
+}
 #cashier,#cashier::-webkit-input-placeholder
 {
     background: #000 !important;
@@ -5,7 +8,6 @@
     font-size: 30px !important;
     height: 70px;
     font-weight: bold;
-    border:5px solid gray !important;
 }
 
 #subtotal,#subtotal::-webkit-input-placeholder
@@ -24,4 +26,7 @@ div.payments,div.sub-payments{
 }
 #add_payments{
     margin-left: 15px;
+}
+#resultlist tr{
+    cursor: pointer;
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class UpdateCandidatesTable extends Migration {
+class UpdateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,10 @@ class UpdateCandidatesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('candidates', function(Blueprint $table)
+		Schema::table('users', function(Blueprint $table)
 		{
-			$table->enum('gender',['male','female']);
+			$table->integer('location_id')->unsigned()->default('1');
+			$table->foreign('location_id')->references('id')->on('locations');
 		});
 	}
 
@@ -26,9 +27,9 @@ class UpdateCandidatesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('candidates', function(Blueprint $table)
+		Schema::table('users', function(Blueprint $table)
 		{
-			$table->dropColumn('gender');
+			
 		});
 	}
 

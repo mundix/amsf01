@@ -36,7 +36,7 @@ $(function()
     /**
      * Add products to the result table table
      * */
-    $(document).on("click","#resultlist a",function(e)
+    $(document).on("click","#resultlist tr",function(e)
     {
         total_neto = 0;
         e.preventDefault();
@@ -62,24 +62,39 @@ $(function()
                     .append(
                     $("<td>").text(obj.id).append($("<input>").attr("type","hidden").attr("value",obj.id).attr("name","product_id[]")),
                     $("<td>").text(obj.name),
-                    $("<td>").text(obj.category.name),
-                    $("<td>").text(numeral(obj.price).format('0,0.00')),
+                    //$("<td>").text(obj.category.name),
+                    //$("<td>").text(numeral(obj.price).format('0,0.00')),
+                    $("<td>").append($("<input>").attr('id', "list_price-" + obj.id)
+                        .attr("type", 'number').attr("min", 1).attr("value", obj.price_list)
+                        .attr("name","list_price[]")
+                        .attr("id","list_price-"+obj.id)
+                    ),
                     $("<td>").text(function()
                     {
-                        //itbis_array[0]=0;
-                        //itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
-
-                        //itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
                         itbis_array.push([parseInt(obj.id),parseFloat(obj.itbis.value)]);
-
-                        if(parseFloat(obj.fix_itbis) > 0.00)
-                            return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
-                        return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
+                        if(parseInt(obj.itbis_apply))
+                            return numeral(obj.itbis.value*100).format('0,0.00');
+                        return numeral(itbis_general*100).format('0,0.00');
                     }),
-                    //$("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
-                    $("<td>").text(obj.stock),
+                    $("<td>").attr("id",'itbis-'+obj.id).text(function()
+                    {
+                        $(document).on("change","#list_price-"+obj.id,function()
+                        {
+                            var value = parseFloat($(this).val());
+                            var obj = JSON.parse($(this).parent().parent().attr("data-product"));
+
+                            if(parseInt(obj.itbis_apply))
+                                $("#itbis-"+obj.id).html( numeral((obj.itbis.value*parseFloat($(this).val()))).format('0,0.00'));
+                            $("#itbis-"+obj.id).html(numeral((itbis_general*parseFloat($(this).val()))).format('0,0.00'));
+
+                        });
+                        if(parseInt(obj.itbis_apply))
+                            return numeral((obj.itbis.value*obj.price_list)).format('0,0.00');
+                        return numeral((itbis_general*obj.price_list)).format('0,0.00');
+
+                    }),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
-                        .attr("type", 'number').attr("min", 1).attr("value", 1)
+                        .attr("type", 'number').attr("min", 0).attr("value", 1)
                         .attr("name","qty[]")
                         .attr("class","form-control is_qty")
                         .attr("data-original-title","")
@@ -90,7 +105,7 @@ $(function()
         }else{
                 var qty = ($("#qty-"+id).val());
                 qty ++;
-                $("#obj-"+id).find("input").val(qty);
+                $("#obj-"+id).find("input.is_qty").val(qty);
         }
 
         /**
@@ -156,19 +171,10 @@ $(function()
     {
         var obj = JSON.parse($(this).parent().parent().attr("data-product"));
         var stock = obj.stock;
-        if($(this).val() > stock)
-        {
-            $(this).addClass("bs-popover");
-            $(this).attr("data-original-title","Error");
-            $(this).attr("data-content","La cantidad elegida, es mayor a la existente.");
-            $('.bs-popover').popover();
-            $(this).parent().parent().attr("style","background:#f2dede");
-            //bootbox.alert("La cantidad elegida, es mayor a la existente.");
-        }else{
-            $(this).removeClass("bs-popover");
-            $(this).removeAttr("data-original-title");
-            $(this).removeAttr("data-content");
-        }
+
+        $(this).removeClass("bs-popover");
+        $(this).removeAttr("data-original-title");
+        $(this).removeAttr("data-content");
 
         //console.log("Estamos en algo");
         //getTotal();
@@ -296,7 +302,7 @@ function getTotal()
 
         var item                    = JSON.parse($(value).attr("data-product"));
         var item_qty                = parseInt($("#qty-"+item.id).val());
-        var item_price              = parseFloat(item.price);
+        var item_price              = parseFloat($("#list_price-"+item.id).val());
         var item_total              = item_qty * item_price;
         var item_discount           = 0;
         var item_discount_percent   = 0;
@@ -309,44 +315,44 @@ function getTotal()
          * Estos son los descuentos, primero debe tomar en cuenta
          * los descuentos que vienen del Input
          * */
-        if($("input.radio_discount:checked").val() == -1)
-        {
-            /**
-             * Si el input es diferente de CERO, entonces debe hacer el descuento
-             * */
-            if(parseFloat($("#discount-"+item.id).val()) > 0)
-            {
-                item_discount_percent   = parseFloat($("#discount-"+item.id).val());
-                item_discount           = item_total * (item_discount_percent/100);
-                item_total              = item_total - item_discount;
-
-            }else{
-                /**
-                 * Descuento de la DB
-                 * */
-                if(parseInt(item.discount_apply))
-                {
-                    item_discount_percent   = parseFloat(item.discount);
-                    item_discount           = item_total * (item_discount_percent/100);
-                    item_total              = item_total - item_discount;
-                }
-            }
-            total_discount  += item_discount;
-        }else{
-            /**
-             * Aqui es cuando se le aplica un descuento GRUPAL
-             * */
-            /**
-             * Descuento por Porciento
-             * */
-            if($("input.radio_discount:checked").val() == 1)
-            {
-                item_discount_percent   = parseFloat($("#discount_total").val());
-                item_discount           = item_total * (item_discount_percent/100);
-                item_total              = item_total - item_discount;
-                total_discount          += item_discount;
-            }
-        }
+        //if($("input.radio_discount:checked").val() == -1)
+        //{
+        //    /**
+        //     * Si el input es diferente de CERO, entonces debe hacer el descuento
+        //     * */
+        //    if(parseFloat($("#discount-"+item.id).val()) > 0)
+        //    {
+        //        item_discount_percent   = parseFloat($("#discount-"+item.id).val());
+        //        item_discount           = item_total * (item_discount_percent/100);
+        //        item_total              = item_total - item_discount;
+        //
+        //    }else{
+        //        /**
+        //         * Descuento de la DB
+        //         * */
+        //        if(parseInt(item.discount_apply))
+        //        {
+        //            item_discount_percent   = parseFloat(item.discount);
+        //            item_discount           = item_total * (item_discount_percent/100);
+        //            item_total              = item_total - item_discount;
+        //        }
+        //    }
+        //    total_discount  += item_discount;
+        //}else{
+        //    /**
+        //     * Aqui es cuando se le aplica un descuento GRUPAL
+        //     * */
+        //    /**
+        //     * Descuento por Porciento
+        //     * */
+        //    if($("input.radio_discount:checked").val() == 1)
+        //    {
+        //        item_discount_percent   = parseFloat($("#discount_total").val());
+        //        item_discount           = item_total * (item_discount_percent/100);
+        //        item_total              = item_total - item_discount;
+        //        total_discount          += item_discount;
+        //    }
+        //}
 
         if($("#apply_itbis").is(":checked"))
         {
@@ -363,18 +369,18 @@ function getTotal()
      * Este caso es cuando el descuento es por monto
      * fijo.
      * */
-    if($("input.radio_discount:checked").val() == 2 )
-    {
-        if(array_is_same_values(itbis_array))
-        {
-            $("#discount_total").prop('disabled',false);
-            total_neto = total_neto - parseFloat($("#discount_total").val());
-        }
-        else
-        {
-            $("#discount_total").prop('disabled',true);
-        }
-    }
+    //if($("input.radio_discount:checked").val() == 2 )
+    //{
+    //    if(array_is_same_values(itbis_array))
+    //    {
+    //        $("#discount_total").prop('disabled',false);
+    //        total_neto = total_neto - parseFloat($("#discount_total").val());
+    //    }
+    //    else
+    //    {
+    //        $("#discount_total").prop('disabled',true);
+    //    }
+    //}
 
     /**
      * Black Display

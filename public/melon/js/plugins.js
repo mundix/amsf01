@@ -21,8 +21,8 @@ var Plugins = function() {
 	var initDaterangepicker = function() {
 		if ($.fn.daterangepicker) {
 			$('.range').daterangepicker({
-				startDate: moment().subtract('days', 29),
-				endDate: moment(),
+				//startDate: moment().subtract('days', 29),
+				//endDate: moment(),
 				minDate: '01/01/2012',
 				maxDate: '12/31/2014',
 				dateLimit: { days: 60 },
@@ -31,27 +31,27 @@ var Plugins = function() {
 				timePicker: false,
 				timePickerIncrement: 1,
 				timePicker12Hour: true,
-				ranges: {
-				   'Today': [moment(), moment()],
-				   'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
-				   'Last 7 Days': [moment().subtract('days', 6), moment()],
-				   'Last 30 Days': [moment().subtract('days', 29), moment()],
-				   'This Month': [moment().startOf('month'), moment().endOf('month')],
-				   'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-				},
+				//ranges: {
+				//   'Today': [moment(), moment()],
+				//   'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+				//   'Last 7 Days': [moment().subtract('days', 6), moment()],
+				//   'Last 30 Days': [moment().subtract('days', 29), moment()],
+				//   'This Month': [moment().startOf('month'), moment().endOf('month')],
+				//   'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+				//},
 				opens: 'left',
 				buttonClasses: ['btn btn-default'],
 				applyClass: 'btn-sm btn-primary',
 				cancelClass: 'btn-sm',
-				format: 'MM/DD/YYYY',
-				separator: ' to ',
+				format: 'DD/MM/YYYY',
+				separator: ' hasta ',
 				locale: {
-					applyLabel: 'Submit',
-					fromLabel: 'From',
-					toLabel: 'To',
+					applyLabel: 'Seleccionar',
+					fromLabel: 'Desde',
+					toLabel: 'Hasta',
 					customRangeLabel: 'Custom Range',
-					daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
-					monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+					daysOfWeek: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi','Sa'],
+					monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
 					firstDay: 1
 				}
 			},
@@ -288,8 +288,8 @@ var Plugins = function() {
 						"sDom": "<'row'<'dataTables_header clearfix'<'col-md-4'l><'col-md-8'Tf>r>>t<'row'<'dataTables_footer clearfix'<'col-md-6'i><'col-md-6'p>>>", // T is new
 						"oTableTools": {
 							"aButtons": [
-								"copy",
-								"print",
+								//"copy",
+								//"print",
 								"csv",
 								"xls",
 								"pdf"

@@ -36,7 +36,7 @@ abstract class BaseRepo
 
     public function getList()
     {
-        return $this->model->lists('name','id','value');
+        return $this->model->lists('name','id');
     }
 
     public function getTotal()

@@ -122,7 +122,7 @@ return array(
 
 		//Vendor
         'Way\Generators\GeneratorsServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
+//		'Barryvdh\Debugbar\ServiceProvider',
 
 		//Custom
 		'Commons\Components\FieldServiceProvider',

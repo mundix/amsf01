@@ -6,7 +6,6 @@
         </div>
         <div class="widget-content">
             {{ Form::model($entity,['route'=>'product_update','method'=>'POST','role'=>'form','class'=>'form-horizontal row-border']) }}
-
                 <div class="form-group">
                     {{ Form::label('name','Nombre Producto',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">
@@ -20,7 +19,7 @@
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-4">
-                                {{ Form::select('category_id',$categories,null,['class'=>'col-md-12 select2 full-width-fix required']) }}
+                                {{ Form::select('category_id',['default'=>'Seleccione Categoria'] + $categories,null,['class'=>'col-md-12 select2 full-width-fix required']) }}
                             </div>
                         </div>
                         <div class="row" id="sub-category">
@@ -35,13 +34,18 @@
                         {{ Form::textarea('description',null,['placeholder'=>'Escriba una descripción del producto...','class'=>'input-block-level']) }}
                     </div>
                 </div>
-
                 <div class="form-group">
                     {{ Form::label('sku','Código SKU',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">
                         {{ Form::text('sku',null,['placeholder'=>'(Optional) Código único físico. ','class'=>'form-control']) }}
                     </div>
                 </div>
+            <div class="form-group">
+                {{ Form::label('price_list','Precio de lista',['class'=>'col-md-2 control-label']) }}
+                <div class="col-md-10">
+                    {{ Form::text('price_list',null,['placeholder'=>'(Optional)','class'=>'form-control']) }}
+                </div>
+            </div>
                 <div class="form-group">
                     {{ Form::label('price','Precio',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">

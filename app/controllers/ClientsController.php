@@ -13,12 +13,10 @@ class ClientsController extends AssetsController
 	}
 	public function dashboard()
 	{
-		$clients = $this->clientsRepo->getAllClients();
-		$javascripts = ['melon/plugins/bootbox/bootbox.min.js',
-			'js/jquery/plugin/numeral.min.js',
-			'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
-			'js/app.js'];
+		$clients 		= $this->clientsRepo->getAllClients();
+		$javascripts 	= array_merge($this->getScripts(),$this->getJsDataTables(),['js/buy.js']);
 		$data = $this->getProductsData();
+		
 		return View::make("themes/{$this->theme}/pages/resources/clients/dashboard",compact('clients','data','javascripts'));
 	}
 	public function add()

@@ -18,7 +18,9 @@ class CreateInvoicesTable extends Migration {
             $table->integer("order_id")->unsigned();
             $table->float("total",2);
             $table->float("sub_total",2);
-            $table->foreign("order_id")->references("id")->on("orders");
+			$table->foreign('order_id')
+				->references('id')->on('orders')
+				->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

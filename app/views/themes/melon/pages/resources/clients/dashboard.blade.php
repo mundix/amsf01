@@ -25,7 +25,7 @@
 
                 <div class="widget-content">
                     @if(isset($clients))
-                        <table class="table table-striped table-bordered table-hover table-checkable  datatable">
+                        <table class="table table-striped table-bordered table-hover table-checkable  datatable table-responsive" data-display-length="50">
                             <thead>
                             <tr>
                                 <th class="checkbox-column">

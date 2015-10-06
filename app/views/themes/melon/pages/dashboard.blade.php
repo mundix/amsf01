@@ -24,7 +24,7 @@
                 </div>
                 <div class="widget-content">
                     @if(isset($sales))
-                        <table class="table table-striped table-bordered table-hover table-checkable  datatable ">
+                        <table class="table table-striped table-bordered table-hover table-checkable  datatable table-responsive" data-display-length="20">
                             <thead>
                             <tr>
                                 <th class="checkbox-column">
@@ -32,6 +32,7 @@
                                 </th>
                                 <th>Factura</th>
                                 <th>Fecha</th>
+                                <th>Empleado</th>
                                 <th>Tipo</th>
                                 <th>Estatus</th>
                                 <th>Total</th>
@@ -46,6 +47,7 @@
                                     </td>
                                     <td><a href="#">{{$order->id}}</a></td>
                                     <td><a href="#">{{$order->created_at->format('d/n/Y h:m A')}}</a></td>
+                                    <td><a href="">{{$order->user->full_name}}</a></td>
                                     <td><a href="">{{$order->type_title}}</a></td>
                                     <td>{{$order->status_title}}</td>
                                     <td>RD$ {{number_format($order->sub_total,2)}}</td>
@@ -62,7 +64,7 @@
                 </div>
                 <div class="widget-content">
                     @if(isset($shopings))
-                        <table class="table table-striped table-bordered table-hover table-checkable  datatable">
+                        <table class="table table-striped table-bordered table-hover table-checkable  datatable" data-display-length="20">
                             <thead>
                             <tr>
                                 <th class="checkbox-column">

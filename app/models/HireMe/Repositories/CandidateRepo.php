@@ -8,6 +8,7 @@ use HireMe\Entities\Category;
 use HireMe\Entities\User;
 use Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator;
 use Illuminate\Support\Facades\Mail;
+//use Resources\Entities\PasswordReminder;
 
 class CandidateRepo extends BaseRepo
 {
@@ -37,8 +38,13 @@ class CandidateRepo extends BaseRepo
     public function newCandidate()
     {
         $user = new User();
-        $user->type = 'candidate';
+        $user->type = 'employee';
         return $user;
+    }
+
+    public function findUser($id)
+    {
+        return User::find($id);
     }
 
     public function resetPassword(User $user)
@@ -51,17 +57,20 @@ class CandidateRepo extends BaseRepo
             ->setOptionValue(ComputerPasswordGenerator::OPTION_SYMBOLS, false);
 
         $password = $generator->generatePassword();
-        $user->password = \Hash::make($password);
-        $user->save();
-        $mail = Mail::send('themes.melon.emails.users.reset_password',compact('user','password'),function($message) use ($user)
+//        $user->password = \Hash::make($password);
+        $user->password = ($password); //No necesita el Hash por que ya en el usaurio el campo tiene autohash
+        if(!$user->save())
+            return FALSE;
+
+        Mail::send('themes.melon.emails.users.reset_password',compact('user','password'),function($message) use ($user)
         {
-            $message->to('ce.pichardo@gmail.com','Edmundo Pichardo')->subject('Reset Password');
+            $message->to($user->email,$user->full_name)->subject('Restaurar Contrase&ntilde;a Sistema de Inventario');
         });
 
         if(count(Mail::failures()) > 0){
-            print_r(Mail::failures());
-//           return $errors = 'Failed to send password reset email, please try again.';
+            return FALSE;
         }
+        return TRUE;
     }
 
     public function findUserByEmail($email = null)
@@ -70,4 +79,54 @@ class CandidateRepo extends BaseRepo
             return $user;
         return 0;
     }
+
+    public function save(User $user,$params = [])
+    {
+        $candidate = $this->getModel();
+        $candidate->id = $user->id;
+        $candidate->phone = isset($params['phone'])?$params['phone']:"";
+        $candidate->gender = isset($params['gender'])?$params['gender']:"male";
+        $candidate->category_id = 1;
+        $candidate->available = 1;
+        $candidate->save();
+        $password = $this->generatePassword();
+        $candidate->user->password = $password;
+        if($candidate->user->save())
+        {
+            if(!$user->save())
+                return FALSE;
+
+            Mail::send('themes.melon.emails.users.registered',compact('candidate','password'),function($message) use ($candidate)
+            {
+                $message->to($candidate->user->email,$candidate->user->full_name)->subject('Restaurar Contraseña Sistema de Inventario y Facturación');
+            });
+
+            if(count(Mail::failures()) > 0){
+                return FALSE;
+            }
+            return TRUE;
+        }
+    }
+
+    public function getUserByToken($token)
+    {
+//        echo "<pre>";
+//        $passReminder = PasswordReminder::where('token',$token)->get();
+//        $obj = json_decode($passReminder);
+//        return $this->findUserByEmail($obj[0]->email);
+    }
+
+    public function generatePassword()
+    {
+        $generator = new ComputerPasswordGenerator();
+        $generator
+            ->setOptionValue(ComputerPasswordGenerator::OPTION_UPPER_CASE, true)
+            ->setOptionValue(ComputerPasswordGenerator::OPTION_LOWER_CASE, true)
+            ->setOptionValue(ComputerPasswordGenerator::OPTION_NUMBERS, true)
+            ->setOptionValue(ComputerPasswordGenerator::OPTION_SYMBOLS, false);
+
+        return  $generator->generatePassword();
+
+    }
 }
+

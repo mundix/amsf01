@@ -13,7 +13,7 @@ class DashboardController extends AssetsController
 	public function index()
 	{
 		$data 			= $this->getProductsData();
-		$javascripts 	= $this->getJsDataTables();
+		$javascripts 	= $this->getScripts();
 		$sales 			= $this->getOrdersSales();
 		$shopings 		= $this->getOrdersBuy();
 

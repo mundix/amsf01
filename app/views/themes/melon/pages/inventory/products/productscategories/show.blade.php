@@ -23,7 +23,7 @@
                 </div>
                 <div class="widget-content">
                     @if(isset($categories))
-                    <table class="table table-striped table-bordered table-hover table-checkable datatable">
+                    <table class="table table-striped table-bordered table-hover table-checkable datatable table-responsive" data-display-length="50">
                         <thead>
                         <tr>
                             <th class="checkbox-column">
@@ -31,17 +31,24 @@
                             </th>
                             <th>Categorías</th>
                             <th class="hidden-xs">Total Productos</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($categories as $category)
+                        @foreach($categories as $id => $category)
                         <tr>
                             <td class="checkbox-column">
                                 <input type="checkbox" class="uniform">
                             </td>
                             <td>{{$category}}</td>
-                            <td>Productos (10)</td>
+                            <td>{{$repo->totalProductsByCatID($id)}}</td>
+                            <td>
+                                @if(is_admin() || is_super_admin())
+                                    <a href="{{route('product_category_edit',[$id])}}" class="">Edit</a>
+                                    <a href="#" class="delete_entity" data-entity-route="{{Route("product_category_delete",[$id])}}">Eliminar</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>

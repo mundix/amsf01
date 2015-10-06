@@ -1,0 +1,1 @@
+[22-Sep-2015 20:40:33 UTC] PHP Fatal error:  Class 'Hackzilla\PasswordGenerator\Generator\ComputerPasswordGenerator' not found in /home/awesomemedia/public_html/clients/amsisinvoices/app/models/HireMe/Repositories/CandidateRepo.php on line 121

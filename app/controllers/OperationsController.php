@@ -6,6 +6,7 @@ use Billing\Repositories\OrderRepo;
 use HireMe\Repositories\ClientRepo;
 use Billing\Repositories\NcfRepo;
 use Billing\Repositories\InvoiceRepo;
+use HireMe\Repositories\SupplyerRepo;
 
 class OperationsController extends AssetsController
 {
@@ -15,6 +16,7 @@ class OperationsController extends AssetsController
 	protected $clientRepo;
 	protected $ncfRepo;
 	protected $invoiceRepo;
+	protected $supplyerRepo;
 
 	public function __construct(
 		ProductRepo $productRepo,
@@ -22,7 +24,8 @@ class OperationsController extends AssetsController
 		OrderRepo $orderRepo,
 		ClientRepo $clientRepo,
 		NcfRepo $ncfRepo,
-		InvoiceRepo $invoiceRepo
+		InvoiceRepo $invoiceRepo,
+		SupplyerRepo $supplyerRepo
 	)
 	{
 		$this->productRepo          = $productRepo;
@@ -31,6 +34,7 @@ class OperationsController extends AssetsController
 		$this->clientRepo			= $clientRepo;
 		$this->ncfRepo				= $ncfRepo;
 		$this->invoiceRepo			= $invoiceRepo;
+		$this->supplyerRepo			= $supplyerRepo;
 
 	}
 
@@ -39,53 +43,37 @@ class OperationsController extends AssetsController
 		$products 		= $this->productRepo->all('id','DESC');
 		$ncfTypes		= $this->ncfRepo->getTypesByLocationId(Auth::User()->location_id);
 		$clients		= $this->clientRepo->all('id','ASC');
-		$javascripts 	= $this->getJsDataTables();
-
-		array_push($javascripts,
-			'melon/plugins/bootbox/bootbox.min.js',
-			'js/jquery/plugin/numeral.min.js',
-			'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
-			'js/sales.js',
-			'js/app.js'
-		);
-
-		$styles				= $this->getCssGeneral();
-		array_push(
-			$styles,
-			'css/cashier.css'
-		);
+		$javascripts 	= array_merge($this->getScripts(),$this->getJsDataTables(),['js/sales.js']);
+		$styles			= array_merge($this->getCssGeneral(),['css/cashier.css']);
 		$data 			= $this->getProductsData();
 
 		return View::make("themes/{$this->theme}/forms/operations/sales",compact('products','javascripts','data','styles','clients','ncfTypes'));
+	}
+	public function credit()
+	{
+		$clients		= $this->clientRepo->all('id','ASC');
+		$javascripts 	= array_merge($this->getScripts(),$this->getJsUI(),['js/credits.js']);
+		$styles			= array_merge($this->getCssGeneral(),['css/cashier.css']);
+		$data 			= $this->getProductsData();
+
+		return View::make("themes/{$this->theme}/forms/operations/credits",compact('products','javascripts','data','styles','clients','ncfTypes'));
 	}
 
 	public function buy()
 	{
 		$products 		= $this->productRepo->all('id','DESC');
 		$ncfTypes		= $this->ncfRepo->getTypesByLocationId(Auth::User()->location_id);
-		$clients		= $this->clientRepo->all('id','ASC');
-		$javascripts 	= $this->getJsDataTables();
-
-		array_push($javascripts,
-			'melon/plugins/bootbox/bootbox.min.js',
-			'js/jquery/plugin/numeral.min.js',
-			'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
-			'js/buy.js',
-			'js/app.js'
-		);
-
-		$styles				= $this->getCssGeneral();
-		array_push(
-			$styles,
-			'css/cashier.css'
-		);
+		$supplyers		= $this->supplyerRepo->getList();
+		$javascripts 	= array_merge($this->getScripts(),$this->getJsDataTables(),['js/buy.js']);
+		$styles			= array_merge($this->getCssGeneral(),['css/cashier.css']);
 		$data 			= $this->getProductsData();
 
-		return View::make("themes/{$this->theme}/forms/operations/buy",compact('products','javascripts','data','styles','clients','ncfTypes'));
+		return View::make("themes/{$this->theme}/forms/operations/buy",compact('products','javascripts','data','styles','supplyers','ncfTypes'));
 	}
 
 	public function saveSales()
 	{
+
 		$order_id = $this->invoiceRepo->create($this->orderRepo->create(Input::all()));
 		return Redirect::route('invoices',[$order_id]);
 	}
@@ -93,6 +81,12 @@ class OperationsController extends AssetsController
 	{
 		$this->orderRepo->create(Input::all(),"buy");
 		return Redirect::route('home');
+	}
+	public function saveCredit()
+	{
+
+		$order_id = $this->invoiceRepo->create($this->orderRepo->createCredit(Input::all()));
+		return Redirect::route('invoices',[$order_id]);
 	}
 
 }

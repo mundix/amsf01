@@ -9,6 +9,7 @@ class Order extends \Eloquent
 			'user_id',
 			'type',
 			'client_id',
+			'supplyer_id',
 			'itbis',
 			'itbis_amount',
 			'total',
@@ -29,6 +30,10 @@ class Order extends \Eloquent
 	public function client()
 	{
 		return $this->belongsTo('HireMe\Entities\Client');
+	}
+	public function supplyer()
+	{
+		return $this->belongsTo('HireMe\Entities\Supplyer');
 	}
 	public function details()
 	{

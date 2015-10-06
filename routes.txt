@@ -1,0 +1,53 @@
++--------+--------------------------------------------+-----------------------+------------------------------------------------------------+----------------+---------------+
+|[32m Domain [0m|[32m URI                                        [0m|[32m Name                  [0m|[32m Action                                                     [0m|[32m Before Filters [0m|[32m After Filters [0m|
++--------+--------------------------------------------+-----------------------+------------------------------------------------------------+----------------+---------------+
+|        | GET|HEAD _debugbar/open                    | debugbar.openhandler  | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle |                |               |
+|        | GET|HEAD _debugbar/assets/stylesheets      | debugbar.assets.css   | Barryvdh\Debugbar\Controllers\AssetController@css          |                |               |
+|        | GET|HEAD _debugbar/assets/javascript       | debugbar.assets.js    | Barryvdh\Debugbar\Controllers\AssetController@js           |                |               |
+|        | GET|HEAD /                                 | login                 | LoginController@index                                      |                |               |
+|        | POST login.forgot                          | forgot_password       | LoginController@forgot                                     |                |               |
+|        | GET|HEAD test                              | test                  | DashboardController@test                                   |                |               |
+|        | GET|HEAD get_config                        | config                | HomeController@config                                      |                |               |
+|        | POST login                                 | login                 | AuthController@login                                       |                |               |
+|        | GET|HEAD user.reset                        | user_reset            | UsersController@reset                                      |                |               |
+|        | POST reset.password                        | reset                 | UsersController@reset                                      |                |               |
+|        | GET|HEAD dashboard                         | home                  | DashboardController@index                                  | auth           |               |
+|        | GET|HEAD logout                            | logout                | AuthController@logout                                      | auth           |               |
+|        | GET|HEAD products                          | products              | ProductsController@index                                   | auth           |               |
+|        | GET|HEAD product.add                       | product_add           | ProductsController@add                                     | auth           |               |
+|        | POST product.add                           | product_save          | ProductsController@save                                    | auth           |               |
+|        | GET|HEAD product.edit/{slug}/{id}          | product_edit          | ProductsController@edit                                    | auth           |               |
+|        | POST product.edit/{slug}/{id}              | product_update        | ProductsController@update                                  | auth           |               |
+|        | GET|HEAD product/{slug}/{id}               | product_show          | ProductsController@show                                    | auth           |               |
+|        | GET|HEAD products.categories               | products_categories   | ProductsCategoriesController@index                         | auth           |               |
+|        | GET|HEAD product.category.add              | product_category_add  | ProductsCategoriesController@add                           | auth           |               |
+|        | POST product.category.add                  | product_category_save | ProductsCategoriesController@save                          | auth           |               |
+|        | GET|HEAD product.category.edit/{slug}/{id} | product_category_edit | ProductsCategoriesController@edit                          | auth           |               |
+|        | POST product.categoru.edit/{slug}/{id}     | product_category_edit | ProductsCategoriesController@edit                          | auth           |               |
+|        | GET|HEAD product.category.show             | product_category_show | ProductsCategoriesController@show                          | auth           |               |
+|        | GET|HEAD sales                             | make_sale             | OperationsController@sales                                 | auth           |               |
+|        | POST sales                                 | add_sale              | OperationsController@saveSales                             | auth           |               |
+|        | GET|HEAD buy                               | make_buy              | OperationsController@buy                                   | auth           |               |
+|        | POST buy                                   | add_buy               | OperationsController@saveBuy                               | auth           |               |
+|        | GET|HEAD products.search                   | products_search       | ProductsController@search                                  | auth           |               |
+|        | GET|HEAD invoice.details/{id}              | invoices              | InvoicesController@show                                    | auth           |               |
+|        | GET|HEAD clients.dashboard                 | clients               | ClientsController@dashboard                                | auth           |               |
+|        | GET|HEAD client.add                        | client_add            | ClientsController@add                                      | auth           |               |
+|        | POST client.add                            | client_save           | ClientsController@save                                     | auth           |               |
+|        | GET|HEAD client.edit/{id}                  | client_edit           | ClientsController@edit                                     | auth           |               |
+|        | POST client.edit                           | client_update         | ClientsController@update                                   | auth           |               |
+|        | GET|HEAD client.delete/{id}                | client_delete         | ClientsController@delete                                   | auth           |               |
+|        | GET|HEAD supplyers.dashboard               | supplyers             | SupplyersController@dashboard                              | auth           |               |
+|        | GET|HEAD supplyer.add                      | supplyer_add          | SupplyersController@add                                    | auth           |               |
+|        | POST supplyer.add                          | supplyer_save         | SupplyersController@save                                   | auth           |               |
+|        | GET|HEAD supplyer.edit/{id}                | supplyer_edit         | SupplyersController@edit                                   | auth           |               |
+|        | POST supplyer.edit                         | supplyer_update       | SupplyersController@update                                 | auth           |               |
+|        | GET|HEAD supplyer.delete/{id}              | supplyer_delete       | SupplyersController@delete                                 | auth           |               |
+|        | GET|HEAD employees.dashboard               | employees             | UsersController@dashboard                                  | auth           |               |
+|        | GET|HEAD employee.add                      | employee_add          | UsersController@add                                        | auth           |               |
+|        | POST employee.add                          | employee_save         | UsersController@save                                       | auth           |               |
+|        | GET|HEAD account                           | account               | UsersController@account                                    | auth           |               |
+|        | PUT account                                | update_account        | UsersController@updateAccount                              | auth           |               |
+|        | GET|HEAD profile                           | profile               | UsersController@profile                                    | auth           |               |
+|        | PUT profile                                | update_profile        | UsersController@updateProfile                              | auth           |               |
++--------+--------------------------------------------+-----------------------+------------------------------------------------------------+----------------+---------------+

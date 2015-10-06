@@ -88,3 +88,13 @@ function is_admin()
 {
 	return Auth::check() & Auth::user()->type == 'admin';
 }
+
+function is_super_admin()
+{
+	return Auth::check() & Auth::user()->type == 'superadmin';
+}
+
+function is_employer()
+{
+	return Auth::check() & Auth::user()->type == 'employer';
+}

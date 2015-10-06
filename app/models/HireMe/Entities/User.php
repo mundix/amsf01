@@ -13,7 +13,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
-	protected $fillable = ['full_name','email','password','location_id'];
+	protected $fillable = ['full_name','email','password','location_id','type'];
 
 
 	public function candidate()
@@ -106,6 +106,11 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+	public function getTypeTitleAttribute()
+	{
+		return \Lang::get('users.types.'.$this->type);
 	}
 
 }

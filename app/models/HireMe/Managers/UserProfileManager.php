@@ -3,7 +3,6 @@
 namespace HireMe\Managers;
 use Commons\Managers\BaseManager;
 
-//Hay qye definir el metodo getrules
 class UserProfileManager extends  BaseManager
 {
     //Aqui se van a poner las reglasdel controller, de usuarios

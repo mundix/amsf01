@@ -11,6 +11,7 @@ class Product extends \Eloquent
 		'sku',
 		'stock',
 		'min_stock',
+		'price_list',
 		'price',
 		'min_price',
 		'discount',
@@ -20,6 +21,8 @@ class Product extends \Eloquent
 		'date_out',
 		'available',
 		'fix_itbis',
+		'itbis_id',
+		'itbis_apply',
 	];
 	protected $perPage = 20;
 

@@ -11,13 +11,14 @@ class ProductManager extends  BaseManager
         $rules = [
             'name'          => 'required',
             'description'   => 'required|max:1000',
-            'sku'           => 'required',
-            'stock'         => 'required|numeric',
-            'min_stock'     => 'required|numeric',
-            'category_id'   => 'required|exists:products_categories,id',
+            'sku'           => '',
+            'stock'         => 'numeric',
+            'min_stock'     => 'numeric',
+            'category_id'   => 'exists:products_categories,id',
+            'price_list'    => 'numeric',
             'price'         => 'required|numeric',
-            'min_price'     => 'required|numeric',
-            'min_price'     => 'required|numeric',
+            'min_price'     => 'numeric',
+            'itbis_id'      => 'exists:itbis,id',
             'available'     => 'in:1,0',
         ];
         return $rules;

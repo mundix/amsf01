@@ -99,6 +99,12 @@
                     Compras
                 </a>
             </li>
+            <li>
+                <a href="{{ route('make_credit') }}">
+                    <i class="icon-hand-left"></i>
+                    Cr&eacute;dito
+                </a>
+            </li>
         </ul>
     </li>
     <li>
@@ -108,15 +114,21 @@
         </a>
         <ul class="sub-menu">
             <li>
-                <a href="#">
+                <a href="{{Route('reports_sale')}}">
                     <i class="icon-angle-right"></i>
                     Ventas
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{Route('reports_buy')}}">
                     <i class="icon-angle-right"></i>
                     Compras
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon-angle-right"></i>
+                    Productos
                 </a>
             </li>
         </ul>

@@ -7,48 +7,17 @@
 //Route::get('/',['as' => 'login','uses' => 'HomeController@index']);
 Route::get('/',['as' => 'login','uses' => 'LoginController@index']);
 Route::post('login.forgot',['as' => 'forgot_password','uses' => 'LoginController@forgot']);
-
 Route::get('test',['as' => 'test','uses' => 'DashboardController@test']);
-
 Route::get('get_config',['as' => 'config','uses' => 'HomeController@config']);
-
-
-
-/**
- * Segmento para los buscadores Candiadtes, el cual tendra un controller llamado
- * Candidates y apunte al meotdo de category()
- * @param String $slug
- * @param Int $id
- * @return View
- * Esta seria l URL de la categoria
- *
- * candidates/backend-developer/1
- *
-*/
-//Route::get('candidates/{slug}/{id}',['as' => 'category','uses' => 'CandidatesController@category']);
 
 /**
  * la ruta para un candidate seria
  * edmundo-pichardo/1
 */
-//Route::get('{slug}/{id}',['as' => 'candidate', 'uses' => 'CandidatesController@show']);
-Route::get('melons',['as'=>'product','uses'=> 'ProductsController@melon']);
 
-Route::group(['before'=>'guest'],function()
-{
-    /**
-     * Llamadas para el Registro
-     */
-    Route::get('sign-up',['as'=>'sign_up','uses'=> 'UsersController@signUp']);
-    Route::post('sign-up',['as'=>'register','uses'=> 'UsersController@register']);
-    /**
-     * Login, viene del formulario de login de layout.blade.php
-     */
-});
 Route::post('login',['as' => 'login', 'uses' => 'AuthController@login']);
 Route::get('user.reset',['as'=>'user_reset','uses'=>'UsersController@reset']);
-Route::post('forgot_password',['as'=>'forgot_password','uses'=>'RemindersController@postRemind']);
-
+Route::post('reset.password',['as'=>'reset','uses'=>'UsersController@reset']);
 
 /**
  * Group de Routas por Filtro
@@ -60,49 +29,40 @@ Route::group(['before' => 'auth'], function()
     */
     Route::get('dashboard',['as'=>'home','uses'=>'DashboardController@index']);
     Route::get('logout',['as' => 'logout', 'uses' => 'AuthController@logout']);
-
-    Route::get('employees',['as'=>'employees','uses'=>'UsersController@dashboard']);
     /**
-     * Formularios Account, informacion de la cuetna
-     */
-    Route::get('account',['as' => 'account','uses' => 'UsersController@account']);
-    Route::put('account',['as' => 'update_account','uses' => 'UsersController@updateAccount']);
-    Route::get('profile',['as' => 'profile','uses' => 'UsersController@profile']);
-    Route::put('profile',['as' => 'update_profile','uses' => 'UsersController@updateProfile']);
-
-    Route::group(['before' => 'is_admin'],function(){
-        /**
-         * Admin Routes
-         */
-        Route::get('admin/candidate/{id}',['as' => 'admin_candidate_edit', function($id){
-            return 'Editando un candidato:'.$id;
-        }]);
-
-    });
-
-    /**
-     * Rutas Relacionadas al Producto
+     *      Rutas Relacionadas al Producto
     */
     Route::get('products',['as'=>'products','uses'=>'ProductsController@index']);
+    Route::get('products.view',['as'=>'products_view','uses'=>'ProductsController@show']);
 
-    Route::get('products.add',['as'=>'product_add','uses'=>'ProductsController@add']);
-    Route::post('products.add',['as'=>'product_save','uses'=>'ProductsController@save']);
+    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+    {
+        Route::get('product.add', ['as' => 'product_add', 'uses' => 'ProductsController@add']);
+        Route::post('product.add', ['as' => 'product_save', 'uses' => 'ProductsController@save']);
 
-    Route::get('products.edit/{slug}/{id}',['as'=>'product_edit','uses'=>'ProductsController@edit']);
-    Route::post('products.edit/{slug}/{id}',['as'=>'product_update','uses'=>'ProductsController@update']);
-    Route::get('products/{slug}/{id}',['as'=>'product_show','uses'=>'ProductsController@show']);
+        Route::get('product.edit/{slug}/{id}', ['as' => 'product_edit', 'uses' => 'ProductsController@edit']);
+        Route::post('product.edit/{slug}/{id}', ['as' => 'product_update', 'uses' => 'ProductsController@update']);
 
+        Route::get('product.delete/{id}', ['as' => 'product_delete', 'uses' => 'ProductsController@delete']);
+    });
     /**
      * Rutas de Las categorias de Productos
     */
     Route::get('products.categories',['as'=>'products_categories','uses'=>'ProductsCategoriesController@index']);
-    Route::get('products.categories.add',['as'=>'product_category_add','uses'=>'ProductsCategoriesController@add']);
-    Route::post('products.categories.add',['as'=>'product_category_save','uses'=>'ProductsCategoriesController@save']);
+    Route::get('products.categories.view',['as'=>'products_categories_view','uses'=>'ProductsCategoriesController@show']);
 
-    Route::get('products.categories.edit/{slug}/{id}',['as'=>'product_category_edit','uses'=>'ProductsCategoriesController@edit']);
-    Route::post('products.categories.edit/{slug}/{id}',['as'=>'product_category_edit','uses'=>'ProductsCategoriesController@edit']);
-    Route::get('products.categories.show',['as'=>'product_category_show','uses'=>'ProductsCategoriesController@show']);
+//    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+//    {
+        Route::get('product.category.add', ['as' => 'product_category_add', 'uses' => 'ProductsCategoriesController@add']);
+        Route::post('product.category.add', ['as' => 'product_category_save', 'uses' => 'ProductsCategoriesController@save']);
 
+        Route::get('product.category.edit/{id}', ['as' => 'product_category_edit', 'uses' => 'ProductsCategoriesController@edit']);
+        Route::post('product.category.edit/{id}', ['as' => 'product_category_update', 'uses' => 'ProductsCategoriesController@update']);
+
+        Route::get('product.category.show', ['as' => 'product_category_show', 'uses' => 'ProductsCategoriesController@show']);
+
+        Route::get('product.category.delete/{id}', ['as' => 'product_category_delete', 'uses' => 'ProductsCategoriesController@delete']);
+//    });
     /**
      * ###############################
      * Operaciones
@@ -114,47 +74,121 @@ Route::group(['before' => 'auth'], function()
     Route::get('sales',['as'=>'make_sale','uses'=>'OperationsController@sales']);
     Route::post('sales',['as'=>'add_sale','uses'=>'OperationsController@saveSales']);
 
+    /**
+     * Compras
+    */
+
     Route::get('buy',['as'=>'make_buy','uses'=>'OperationsController@buy']);
     Route::post('buy',['as'=>'add_buy','uses'=>'OperationsController@saveBuy']);
 
-    Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
+    /**
+     * Credito
+    */
+    Route::get('credits',['as'=>'make_credit','uses'=>'OperationsController@credit']);
+    Route::post('credits',['as'=>'make_credit','uses'=>'OperationsController@saveCredit']);
 
     /**
+     * Angular Search Products
+    */
+    Route::get('products.search',['as'=>'products_search','uses'=>'ProductsController@search'] );
+//    Route::get('products.slug',['as'=>'products_slug','uses'=>'ProductsController@slug'] );
+
+    /**
+     * *************************
      * Invoice Details
+     * *************************
     */
     Route::get('invoice.details/{id}',['as'=>'invoices','uses'=>'InvoicesController@show']);
 
     /**
+     * *************************
      * Client Administrator
+     * *************************
     */
     Route::get('clients.dashboard',['as'=>'clients','uses'=>'ClientsController@dashboard']);
+    Route::get('client.view',['as'=>'client_view','uses'=>'ClientsController@show']);
 
-    Route::get('client.add',['as'=>'client_add','uses'=>'ClientsController@add']);
-    Route::post('client.add',['as'=>'client_save','uses'=>'ClientsController@save']);
+    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+    {
+        Route::get('client.add',['as'=>'client_add','uses'=>'ClientsController@add']);
+        Route::post('client.add',['as'=>'client_save','uses'=>'ClientsController@save']);
 
-    Route::get('client.edit/{id}',['as'=>'client_edit','uses'=>'ClientsController@edit']);
-    Route::post('client.edit',['as'=>'client_update','uses'=>'ClientsController@update']);
+        Route::get('client.edit/{id}',['as'=>'client_edit','uses'=>'ClientsController@edit']);
+        Route::post('client.edit',['as'=>'client_update','uses'=>'ClientsController@update']);
 
-    Route::get('client.delete/{id}',['as'=>'client_delete','uses'=>'ClientsController@delete']);
+        Route::get('client.delete/{id}',['as'=>'client_delete','uses'=>'ClientsController@delete']);
+    });
+    /**
+     * **********************
+     * Supplyer
+     * **********************
+    */
+    Route::get('supplyers.dashboard',['as'=>'supplyers','uses'=>'SupplyersController@dashboard']);
+    Route::get('supplyer.view',['as'=>'supplyer_view','uses'=>'SupplyersController@show']);
+
+    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+    {
+        Route::get('supplyer.add', ['as' => 'supplyer_add', 'uses' => 'SupplyersController@add']);
+        Route::post('supplyer.add', ['as' => 'supplyer_save', 'uses' => 'SupplyersController@save']);
+
+        Route::get('supplyer.edit/{id}', ['as' => 'supplyer_edit', 'uses' => 'SupplyersController@edit']);
+        Route::post('supplyer.edit', ['as' => 'supplyer_update', 'uses' => 'SupplyersController@update']);
+
+        Route::get('supplyer.delete/{id}', ['as' => 'supplyer_delete', 'uses' => 'SupplyersController@delete']);
+
+    });
+    /**
+     * **********************
+     * Emplyee
+     * **********************
+    */
+    Route::get('employees.dashboard',['as'=>'employees','uses'=>'UsersController@dashboard']);
+    Route::put('employee.view', ['as'=>'employee_view','uses'=>'UsersController@show']);
+
+    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+    {
+        Route::get('employee.add', ['as'=>'employee_add','uses'=>'UsersController@add']);
+        Route::get('employee.add', ['as'=>'employee_add','uses'=>'UsersController@add']);
+
+        Route::get('employee.delete/{id}', ['as'=>'employee_delete','uses'=>'UsersController@delete']);
+        Route::get('employee.reset/{id}', ['as'=>'employee_reset','uses'=>'UsersController@delete']);
+    });
 
     /**
-     * Supplyer
+     * Formularios Account, informacion de la cuetna
+     */
+    Route::get('account',['as' => 'account','uses' => 'UsersController@account']);
+    Route::put('account',['as' => 'update_account','uses' => 'UsersController@updateAccount']);
+
+    Route::get('profile',['as' => 'profile','uses' => 'UsersController@profile']);
+    Route::put('profile',['as' => 'update_profile','uses' => 'UsersController@updateProfile']);
+
+    /**
+     *******************************
+     * Report's
+     *******************************
     */
+    /**
+     * Reportes de Ventas
+    */
+    Route::group(['before'=>'is_admin-or-is_super_admin'],function()
+    {
+        Route::get('reports.sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
+        Route::post('reports.sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
 
-    Route::get('supplyers.dashboard',['as'=>'supplyers','uses'=>'SupplyersController@dashboard']);
-    Route::get('supplyers.add',['as'=>'supplyer_add','uses'=>'SupplyersController@add']);
-    Route::post('supplyers.add',['as'=>'supplyer_save','uses'=>'SupplyersController@save']);
+        /**
+         *
+         * Reportes de Compras
+         *
+         */
+        Route::get('reports.buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
+        Route::post('reports.buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
 
-    Route::get('supplyers.edit/{id}',['as'=>'supplyer_edit','uses'=>'SupplyersController@edit']);
-    Route::post('supplyers.edit',['as'=>'supplyer_update','uses'=>'SupplyersController@update']);
-
-    Route::get('supplyers.delete/{id}',['as'=>'supplyer_delete','uses'=>'SupplyersController@delete']);
-
-
-//    Route::get('user.reset',function()
-//    {
-//       return \Hash::make('SupeR@.#-2014!');
-//    });
-
-
+        /**
+         *
+         * Ventas por [day,month]
+         *
+         */
+        Route::get('reports.sales/{by}/{type}', ['as' => 'reports_by', 'uses' => 'OrdersController@sales_by']);
+    });
 });

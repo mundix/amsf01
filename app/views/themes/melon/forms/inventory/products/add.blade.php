@@ -19,7 +19,7 @@
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-4">
-                                {{ Form::select('category_id',$categories,null,['class'=>'col-md-12 select2 full-width-fix required']) }}
+                                {{ Form::select('category_id',['default'=>'Seleccione Categoria']+$categories,null,['class'=>'col-md-12 select2 full-width-fix required']) }}
                             </div>
                         </div>
                         <div class="row" id="sub-category">
@@ -41,12 +41,19 @@
                         {{ Form::text('sku',null,['placeholder'=>'(Optional) Código único físico. ','class'=>'form-control']) }}
                     </div>
                 </div>
+            <div class="form-group">
+                {{ Form::label('price_list','Precio de lista',['class'=>'col-md-2 control-label']) }}
+                <div class="col-md-10">
+                    {{ Form::text('price_list',null,['placeholder'=>'(Optional)','class'=>'form-control']) }}
+                </div>
+            </div>
                 <div class="form-group">
                     {{ Form::label('price','Precio',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">
                         {{ Form::text('price',null,['placeholder'=>'Requerido','class'=>'form-control']) }}
                     </div>
                 </div>
+
                 <div class="form-group">
                     {{ Form::label('min_price','Precio Mínimo',['class'=>'col-md-2 control-label']) }}
                     <div class="col-md-10">

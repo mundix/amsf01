@@ -32,10 +32,22 @@
 }
 .fix-select-2-group
 {
-
+    padding-left: 25px !important;
 }
 .fix-select-2-group select
 {
     float: left !important;
+    margin-right: 15px;
+}
+
+.client_info .form-group .inputs
+{
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.to_credit{
+    float:left;
+    margin-left: 15px;
     margin-right: 15px;
 }

@@ -1,6 +1,15 @@
 <?php
+use HireMe\Repositories\CandidateRepo;
 
 class RemindersController extends Controller {
+
+	protected $candidateRepo;
+
+	public function __construct(CandidateRepo $candidateRepo)
+	{
+		$this->candidateRepo = $candidateRepo;
+	}
+
 
 	/**
 	 * Display the password reminder view.
@@ -39,7 +48,8 @@ class RemindersController extends Controller {
 	{
 		if (is_null($token)) App::abort(404);
 
-		return View::make('password.reset')->with('token', $token);
+		$user = $this->candidateRepo->getUserByToken($token);
+		return View::make('password.reset',compact('token','user'));
 	}
 
 	/**
@@ -53,13 +63,15 @@ class RemindersController extends Controller {
 			'email', 'password', 'password_confirmation', 'token'
 		);
 
+
 		$response = Password::reset($credentials, function($user, $password)
 		{
 			$user->password = Hash::make($password);
-
 			$user->save();
 		});
-
+		echo "<pre>";
+		print_r(["response"=>$response,Password::INVALID_PASSWORD,Password::INVALID_TOKEN,Password::INVALID_USER]);
+		exit();
 		switch ($response)
 		{
 			case Password::INVALID_PASSWORD:

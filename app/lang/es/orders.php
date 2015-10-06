@@ -3,8 +3,8 @@
 return [
     'status' => [
         'pending'           => 'Pendiente',
-        'pending_payment'   => 'Por Pagar',
-        'status_credit'     => 'Por Cobrar',
+        'pending_payment'   => 'Por pagar',
+        'status_credit'     => 'Por cobrar',
         'canceled'          => 'Cancelado',
         'returned'          => 'Devuelto',
         'modify'            => 'Modificado',

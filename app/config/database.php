@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'amsisinvoice',
+			'database'  => isset($_SERVER['SERVER_NAME'])?($_SERVER['SERVER_NAME'] == 'sisinvoices.awesomemedia.do' || $_SERVER['SERVER_NAME'] == 'localhost' )?'amsisinvoice':'dannaglams':"amsisinvoice",
 			'username'  => 'cpichardodb',
 			'password'  => 'SupeR0614!',
 			'charset'   => 'utf8',

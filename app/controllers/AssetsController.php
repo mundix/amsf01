@@ -23,7 +23,26 @@ class AssetsController extends BaseController
             'melon/js/app.js',
             'melon/js/plugins.js',
             'melon/js/plugins.form-components.js',
+
         ];
+    }
+
+    protected function getJsUI()
+    {
+        return [
+            'melon/plugins/pickadate/picker.js',
+            'melon/plugins/pickadate/picker.date.js',
+            'melon/plugins/pickadate/picker.time.js',
+            'melon/plugins/bootstrap-colorpicker/bootstrap-colorpicker.min.js',
+//            'melon/js/demo/ui_general.js',
+        ];
+    }
+    protected function getScripts()
+    {
+        return ['melon/plugins/bootbox/bootbox.min.js',
+            'js/jquery/plugin/numeral.min.js',
+            'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js',
+            'js/app.js'];
     }
     protected function getCssDataTable()
     {
@@ -69,4 +88,6 @@ class AssetsController extends BaseController
             'css/style.css'
         ];
     }
+
+
 }

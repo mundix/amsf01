@@ -180,6 +180,22 @@ var Login = function() {
 					//
 					// Here on form submit you should
 					// implement some ajax (@see: http://api.jquery.com/jQuery.ajax/)
+					//var url = $(form).attr('action');
+					//console.log(url);
+					$.ajax({
+						url:"reset.password",
+						type:"POST",
+						dataType:'json',
+						data:$(form).serialize(),
+						success:function(data)
+						{
+							console.log('Success');
+						},
+						error:function(data)
+						{
+							console.log('Error');
+						}
+					});
 
 					$('.inner-box').slideUp(350, function() {
 						$('.forgot-password-form').hide();
@@ -190,7 +206,7 @@ var Login = function() {
 
 						$('.inner-box').slideDown(350);
 					});
-					form.submit();
+					//form.submit();
 					return false;
 				}
 			});

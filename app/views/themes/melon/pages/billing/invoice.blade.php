@@ -1,11 +1,10 @@
 @extends('themes.melon.tpls.page')
-
 @section('content')
 <div class="col-md-12">
     <div class="widget invoice">
         <div class="widget-header">
             <div class="pull-left">
-                <h2>Factura</h2>
+                <h2>Factura <strong>{{ $order->status_title }}</strong></h2>
             </div>
             <div class="pull-right">
                 <p class="invoice-nr"><strong>Invoice:</strong> #{{$order->id}}-{{$order->invoice->id}}</p>
@@ -40,7 +39,7 @@
 
                 <!--=== Table ===-->
                 <div class="col-md-12">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover table-responsive" data-display-length="50">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -58,8 +57,8 @@
                             <td>{{ $detail->product->name }}</td>
                             <td class="hidden-xs">{{ $detail->product->category->name  }}</td>
                             <td class="hidden-xs">{{$detail->qty}}</td>
-                            <td class="hidden-xs">{{$detail->product->price}}</td>
-                            <td>{{ $detail->price }}</td>
+                            <td class="hidden-xs">$ {{number_format($detail->product->price,2)}}</td>
+                            <td>$ {{ number_format($detail->price,2) }}</td>
                         </tr>
                         @endforeach
                         </tbody>
@@ -79,9 +78,20 @@
                     <ul class="list-unstyled amount padding-bottom-5px">
                         <li><strong>Subtotal:</strong> ${{ number_format($order->total,2) }}</li>
                         {{--<li><strong>Delivery:</strong> $5</li>--}}
-                        <li><strong>DESCUENTO ({{number_format($order->discount_percent,2)}}%):</strong> ${{number_format($order->discount_amount,2)}}</li>
+                        <li><strong>DESCUENTO ({{number_format($order->discount_percent,2)}}%):</strong> ${{number_format($order->discount,2)}}</li>
                         <li><strong>ITBIS ({{number_format($order->itbis,2)}}%):</strong> ${{number_format($order->itbis_amount,2)}}</li>
                         <li class="total"><strong>Total:</strong> ${{ number_format($order->sub_total,2) }}</li>
+                    </ul>
+                    <hr>
+                    <ul class="list-unstyled amount padding-bottom-5px">
+                        <li><strong>Total Pagado:</strong> ${{ number_format($order->invoice->total_paid,2) }}</li>
+                        @if($order->sub_total > $order->invoice->total_paid )
+                            <li><strong>Total por Pagar:</strong> ${{ number_format($order->sub_total - $order->invoice->total_paid,2) }}</li>
+                        @endif
+                        {{--<li><strong>Delivery:</strong> $5</li>--}}
+                        {{--<li><strong>DESCUENTO ({{number_format($order->discount_percent,2)}}%):</strong> ${{number_format($order->discount,2)}}</li>--}}
+{{--                        <li><strong>ITBIS ({{number_format($order->itbis,2)}}%):</strong> ${{number_format($order->itbis_amount,2)}}</li>--}}
+{{--                        <li class="total"><strong>Total:</strong> ${{ number_format($order->sub_total,2) }}</li>--}}
                     </ul>
 
                     <div class="buttons">
