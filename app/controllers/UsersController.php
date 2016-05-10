@@ -41,6 +41,7 @@ class UsersController extends AssetsController
 
     public function save()
     {
+
         $user       = $this->candidateRepo->newCandidate();
         $manager    = new RegisterManager($user,Input::all());
         $user_id    = $manager->save();
@@ -88,12 +89,13 @@ class UsersController extends AssetsController
         return Redirect::route('home');
     }
 
-    public function reset()
+    public function reset($id)
     {
         if(Request::ajax())
         {
-            $this->candidateRepo->resetPassword($this->candidateRepo->findUserByEmail(Input::get('email')));
-            return json_encode(['success' => 200]);
+            $candidate = $this->candidateRepo->find($id);
+            $this->candidateRepo->resetPassword($this->candidateRepo->findUserByEmail($candidate->user->email));
+            return json_encode(['success' => 200,"email"=>$candidate->user->email]);
         }
         return json_encode(['error' => 400]);
     }

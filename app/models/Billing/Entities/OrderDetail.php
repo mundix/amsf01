@@ -2,7 +2,8 @@
 
 namespace Billing\Entities;
 
-class OrderDetail extends \Eloquent {
+class OrderDetail extends \Eloquent
+{
 
 	protected $table = "orders_details";
 	protected $fillable = [
@@ -23,4 +24,5 @@ class OrderDetail extends \Eloquent {
 	{
 		return $this->belongsTo('\Inventory\Entities\Product');
 	}
+
 }

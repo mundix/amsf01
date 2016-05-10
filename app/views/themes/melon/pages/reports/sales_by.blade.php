@@ -15,8 +15,10 @@
             <div class="widget box">
                 <div class="widget-header">
                     <div class="col-md-2">
-                        <a href="{{Route('reports_by',['day','sale'])}}" class="btn btn-xs btn-success bs-popover" data-trigger="hover" data-placement="bottom" data-content="Ventas diarias de las órdenes" data-original-title="Reporte Ventas" >
+                        <a href="{{Route('reports_by',['day','sale'])}}" class="btn btn-xs btn-success bs-popover" data-trigger="hover" data-placement="bottom" data-content="Ventas diarias de las órdenes" data-original-title="Reporte Ventas por día." >
                             <i class="icon-usd"></i> Ventas por día</a>
+                        <a href="{{Route('reports_sale')}}" class="btn btn-xs btn-success bs-popover" data-trigger="hover" data-placement="bottom" data-content="Ventas diarias de facturas" data-original-title="Facturas." >
+                            <i class="icon-usd"></i> Facturas</a>
                     </div>
                 </div>
                 <div class="widget-content">

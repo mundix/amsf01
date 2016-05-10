@@ -26,10 +26,6 @@ $(function()
         getTotal();
     });
 
-
-
-
-
     /**
      * Click on a checkbox if apply itbis is checked or not
      * */
@@ -37,7 +33,6 @@ $(function()
     {
         getTotal();
     });
-
 
 
     /**
@@ -148,109 +143,4 @@ $(function()
         form.submit();
     });
 
-    //$("#payments .payments input").focusout(function()
-    //{
-    //    total_payments = 0;
-    //    $("#payments .payments").each(function()
-    //    {
-    //        total_payments += parseFloat($(this).find("input").val());
-    //    });
-    //    console.log(total_payments);
-    //    var total =   total_payments - total_neto;
-    //    $("#refound span").html(numeral(total).format('0,0.00'));
-    //});
-
 });
-
-/**
- * ***********************
- * My Vars
- * ***********************
- * */
-var discount        = 0;
-var total           = 0;
-var total_neto      = 0;
-var total_itbis     = 0;
-var total_discount  = 0;
-var discount        = 0;
-var value           = 0;
-var same_discount   = false;
-var total_payments  = 0;
-/**
- * Types By Cases
- * #1 Same Taxes, apply discount to the main amount.
- * #2 Same Taxes, apply discont on each products.
- * #3 Differents Taxes, apply percent discount on each products.
- * #4 Different Taxes, can't apply discount to the main amount.
- *
- * if taxes_type == 0 don't apply discount
- *
- * */
-var itbis_array     = [];
-/**
- * Display Total
- * Black Display
- * */
-function getTotal()
-{
-    total                   = 0;
-    total_neto              = 0;
-    total_itbis             = 0;
-    total_discount          = 0;
-    same_discount           = false;
-
-
-
-
-
-    /**
-     * Black Display
-     * */
-    //var string = numeral(total).format('0,0.00');
-    //$("#cashier").val("RD$ "+(string));
-
-    /**
-     * Yellow
-     * */
-    getTotalWTaxes();
-
-    if(total_neto > 0)
-        $("input[type=submit]").prop("disabled", false);
-    else
-        $("input[type=submit]").prop("disabled", true);
-}
-
-/**
- * Display Tota w/ Taxes
- * Yellow Display
- * */
-function getTotalWTaxes()
-{
-    var string = numeral(total_neto).format('0,0.00');
-    $("#subtotal").val("RD$ "+(string));
-}
-
-/**
- * Returns the Value to discount
- *
- * @param type = 1 Percentual
- * @param type = 2 Direct Amount
- *
- * */
-function getDiscountValue(type)
-{
-    /**
-     * 1 - Percent
-     * 2 - Amount
-     * */
-    var value = parseFloat($("#discount_total").val());
-    var discount = 0;
-    if( type == 1 )
-    {
-        discount = value /100;
-    }else
-    {
-        discount = value;
-    }
-    return discount;
-}

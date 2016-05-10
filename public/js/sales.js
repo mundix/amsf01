@@ -65,20 +65,17 @@ $(function()
                     $("<td>").text(numeral(obj.price).format('0,0.00')),
                     $("<td>").text(function()
                     {
-                        //itbis_array[0]=0;
-                        //itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
-
-                        //itbis_array[parseInt(obj.id)] = parseFloat(obj.itbis.value);
                         itbis_array.push([parseInt(obj.id),parseFloat(obj.itbis.value)]);
-
-                        //if(parseInt(obj.itbis_apply))
-                            //return numeral((obj.fix_itbis*obj.price)/100).format('0,0.00');
                         if(parseInt(obj.itbis_apply))
                             return numeral((obj.itbis.value*obj.price)/100).format('0,0.00');
                         return numeral((itbis_general*obj.price)/100).format('0,0.00');
 
                     }),
-                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", 0.00).attr("class","form-control is_percent")),
+                    $("<td>").append($("<input>").attr('id', "discount-" + obj.id).attr("name","items_discounts[]").attr("type", 'number').attr("min", 0).attr("value", function(){
+                        if(obj.discount_apply == 1)
+                            return obj.discount;
+                        return 0.00;
+                    }).attr("class","form-control is_percent")),
                     $("<td>").text(obj.stock),
                     $("<td>").append($("<input>").attr('id', "qty-" + obj.id)
                         .attr("type", 'number').attr("min", 1).attr("value", 1)
@@ -157,19 +154,19 @@ $(function()
     $(document).on("change",".is_qty",function()
     {
         var obj = JSON.parse($(this).parent().parent().attr("data-product"));
-        var stock = obj.stock;
-        if($(this).val() > stock)
+        var stock = parseInt(obj.stock);
+        //return
+        if(stock < parseInt($(this).val()) )
         {
             $(this).addClass("bs-popover");
             $(this).attr("data-original-title","Error");
             $(this).attr("data-content","La cantidad elegida, es mayor a la existente.");
             $('.bs-popover').popover();
             $(this).parent().parent().attr("style","background:#f2dede");
-            //bootbox.alert("La cantidad elegida, es mayor a la existente.");
         }else{
-            $(this).removeClass("bs-popover");
-            $(this).removeAttr("data-original-title");
-            $(this).removeAttr("data-content");
+
+            $('.bs-popover').popover("destroy");
+            $(this).parent().parent().removeAttr("style");
         }
 
         //console.log("Estamos en algo");

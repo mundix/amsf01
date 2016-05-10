@@ -27,5 +27,6 @@
         <!-- /.container -->
     </div>
 </div>
+@include("themes.melon.commons.config");
 </body>
 </html>

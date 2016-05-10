@@ -51,7 +51,7 @@
                                 <select name="client_id" id="client_id" class="form-control fix-selected-1">
                                     <option value="-1">Cliente</option>
                                     @foreach($clients as $client)
-                                        <option value="{{$client->id}}" data-rnc-value="{{$client->rnc}}">{{ $client->name }}</option>
+                                        <option value="{{$client->id}}" data-rnc-value="{{$client->rnc}}">{{$client->name}}</option>
                                     @endforeach
                                 </select>
                              @endif
@@ -63,13 +63,13 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-9 inputs">
-                                        <input type="text" name="pay_date" placeholder="Fecha Vencimiento" class="form-control datepicker">
+                                        <input type="text" name="pay_date" placeholder="Fecha Vencimiento (Requerido)" class="form-control datepicker custom-required">
                                     </div>
                                     <div class="col-md-9 inputs">
-                                        <input type="text" name="client_name" placeholder="Nombre" class="form-control">
+                                        <input type="text" name="client_name" placeholder="Nombre (Requerido)" class="form-control custom-required">
                                     </div>
                                     <div class="col-md-9 inputs">
-                                        <input type="text" name="phone" placeholder="Tel&eacute;fono" class="form-control">
+                                        <input type="text" name="phone" placeholder="Tel&eacute;fono (Requerido)" class="form-control custom-required">
                                     </div>
                                     <div class="col-md-9 inputs">
                                         <input type="text" name="rnc" placeholder="RNC" class="form-control">
@@ -83,12 +83,12 @@
                                 <input type="number" name="discount_total" disabled id="discount_total" class="form-control" value="0.00">
                             </div>
                         </div>
-                        <div class="form-group" id="ncf">
+                        {{--<div class="form-group" id="ncf">--}}
                             {{--<label class="col-md-3 control-label"></label>--}}
-                            <div class="col-md-12">
-                                <input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">
-                            </div>
-                        </div>
+                            {{--<div class="col-md-12">--}}
+                                {{--<input type="text"  name="sub_total" class="form-control" disabled id="subtotal" role="money"  placeholder="S/. 0.00">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="form-group" >
                             <div class="row col-md-12" >

@@ -16,6 +16,8 @@ class ProductUpdateManager extends  BaseManager
             'min_stock'     => 'numeric',
             'category_id'   => 'exists:products_categories,id',
             'price_list'    => 'numeric',
+            'discount_apply'=> 'numeric',
+            'discount'      => 'numeric',
             'price'         => 'required|numeric',
             'min_price'     => 'numeric',
             'available'     => 'in:1,0',

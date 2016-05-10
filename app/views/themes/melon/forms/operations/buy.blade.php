@@ -135,6 +135,33 @@
                                 <input type="text" name="rnc" placeholder="RNC" class="form-control">
                             </div>
                         </div>
+                        <div class="form-group" >
+                            <div class="row col-md-12" >
+                                <button type="button" class="btn btn-sm btn-primary fix-button-1" id="add_payments"> Agregar Pagos </button>
+                                <label class="checkbox-inline to_credit bs-popover" data-trigger="hover" data-placement="top" data-content="Esta factura autmaticamente pasará a ser a crédito, de lo contrario sera al contado." data-original-title="Financiamiento a crédito" >
+                                    <div class="checker"><span><input type="checkbox" class="uniform" value="1" name="to_credit" id="to_credit"></span></div>A cr&eacute;dito
+                                </label>
+                                <select name="pay_days" class="form-control fix-selected-3" id="pay_days">
+                                    @for($i=1;$i<=90;$i++)
+                                        <option value="{{$i}}">{{$i}} Día{{($i>1)?"s":""}}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" id="payments">
+                            {{--<label class="col-md-3 control-label"></label>--}}
+                            <div class="row col-md-12 payments">
+                                <div class="col-md-6">
+                                    <input type="number"  name="payment[]" class="form-control"   role="money" disabled placeholder="Elija Forma de Pago $0.00" value="0.00">
+                                </div>
+                                <select name="payment_method[]" class="form-control fix-selected-3 payments_methods">
+                                    <option value="-1">Forma Pago</option>
+                                    <option value="cash">Efectivo</option>
+                                    <option value="credit_card">Tarjeta</option>
+                                    <option value="check">Ceque</option>
+                                </select>
+                            </div>
+                        </div>
                         {{--<div class="form-group">--}}
                             {{--<label class="col-md-2 control-label">Descuento</label>--}}
                             {{--<div class="col-md-10">--}}

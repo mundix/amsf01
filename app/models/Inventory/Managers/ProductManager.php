@@ -17,6 +17,8 @@ class ProductManager extends  BaseManager
             'category_id'   => 'exists:products_categories,id',
             'price_list'    => 'numeric',
             'price'         => 'required|numeric',
+            'discount_apply'=> 'numeric',
+            'discount'      => 'numeric',
             'min_price'     => 'numeric',
             'itbis_id'      => 'exists:itbis,id',
             'available'     => 'in:1,0',

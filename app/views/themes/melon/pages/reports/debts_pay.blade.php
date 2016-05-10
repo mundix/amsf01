@@ -34,7 +34,7 @@
         <div class="col-md-12">
             <div class="widget box">
                 <div class="widget-header">
-                    <h4><i class="icon-reorder"></i>Informe de Ordenes Compras</h4>
+                    <h4><i class="icon-reorder"></i>Cuentas por Pagar</h4>
                     <div class="toolbar no-padding">
                         <div class="btn-group">
                             <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
@@ -56,7 +56,7 @@
                                 <th>Tipo</th>
                                 {{--<th>Estatus</th>--}}
                                 <th>Total</th>
-                                {{--<th class="hidden-xs"></th>--}}
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -72,9 +72,10 @@
                                     <td><a href="">{{$order->type_title}}</a></td>
                                     {{--<td>{{$order->status_title}}</td>--}}
                                     <td>RD$ {{number_format($order->sub_total,2)}}</td>
-                                    {{--<td>--}}
+                                    <td style="text-align: center;">
+                                        <a class="btn btn-xs btn-info" href="{{route('debts_pay_show',[$order->id])}}" >Ver</a>
                                         {{--<a href="{{Route('invoices',[$order->id])}}">Factura</a>--}}
-                                    {{--</td>--}}
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

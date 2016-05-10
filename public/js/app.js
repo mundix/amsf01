@@ -1,7 +1,8 @@
 var itbis_general = 0.00;
 var ncf = "";
-
+var base_url = "";
 $(function(){
+    base_url = $("#base_url").val()+"/";
     $.ajax({
         url: 'get_config',
     }).done(function( data ) {
@@ -39,12 +40,201 @@ $(function(){
                     label: "Aceptar",
                     className: "btn-primary",
                     callback: function() {
-                        location.href = route;
+                        //location.href = route;
+                        //console.log(route);
+                        $.ajax({
+                            url:route,
+                            type:"GET",
+                            dataType:"json",
+                            success:function(data)
+                            {
+                                if(data.success)
+                                {
+                                    bootbox.dialog({
+                                        message: "El usuario fue restablecido.",
+                                        title: "Retablecimiento de usuario.",
+                                        buttons: {
+                                            danger: {
+                                                label: "Entendido",
+                                                className: "btn-success"
+                                            }
+                                        }
+                                    });
+                                }else
+                                {
+                                    bootbox.dialog({
+                                        message: "No se pudo restablecer su usuario.",
+                                        title: "Restauración de usario.",
+                                        buttons: {
+                                            danger: {
+                                                label: "Entendido",
+                                                className: "btn-danger"
+                                            }
+                                        }
+                                    });
+                                }
+
+                            },
+                            error:function(data)
+                            {
+                                console.log("Error:",data);
+                            }
+                        })
                     }
                 }
             }
         });
     });
+    /**
+     * Activando el campo del pago , segun el metodo de pago seleccionado
+     * */
+    $(document).on("change",'select.payments_methods',function()
+    {
+        if($(this).val()!=-1)
+        {
+            $(this).parent().find("input").prop('disabled',false);
+        }else{
+            $(this).parent().find("input").prop('disabled',true);
+        }
+    });
+    /**
+     * Boton para agregar mas metodos de pagos.
+     * */
+    var divClone = new $("#payments").parent().find(".payments");
+
+    $("#add_payments").click(function(e)
+    {
+        e.preventDefault();
+        var new_div_cloned;
+        $("#payments").append(
+
+            new_div_cloned = $(divClone).clone(true).append(
+                $("<a>").attr("href","#").addClass("removePayment").html(" Remover")
+            )
+        );
+        new_div_cloned.find("input").val(0);
+        new_div_cloned.find("input").prop("disabled",true);
+        //console.log($(divClone).find("input").val());
+    });
+    $(document).on("click",".removePayment",
+        function(e){
+            e.preventDefault();
+            $(this).parent().remove();
+        }
+    );
+
+    /**
+     * Modal
+     * */
+    $(document).on("click",".open-modal",function(e)
+    {
+        e.preventDefault();
+        $(".modal-container").css("display","block");
+    });
+
+    $(document).on("click",".btn-close-modal",function(e)
+    {
+        $(".modal-container").css("display","none");
+    });
+
+    /**
+     * Making Payments to order
+     * */
+    $(document).on("click",".btn-make-payments",function(e)
+    {
+        e.preventDefault();
+        var total = 0;
+        $("#payments input[type=number]").each(function()
+        {
+            if(!$(this).is(":disabled") && $(this).val()>0)
+            {
+                total += parseFloat($(this).val());
+            }
+        });
+        if(!(total>0))
+        {
+            bootbox.dialog({
+                message: "La suma de los pagos debe ser mayor a RD$ 0.00",
+                title: "Procesando pago.",
+                buttons: {
+                    danger: {
+                        label: "Entendido",
+                        className: "btn-danger"
+                    }
+                }
+            });
+            return;
+        }
+        //$("#payment-modal").submit();
+        $.ajax({
+            url:base_url+"received.payments",
+            type:"POST",
+            dataType:"json",
+            data:$("#payment-modal").serialize(),
+            beforeSend:function()
+            {
+                $("#custom-loading").css("display","block");
+
+            },
+            success:function(data)
+            {
+                console.log("Success",data);
+
+                if(data.success)
+                {
+                    $(".modal-container").css("display","none");
+                    $("#custom-loading").css("display","none");
+                    clearPaymentsModal();
+
+                    bootbox.dialog({
+                        message: "Su pago fue generado exitosamente.",
+                        title: "Procesando pago.",
+                        buttons: {
+                            success: {
+                                label: "Entendido",
+                                className: "btn-success",
+                                callback: function()
+                                {
+                                    location.reload();
+                                }
+                            }
+                        }
+                    });
+                }else
+                {
+                    $("#custom-loading").css("display","none");
+                    bootbox.dialog({
+                        message: "Hubo un error en el pago.",
+                        title: "Procesando pago.",
+                        buttons: {
+                            danger: {
+                                label: "Entendido",
+                                className: "btn-danger"
+                            }
+                        }
+                    });
+                }
+            },
+            error:function(data)
+            {
+                $(".modal-container").css("display","none");
+                $("#custom-loading").css("display","none");
+                clearPaymentsModal();
+                bootbox.dialog({
+                    message: "Hubo un error en el proceso de pago interno.",
+                    title: "Procesando pago.",
+                    buttons: {
+                        danger: {
+                            label: "Entendido",
+                            className: "btn-danger"
+                        }
+                    }
+                });
+                console.log(data)
+            }
+        });
+    });
+
 
 });
 
@@ -106,4 +296,14 @@ function anualSales()
         }));
 
 
+}
+
+/**
+ * Clear Payments
+ * */
+function clearPaymentsModal()
+{
+    $(".removePayment").each(function(){
+       $(this).parent().remove();
+    });
 }

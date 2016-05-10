@@ -259,6 +259,21 @@ $(function()
        getTotal();
     });
 
+
+    /**
+     * Activando el campo del pago , segun el metodo de pago seleccionado
+     * */
+    $(document).on("change",'select.payments_methods',function()
+    {
+        if($(this).val()!=-1)
+        {
+            $(this).parent().find("input").prop('disabled',false);
+        }else{
+            $(this).parent().find("input").prop('disabled',true);
+        }
+    });
+
+
 });
 
 /**

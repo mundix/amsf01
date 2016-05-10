@@ -48,7 +48,7 @@
                                             <div class="form-group">
                                                 {{ Form::label('location','Ubicai&oacute;n',['class'=>'col-md-4 control-label']) }}
                                                 <div class="col-md-8">
-                                                    {{Form::select('location',$locations,null,['class'=>'col-md-12 select2 full-width-fix required'])}}
+                                                    {{Form::select('location',['4'=>'Sin Localidad']+$locations,null,['class'=>'col-md-12 select2 full-width-fix required'])}}
                                                 </div>
                                             </div>
                                             <div class="form-group">

@@ -73,20 +73,61 @@ class OperationsController extends AssetsController
 
 	public function saveSales()
 	{
-
 		$order_id = $this->invoiceRepo->create($this->orderRepo->create(Input::all()));
 		return Redirect::route('invoices',[$order_id]);
 	}
 	public function saveBuy()
 	{
-		$this->orderRepo->create(Input::all(),"buy");
+		$order_id = $this->invoiceRepo->create($this->orderRepo->create(Input::all(),"buy"));
 		return Redirect::route('home');
 	}
 	public function saveCredit()
 	{
-
 		$order_id = $this->invoiceRepo->create($this->orderRepo->createCredit(Input::all()));
 		return Redirect::route('invoices',[$order_id]);
+	}
+	public function debts_pay()
+	{
+		$orders = $this->orderRepo->getOrderBetweenDates(Input::all(), "buy","pending_payment");
+		$javascripts = array_merge($this->getJsDataTables(), $this->getJsUI(), $this->getScripts());
+		$data = $this->getProductsData();
+		return View::make("themes.{$this->theme}.pages.reports.debts_pay", compact('orders', 'data', 'javascripts'));
+	}
+	public function debts_pay_show($id = null)
+	{
+		$order = $this->orderRepo->find($id);
+		$javascripts = array_merge($this->getJsDataTables(), $this->getJsUI(), $this->getScripts());
+		$styles			= array_merge($this->getCssGeneral());
+		$data = $this->getProductsData();
+		return View::make("themes.{$this->theme}.pages.resources.operations.debts_pay", compact('order', 'data', 'javascripts',"styles"));
+	}
+	public function accounts_receivable()
+	{
+
+	}
+	/**
+	 * Jquery Recieved Payments
+	 * @param Forms.serialize
+	*/
+	public function received_payments()
+	{
+		if(Auth::check())
+		{
+			if($this->invoiceRepo->add_payments(Input::all(),Input::get('order')))
+			{
+				return Response::json(
+						[
+							"post" => Input::all(),
+							"success"=>1
+						]);
+			}else{
+				return Response::json([
+					'succcess'=>0
+				]);
+			}
+
+
+		}
 	}
 
 }

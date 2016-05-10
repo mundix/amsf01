@@ -23,9 +23,9 @@ var Plugins = function() {
 			$('.range').daterangepicker({
 				//startDate: moment().subtract('days', 29),
 				//endDate: moment(),
-				minDate: '01/01/2012',
-				maxDate: '12/31/2014',
-				dateLimit: { days: 60 },
+				//minDate: '01/01/2012',
+				//maxDate: '12/31/2014',
+				//dateLimit: { days: 60 },
 				showDropdowns: true,
 				showWeekNumbers: true,
 				timePicker: false,

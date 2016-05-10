@@ -68,6 +68,7 @@ Route::group(['before' => 'auth'], function()
      * Operaciones
      * ###############################
     */
+
     /**
      * Ventas
     */
@@ -86,6 +87,19 @@ Route::group(['before' => 'auth'], function()
     */
     Route::get('credits',['as'=>'make_credit','uses'=>'OperationsController@credit']);
     Route::post('credits',['as'=>'make_credit','uses'=>'OperationsController@saveCredit']);
+
+
+    /**
+     * Cuentas por Pagar / Cobrar
+    */
+    Route::get('debts.pay',['as'=>'debts_pay','uses'=>'OperationsController@debts_pay']);
+    Route::get('debts.pay.show/{id}',['as'=>'debts_pay_show','uses'=>'OperationsController@debts_pay_show']);
+    Route::get('accounts.receivable',['as'=>'accounts_receivable','uses'=>'OperationsController@accounts_receivable']);
+
+    /**
+     * Making Payments via AJAX
+    */
+    Route::post('received.payments',['as'=>'received_payments','uses'=>'OperationsController@received_payments']);
 
     /**
      * Angular Search Products
@@ -135,7 +149,6 @@ Route::group(['before' => 'auth'], function()
         Route::post('supplyer.edit', ['as' => 'supplyer_update', 'uses' => 'SupplyersController@update']);
 
         Route::get('supplyer.delete/{id}', ['as' => 'supplyer_delete', 'uses' => 'SupplyersController@delete']);
-
     });
     /**
      * **********************
@@ -147,11 +160,14 @@ Route::group(['before' => 'auth'], function()
 
     Route::group(['before'=>'is_admin-or-is_super_admin'],function()
     {
-        Route::get('employee.add', ['as'=>'employee_add','uses'=>'UsersController@add']);
-        Route::get('employee.add', ['as'=>'employee_add','uses'=>'UsersController@add']);
+        Route::group(['prefix'=>'employee'],function()
+        {
+            Route::get('add', ['as' => 'employee_add', 'uses' => 'UsersController@add']);
+            Route::put('add', ['as' => 'employee_save', 'uses' => 'UsersController@save']);
 
-        Route::get('employee.delete/{id}', ['as'=>'employee_delete','uses'=>'UsersController@delete']);
-        Route::get('employee.reset/{id}', ['as'=>'employee_reset','uses'=>'UsersController@delete']);
+            Route::get('delete/{id}', ['as' => 'employee_delete', 'uses' => 'UsersController@delete']);
+            Route::get('reset/{id}', ['as' => 'employee_reset', 'uses' => 'UsersController@reset']);
+        });
     });
 
     /**
@@ -173,22 +189,22 @@ Route::group(['before' => 'auth'], function()
     */
     Route::group(['before'=>'is_admin-or-is_super_admin'],function()
     {
-        Route::get('reports.sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
-        Route::post('reports.sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
+        Route::group(['prefix'=>'reports'],function()
+        {
+            Route::get('sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
+            Route::post('sale', ['as' => 'reports_sale', 'uses' => 'OrdersController@sale']);
 
-        /**
-         *
-         * Reportes de Compras
-         *
-         */
-        Route::get('reports.buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
-        Route::post('reports.buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
+            /**
+             * Reportes de Compras
+             */
+            Route::get('buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
+            Route::post('buy', ['as' => 'reports_buy', 'uses' => 'OrdersController@buy']);
 
-        /**
-         *
-         * Ventas por [day,month]
-         *
-         */
-        Route::get('reports.sales/{by}/{type}', ['as' => 'reports_by', 'uses' => 'OrdersController@sales_by']);
+            /**
+             * Ventas por [day,month]
+             */
+            Route::get('sales/{by}/{type}', ['as' => 'reports_by', 'uses' => 'OrdersController@sales_by']);
+        });
+
     });
 });

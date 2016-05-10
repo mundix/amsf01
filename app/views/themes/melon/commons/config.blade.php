@@ -1,0 +1,1 @@
+<input type="hidden" id="base_url" value="{{URL::to('/');}}">

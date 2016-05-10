@@ -48,7 +48,7 @@ class ProductsCategoriesController extends AssetsController
 		$manager->save();
 		\Session::push('form.validation.success','El registro fu&eacute; guardado.');
 
-		return Redirect::route('home');
+		return Redirect::route('products_categories');
 
 	}
 	public function edit($id)
@@ -79,6 +79,6 @@ class ProductsCategoriesController extends AssetsController
 		$entity = $this->productCategoryRepo->find($id);
 		$entity->forceDelete();
 		\Session::push('form.validation.success','El registro fu&eacute; eliminado.');
-		return Redirect::route('products.categories');
+		return Redirect::route('products_categories');
 	}
 }

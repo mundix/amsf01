@@ -51,15 +51,17 @@
                         </tr>
                         </thead>
                         <tbody>
+
+
                         @foreach($order->details as $detail)
-                        <tr>
-                            <td>1</td>
-                            <td>{{ $detail->product->name }}</td>
-                            <td class="hidden-xs">{{ $detail->product->category->name  }}</td>
-                            <td class="hidden-xs">{{$detail->qty}}</td>
-                            <td class="hidden-xs">$ {{number_format($detail->product->price,2)}}</td>
-                            <td>$ {{ number_format($detail->price,2) }}</td>
-                        </tr>
+                            <tr>
+                                <td>{{ $detail->product->id }}</td>
+                                <td>{{ $detail->product->name }}</td>
+                                <td class="hidden-xs">{{ $detail->product->category->name  }}</td>
+                                <td class="hidden-xs">{{$detail->qty}}</td>
+                                <td class="hidden-xs">$ {{number_format($detail->product->price,2)}}</td>
+                                <td>$ {{ number_format($detail->price,2) }}</td>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>

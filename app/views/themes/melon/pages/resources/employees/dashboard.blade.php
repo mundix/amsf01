@@ -47,17 +47,17 @@
                                         <input type="checkbox" class="uniform">
                                     </td>
                                     <td>
-                                        <a href="{{ route('client_edit',[$employee->id]) }}">
+                                        <a href="#">
                                             {{$employee->id}}
                                         </a>
                                     </td>
-                                    <td><a href="{{ route('client_edit',[$employee->id]) }}">{{$employee->user->full_name}}</a></td>
+                                    <td><a href="#">{{$employee->user->full_name}}</a></td>
                                     <td>{{$employee->user->type_title}}</td>
                                     <td>{{$employee->phone}}</td>
                                     <td><a href="mailto:{{$employee->user->email}}">{{$employee->user->email}}</a></td>
                                     <td>
-                                        @if(is_super_admin())
-                                            <a href="{{ Route('client_edit',[$employee->id]) }}">Editar</a>
+                                        @if(is_super_admin() || is_admin())
+                                            <a href="#">Editar</a>
                                             <a href="#" class="delete_entity" data-entity-route="{{route("employee_delete",[$employee->id])}}">Eliminar</a>
                                             <a href="#" class="reset_entity_password" data-entity-route="{{route("employee_reset",[$employee->id])}}">Reset</a>
                                         @endif

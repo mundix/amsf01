@@ -112,7 +112,7 @@ class OrderRepo extends BaseRepo
                 $item_total         = (float) $item_qty * $item_price;
             }
 
-            $itbis              = (float)$item->itbis->value;
+            $itbis              = (float) $item->itbis->value;
             $itbis_array[]      = (float) $itbis;
 
             $product['id']         = $item_id;
@@ -368,22 +368,42 @@ class OrderRepo extends BaseRepo
      * @param Array $data['range_date']
      * @return Array
     */
-    public function getOrderBetweenDates($data = array(),$type ='sale')
+    public function getOrderBetweenDates($data = array(),$type ='sale',$status = null)
     {
         if($dates = $this->getDateByStringRangeDates($data))
         {
 //            Session::push('reports.orders.sales.data',$data);
             list($from,$to) = $dates;
-            return $this->getModel()
-                ->where("created_at",'>=',Carbon::createFromFormat('d/m/Y',$from)->format('Y-m-d'))
-                ->where("created_at",'<=',Carbon::createFromFormat('d/m/Y H:i:s',$to." 23:59:59")->format('Y-m-d H:i:s'))
-                ->orderBy('created_at')
-                ->get();
+            if(is_null($status))
+            {
+                return $this->getModel()
+                    ->where("created_at",'>=',Carbon::createFromFormat('d/m/Y',$from)->format('Y-m-d'))
+                    ->where("created_at",'<=',Carbon::createFromFormat('d/m/Y H:i:s',$to." 23:59:59")->format('Y-m-d H:i:s'))
+                    ->where('type',$type)
+                    ->orderBy('created_at')
+                    ->get();
+            }else{
+                return $this->getModel()
+                    ->where("created_at",'>=',Carbon::createFromFormat('d/m/Y',$from)->format('Y-m-d'))
+                    ->where("created_at",'<=',Carbon::createFromFormat('d/m/Y H:i:s',$to." 23:59:59")->format('Y-m-d H:i:s'))
+                    ->where('type',$type)
+                    ->where('status',$status)
+                    ->orderBy('created_at')
+                    ->get();
+            }
         }else
-            return $this->getModel()
-                ->where('type',$type)
-                ->orderBy('created_at')
-                ->take(50)->get();
+            if(is_null($status)) {
+                return $this->getModel()
+                    ->where('type', $type)
+                    ->orderBy('created_at')
+                    ->take(50)->get();
+            }else{
+                return $this->getModel()
+                    ->where('type', $type)
+                    ->where('status',$status)
+                    ->orderBy('created_at')
+                    ->take(50)->get();
+            }
     }
 
 

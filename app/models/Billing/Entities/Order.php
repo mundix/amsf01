@@ -35,6 +35,7 @@ class Order extends \Eloquent
 	{
 		return $this->belongsTo('HireMe\Entities\Supplyer');
 	}
+
 	public function details()
 	{
 		return $this->hasMany('\Billing\Entities\OrderDetail');

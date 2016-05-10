@@ -105,6 +105,18 @@
                     Cr&eacute;dito
                 </a>
             </li>
+            <li>
+                <a href="{{ route('debts_pay') }}">
+                    <i class="icon-hand-left"></i>
+                    Cuentas por Pagar
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('accounts_receivable') }}">
+                    <i class="icon-hand-left"></i>
+                    Cuentas por Cobrar
+                </a>
+            </li>
         </ul>
     </li>
     <li>
